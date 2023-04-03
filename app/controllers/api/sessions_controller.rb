@@ -15,13 +15,14 @@ class Api::SessionsController < ApplicationController
     def create
       email = params[:email]
       password = params[:password]
-      @user = User.find_by_credentials(email, password)
+      @user = User.find_by_credentials(params[:email], params[:password])
   
       if @user #if a user is found
         login!(@user) #login that user and then
         render 'api/users/show' #show them this page
       else
-        render json: { errors: ['Invalid credentials'] }
+        render json: { errors: ['Invalid credentials'] },
+          status: :unauthorized
       end
     end
   
