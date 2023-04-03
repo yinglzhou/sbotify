@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::API
     include ActionController::RequestForgeryProtection
     protect_from_forgery with: :exception
-    before_action :snake_case_params, :attach_authenticity_token
-  
+    
     rescue_from StandardError, with: :unhandled_error
     rescue_from ActionController::InvalidAuthenticityToken,
-    with: :invalid_authenticity_token
-
+      with: :invalid_authenticity_token
+    
+    before_action :snake_case_params, :attach_authenticity_token
     def current_user
         @current_user ||= User.find_by(session_token: session[:session_token])
     end
@@ -15,12 +15,12 @@ class ApplicationController < ActionController::API
         session[:session_token] = user.reset_session_token!
     end
   
-    def logged_in?
-      !!current_user #the method
-    end
+    # def logged_in?
+    #   !!current_user #the method
+    # end
   
     def logout!
-        current_user.reset_session_token!
+        current_user.reset_session_token! if current_user
         session[:session_token] = nil
         @current_user = nil # so that subsequent calls to `current_user` return nil
     end

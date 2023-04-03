@@ -1,23 +1,18 @@
 import csrfFetch from "./csrf";
 
-const initialState = {
-    // user: JSON.parse(sessionStorage.getItem("currentUser"))
-    user: null
-}
 
 /* ------- ACTION TYPES ------- */
-const SET_CURRENT_USER = 'session/SET_CURRENT_USER';
-const REMOVE_CURRENT_USER = 'session/REMOVE_CURRENT_USER';
+const SET_CURRENT_USER = 'session/setUser';
+const REMOVE_CURRENT_USER = 'session/removeUser';
 
 /* ------- ACTION CREATORS ------- */
-export const setUser = (user) => ({
+const setUser = (user) => ({
     type: SET_CURRENT_USER,
-    user
+    payload: user
 })
 
-export const removeUser = (userId) => ({
-    type: REMOVE_CURRENT_USER,
-    userId
+const removeUser = () => ({
+    type: REMOVE_CURRENT_USER
 })
 
 const storeCSRFToken = response => {
@@ -30,10 +25,10 @@ const storeCurrentUser = user => {
     else sessionStorage.removeItem("currentUser");
 }
 
-export const login = ({ credential, password }) => async dispatch => {
+export const login = ({ email, password }) => async dispatch => {
     const response = await csrfFetch("/api/session", {
       method: "POST",
-      body: JSON.stringify({ credential, password })
+      body: JSON.stringify({ email, password })
     });
     const data = await response.json();
     storeCurrentUser(data.user);
@@ -49,18 +44,7 @@ export const login = ({ credential, password }) => async dispatch => {
     dispatch(setUser(data.user));
     return response;
   };
-  
 
-export const loginUser = user => async dispatch => {
-    const res = await csrfFetch('/api/session', {
-        method: 'POST',
-        body: JSON.stringify(user)
-    });
-    let data = await res.json();
-    sessionStorage.setItem('currentUser', JSON.stringify(data.user));
-    storeCurrentUser(data.user)
-    dispatch(setUser(data.user));
-}
 
 export const signup = user => async dispatch => {
     const { name, email, password } = user;
@@ -87,16 +71,19 @@ export const logout = () => async (dispatch) => {
   return response;
 };
 
+const initialState = {
+  user: JSON.parse(sessionStorage.getItem("currentUser"))
+}
 
 const sessionReducer = (state = initialState, action) => {
     switch (action.type) {
       case SET_CURRENT_USER:
-        return { ...state, user: action.user };
+        return { ...state, user: action.payload };
       case REMOVE_CURRENT_USER:
         return { ...state, user: null };
       default:
         return state;
     }
-  };
+};
 
   export default sessionReducer;

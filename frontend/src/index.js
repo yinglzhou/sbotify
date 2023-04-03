@@ -4,12 +4,13 @@ import './index.css';
 import configureStore from './store';
 import {BrowserRouter} from 'react-router-dom';
 import { Provider } from 'react-redux';
-import csrfFetch, { restoreCSRF } from './store/csrf';
+import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
 import App from './App';
 
 
 const store = configureStore();
+
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;

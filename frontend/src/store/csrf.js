@@ -12,15 +12,15 @@ async function csrfFetch(url, options = {}) {
     if (res.status >= 400) throw res;
     return res;
 }
-export function storeCSRFToken(response) {
-    const csrfToken = response.headers.get("X-CSRF-Token");
-    if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
-}
+// export function storeCSRFToken(response) {
+//     const csrfToken = response.headers.get("X-CSRF-Token");
+//     if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
+// }
 
-export async function restoreCSRF() {
-    const res = await csrfFetch('api/session');
-    storeCSRFToken(res);
-    return res;
-}
+// export async function restoreCSRF() {
+//     const res = await csrfFetch('api/session');
+//     storeCSRFToken(res);
+//     return res;
+// }
 
 export default csrfFetch;

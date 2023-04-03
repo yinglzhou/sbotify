@@ -1,6 +1,6 @@
 class Api::SessionsController < ApplicationController
-    before_action :require_logged_out, only: [:create]
-    before_action :require_logged_in, only: [:destroy]
+    # before_action :require_logged_out, only: [:create]
+    # before_action :require_logged_in, only: [:destroy]
   
     #this is just going to show the current user
     def show
@@ -27,7 +27,7 @@ class Api::SessionsController < ApplicationController
   
     def destroy
       logout!
-      head :no_content 
+      render json: { message: 'success' }
     end
   
   end
