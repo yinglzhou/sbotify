@@ -36,13 +36,14 @@ const SignupFormPage = () => {
     }
 
     return (
-        <div id='form'>
-            <h1>Signup Form</h1>
-            <form onSubmit={handleSubmit}>
+        <div>
+            <h1>Sign up with your email address</h1>
+            <form onSubmit={handleSubmit} id='form'>
                 <ul>
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
                 <label>What's your email? 
+                    <br/>
                     <input
                         type="text"
                         value={confirmEmail}
@@ -51,6 +52,7 @@ const SignupFormPage = () => {
                     />
                 </label>
                 <label>Confirm your email 
+                    <br/>
                     <input
                         type="text"
                         value={email}
@@ -59,6 +61,7 @@ const SignupFormPage = () => {
                     />
                 </label>
                 <label>Create a password 
+                    <br/>
                     <input
                         type="password"
                         value={password}
@@ -67,6 +70,7 @@ const SignupFormPage = () => {
                     />
                 </label>
                 <label>What should we call you?
+                    <br/>
                     <input
                         type="text"
                         value={name}
@@ -75,7 +79,7 @@ const SignupFormPage = () => {
                     />
                 </label>
                 <p>This appears on your profile</p>
-                <button type="submit">Sign Up</button>
+                <button id="submit-button"type="submit">Sign Up</button>
             </form>
         </div>
     )
