@@ -57,8 +57,8 @@ export const loginUser = user => async dispatch => {
         body: JSON.stringify(user)
     });
     let data = await res.json();
-    // sessionStorage.setItem('currentUser', JSON.stringify(data.user));
-    // storeCurrentUser(data.user)
+    sessionStorage.setItem('currentUser', JSON.stringify(data.user));
+    storeCurrentUser(data.user)
     dispatch(setUser(data.user));
 }
 
@@ -77,6 +77,15 @@ export const signup = user => async dispatch => {
     dispatch(setUser(data.user))
     return res;
 }
+
+export const logout = () => async (dispatch) => {
+  const response = await csrfFetch("/api/session", {
+    method: "DELETE"
+  });
+  storeCurrentUser(null);
+  dispatch(removeUser());
+  return response;
+};
 
 
 const sessionReducer = (state = initialState, action) => {
