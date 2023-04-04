@@ -6,11 +6,10 @@ import Navigation from "./components/Navigation";
 function App() {
   return (
     <>
-    <Navigation/>
+    <Navigation />
       <Switch>
         <Route exact path="/">
           <h1>Hello from App</h1>
-          <a href="/login">Login Form Link</a>
         </Route>
 
         <Route path="/login">
