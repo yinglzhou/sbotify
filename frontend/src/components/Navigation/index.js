@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import './Navigation.css'
 import ProfileButton from "./ProfileButton";
 
@@ -7,10 +7,19 @@ const Navigation = () => {
     const sessionUser = useSelector(state => state.session.user);
 
     let sessionLinks;
+    let bar;
     if (sessionUser) {
         sessionLinks = (
             <ProfileButton user={sessionUser}/>
         )
+        bar =             
+        <div id="no-nav-bar">
+            <div className="container">
+                <div className='profile-button-holder'>
+                    {sessionLinks}
+                </div>
+            </div>
+        </div>
     } else {
         sessionLinks = (
             <div className="links">
@@ -22,30 +31,18 @@ const Navigation = () => {
                 </div>
             </div>
         )
+        bar =             
+        <div id="nav-bar">
+            <div className="container">
+                <div>
+                    {sessionLinks}
+                </div>
+            </div>
+        </div>
     }
     return (
         <>
-            <div id="side-bar">
-                <Link to="/">
-                    <img className="icon"
-                        src={require('./assets/spot-logo.png')}
-                    />
-                </Link>
-
-                <div className="side-options">
-                    <a href="/">Home</a>
-                </div>
-            </div>
-        
-            <div id="nav-bar">
-                <ul >
-                    <li>
-                        <div>
-                            {sessionLinks}
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            {bar}
         </>
     )
 }

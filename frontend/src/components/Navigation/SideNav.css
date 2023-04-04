@@ -1,0 +1,32 @@
+#side-bar {
+    background-color: rgba(0, 0, 0, 0.068);
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 240px
+}
+
+.icon {
+    margin-top: 23px;
+    margin-left: 23px;
+    width: 130px;
+}
+
+.side-options {
+    position: relative;
+    border: 2px solid white;
+    margin-top: 25px;
+    height: 35px;
+}
+
+.side-options a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    margin-left: 66px;
+}

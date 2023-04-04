@@ -1,0 +1,31 @@
+.profilebutton {
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid green;
+    background-color: rgba(0,0,0,.7);
+    gap: 8px;
+    justify-content: center;
+    padding: 1px;
+    position: relative;
+    align-items: center;
+    border-radius: 20px;
+    width: 90px;
+    height: 28px;
+}
+#caret {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+#user-name {
+    font-size: 14px;
+}
+#pfp {
+    margin-left: 9px;
+}
+
+.profile-dropdown{
+    position: absolute;
+    top: 34px;
+    left: 0;
+}
