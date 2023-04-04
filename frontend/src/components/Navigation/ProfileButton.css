@@ -3,22 +3,26 @@
     display: flex;
     flex-direction: row;
     border: 2px solid green;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(0,0,0,0.7);
     gap: 8px;
     justify-content: center;
     padding: 1px;
     position: relative;
     align-items: center;
     border-radius: 20px;
-    width: 90px;
+    width: 95px;
     height: 28px;
+}
+.profilebutton:hover{
+    background-color: #282828;
 }
 #caret {
     margin-left: 6px;
-    margin-right: 6px;
+    margin-right: 12px;
 }
 #user-name {
     font-size: 14px;
+    color: white;
 }
 #pfp {
     margin-left: 9px;

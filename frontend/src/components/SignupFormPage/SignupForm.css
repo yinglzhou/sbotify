@@ -1,44 +1,83 @@
-h1 {
-    font-family: "Gotham";
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-}
-#form {
-    /* box-sizing: border-box; */
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    border: 2px solid green;
-    font-weight: bold;
-    font-size: 14px;
-    margin-top: 20px;
+html,
+body {
+    height: 100%;
 }
 
-#form label {
-    margin-top: 11px;
-    position: relative;
-    /* left: 30%; */
-    /* transform: translateX(-50%); */
+.signup-form-container {
+    height: 100vh;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#form {
+    display: flex;
+    flex-direction: column;
+}
+
+.all-labels {
+    display: flex;
+    flex-direction: column;
+}
+
+.labels {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 input {
-    padding: 1%;
-    width: 250;
+    padding-inline: 14px;
+    border: 0.25px solid gray;
+    display: block;
+    font-size: 15px;
+    inline-size: 100%;
+    box-sizing: border-box;
+    margin-block: 0px;
+    border-radius: 4px;
+    min-block-size: 47px;
+    color: black;
+}
+.labels p {
+    margin-top: 10px;
+    font-size: 13px;
 }
 
-#submit-button{
-    background-color: #1fdf64;
-    padding: 2%;
-    width: 20;
-    border-radius: 50px;
-    border: 3px solid rgb(255, 255, 255);
-    font-weight: bold;
+#submit-button {
     font-size: 17px;
+    font-weight: bold;
+    width: 175px;
+    border: 2px solid white;
+    background-color: #1ed760;
+    padding: 20px;
+    border-radius: 35px;
+    align-self: center;
 }
-#submit-button:hover{
-    transform: scale(1.04);
+#submit-button:hover {
+    transform: scale(1.03);
 }
-#form p {
-    margin-top: 10px;
+
+#account-ask {
+    margin-top: 30px;
+}
+
+#account-ask p{
+    font-size: 15px
+}
+
+#account-ask a{
+    color: #169c46;
 }

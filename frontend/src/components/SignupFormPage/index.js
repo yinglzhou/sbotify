@@ -1,6 +1,7 @@
 import { Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
 
@@ -36,54 +37,73 @@ const SignupFormPage = () => {
     }
 
     return (
-        <div>
+        <div className="signup-form-container">
+            <Link to="/">
+                <img className="icon"
+                    src={require('./assets/spot-logo-black.png')}
+                />
+            </Link>
             <h1>Sign up with your email address</h1>
             <form onSubmit={handleSubmit} id='form'>
                 <ul>
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
-                <label>What's your email? 
-                    <br/>
-                    <input
-                        type="text"
-                        value={confirmEmail}
-                        onChange={(e) => setConfirmEmail(e.target.value)}
-                        placeholder="Enter your email."
-                        required
-                    />
-                </label>
-                <label>Confirm your email 
-                    <br/>
-                    <input
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email again."
-                        required
-                    />
-                </label>
-                <label>Create a password 
-                    <br/>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Create a password."
-                        required
-                    />
-                </label>
-                <label>What should we call you?
-                    <br/>
-                    <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Enter a profile name."
-                        required
-                    />
-                </label>
-                <p>This appears on your profile</p>
+
+                <div className="all-labels">
+                <div className="labels">
+                    <label>What's your email?</label>
+                        <input
+                            type="text"
+                            value={confirmEmail}
+                            onChange={(e) => setConfirmEmail(e.target.value)}
+                            placeholder="Enter your email."
+                            required
+                            />
+                </div>
+
+                <div className="labels">
+                    <label>Confirm your email</label>
+                        <input
+                            type="text"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Enter your email again."
+                            required
+                        />
+                </div>
+
+                <div className="labels">
+                    <label>Create a password</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Create a password."
+                            required
+                        />
+                </div>
+
+                <div className="labels">
+                    <label>What should we call you?</label>
+                        <input
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="Enter a profile name."
+                            required
+                        />
+                    <p>This appears on your profile.</p>
+                </div>
+
+                </div>
                 <button id="submit-button"type="submit">Sign Up</button>
+
+                <div id="account-ask">
+                    <p>Have an account? 
+                        <a href="/login"> Log in</a>.
+                    </p>
+                </div>
+                
             </form>
         </div>
     )
