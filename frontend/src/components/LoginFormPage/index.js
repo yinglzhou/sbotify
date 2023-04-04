@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as sessionActions from '../../store/session'
 import './LoginForm.css';
 
@@ -31,36 +32,45 @@ const LoginFormPage = () => {
     }
 
     return (
-        <div>
+        <div className="signup-form-container">
+            <Link to="/">
+                <img className="icon"
+                    src={require('./assets/spot-logo-black.png')}
+                />
+            </Link>
 
-            <h1>Login Form Page!</h1>
+            <h1>To continue, log in to Spotify.</h1>
 
             <form>
                 <ul>
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
 
-                <label>Email address
+                <div className="all-labels">
+                <div className="labels">
+                <label>Email address</label>
                     <input
                         type="text"
                         value={email}
+                        placeholder="Email address"
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                </label>
+                </div>
 
-                <label>Password
+            <div className="labels">
+                <label>Password</label>
                     <input
                         type="password"
                         value={password}
+                        placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                </label>
-
-                <label>
-                    <button onClick={handleSubmit}>LOG IN</button>
-                </label>
+            </div>
+                </div>
+                <button id="login-submit-button"onClick={handleSubmit}>LOG IN</button>
+                
             </form>
         </div>
     )
