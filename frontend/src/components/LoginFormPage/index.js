@@ -31,6 +31,18 @@ const LoginFormPage = () => {
         });
     }
 
+    const demologin = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.login({email: 'demo@user.io', password: 'password'}))
+        .catch(async (res) => {
+            let data;
+            try {
+                data = await res.clone().json();
+            } catch {
+                data = await res.text();
+            }})
+    }
+
     return (
         <div className="signup-form-container">
             <Link to="/">
@@ -40,9 +52,9 @@ const LoginFormPage = () => {
             </Link>
 
             <h1>To continue, log in to Spotify.</h1>
-
-            <form>
-                <ul>
+            <button id='demo-login-button'onClick={demologin}>Demo User</button>
+            <form id='login-form'>
+                <ul className="errors">
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
 
@@ -69,7 +81,7 @@ const LoginFormPage = () => {
                     />
             </div>
                 </div>
-                <button id="login-submit-button"onClick={handleSubmit}>LOG IN</button>
+                <button id="login-submit-button" onClick={handleSubmit}>LOG IN</button>
                 
             </form>
         </div>

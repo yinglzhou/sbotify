@@ -66,6 +66,7 @@ input {
     border-radius: 35px;
     align-self: center;
 }
+
 #submit-button:hover {
     transform: scale(1.03);
 }
@@ -80,4 +81,12 @@ input {
 
 #account-ask a{
     color: #169c46;
+}
+
+.errors {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
 }

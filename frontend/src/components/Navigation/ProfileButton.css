@@ -12,6 +12,7 @@
     border-radius: 20px;
     width: 95px;
     height: 28px;
+    margin-bottom: 33px;
 }
 .profilebutton:hover{
     background-color: #282828;
@@ -28,8 +29,39 @@
     margin-left: 9px;
 }
 
-.profile-dropdown{
+#profile-dropdown-container {
+    /* border: 1px solid green; */
     position: absolute;
     top: 34px;
-    left: 0;
+    left: -98px;
+    width: 196px;
+    /* height: 248px; */
+    height: auto;
+    margin-top: 8px;
+    background-color: #565656;
+    border-radius: 3px;
+    z-index: 10000;
+}
+
+.profile-dropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-dropdown li {
+    /* border: 1px solid white; */
+    padding: 14px;
+}
+.profile-dropdown li:hover {
+    /* border: 1px solid white; */
+    background-color: #6a6a6a;
+    /* width: 170px; */
+    border-radius: 3px;
+}
+
+.profile-dropdown div {
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    margin-left: 5px;
 }

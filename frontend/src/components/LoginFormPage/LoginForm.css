@@ -4,7 +4,7 @@ h1 {
     font-weight: bold;
     margin-bottom: 20px;
 }
-#form {
+#login-form {
     display: flex;
     flex-direction: column;
 }
@@ -37,4 +37,33 @@ input {
     border-radius: 4px;
     min-block-size: 47px;
     color: black;
+}
+
+#login-submit-button {
+    position: relative;
+    left: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 124px;
+    border: 2px solid white;
+    background-color: #1ed760;
+    padding: 15px;
+    border-radius: 35px;
+}
+#demo-login-button {
+    margin-bottom: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 124px;
+    border: 2px solid white;
+    background-color: #1ed760;
+    padding: 15px;
+    border-radius: 35px;
+}
+.errors {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
 }

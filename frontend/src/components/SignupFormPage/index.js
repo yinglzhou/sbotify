@@ -45,7 +45,7 @@ const SignupFormPage = () => {
             </Link>
             <h1>Sign up with your email address</h1>
             <form onSubmit={handleSubmit} id='form'>
-                <ul>
+                <ul className="errors">
                     {errors.map(error => <li key={error}>{error}</li>)}
                 </ul>
 
@@ -57,7 +57,7 @@ const SignupFormPage = () => {
                             value={confirmEmail}
                             onChange={(e) => setConfirmEmail(e.target.value)}
                             placeholder="Enter your email."
-                            required
+                            // required
                             />
                 </div>
 
@@ -68,7 +68,7 @@ const SignupFormPage = () => {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email again."
-                            required
+                            // required
                         />
                 </div>
 
@@ -79,7 +79,7 @@ const SignupFormPage = () => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="Create a password."
-                            required
+                            // required
                         />
                 </div>
 
@@ -90,7 +90,7 @@ const SignupFormPage = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Enter a profile name."
-                            required
+                            // required
                         />
                     <p>This appears on your profile.</p>
                 </div>
