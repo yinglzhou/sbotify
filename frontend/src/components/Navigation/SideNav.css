@@ -15,7 +15,7 @@
 
 .side-options {
     position: relative;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     margin-top: 25px;
     height: 35px;
 }
