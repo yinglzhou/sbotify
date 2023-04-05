@@ -21,7 +21,7 @@
 }
 
 .side-options a {
-    color: white;
+    color: #a7a7a7;
     font-size: 14px;
     font-weight: bold;
     position: absolute;
@@ -29,4 +29,7 @@
     transform: translateY(-50%);
     text-decoration: none;
     margin-left: 66px;
+}
+.side-options a:hover {
+    color:white;
 }
