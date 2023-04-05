@@ -6,7 +6,9 @@ class Api::ArtistsController < ApplicationController
     end
 
     def show
-        @artist = Artist.find_by(id: params[:id])
+        @artist = Artist.find(params[:id])
+        # using albums association here
+        @albums = @artist.albums.includes(:artist)
         render :show
     end
 
