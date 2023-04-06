@@ -1,0 +1,14 @@
+#main-content-container {
+    height: 100vh;
+    background-color: rgba(79, 113, 113, 0.533);
+    position: relative;
+    z-index: 300;
+    left: 240px;
+}
+#main-content-container h1 {
+    color: white;
+}
+
+#main-content-container h2 {
+    color: white;
+}

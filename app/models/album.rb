@@ -11,12 +11,11 @@
 class Album < ApplicationRecord
     validates :name, presence: true
 
-    belongs_to :artist,
+    belongs_to :artist
     # primary_key :id,
     # foreign_key :artist_id,
-    dependent: :destroy
+    # dependent: :destroy
 
-
-    has_many :songs,
-    dependent: :destroy
+    has_many :songs
+    # dependent: :destroy
 end

@@ -18,10 +18,10 @@ class Song < ApplicationRecord
         format: { with: /\A\d:\d\d$\z/ }
                         # has to be like "##:##"
 
-    belongs_to :album,
-    dependent: :destroy
+    belongs_to :album
+    # dependent: :destroy
 
-    belongs_to :artist, 
-    dependent: :destroy
+    belongs_to :artist
+    # dependent: :destroy
 
 end

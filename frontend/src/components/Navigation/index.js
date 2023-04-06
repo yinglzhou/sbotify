@@ -13,7 +13,7 @@ const Navigation = () => {
             <ProfileButton user={sessionUser}/>
         )
         bar =             
-        <div id="no-nav-bar">
+        <div id="nav-bar">
             <div className="container">
                 <div className='profile-button-holder'>
                     {sessionLinks}
