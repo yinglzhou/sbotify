@@ -10,12 +10,9 @@
 #
 class Album < ApplicationRecord
     validates :name, presence: true
+    has_one_attached :album_cover
 
     belongs_to :artist
-    # primary_key :id,
-    # foreign_key :artist_id,
-    # dependent: :destroy
 
     has_many :songs
-    # dependent: :destroy
 end

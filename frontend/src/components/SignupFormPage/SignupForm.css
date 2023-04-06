@@ -11,7 +11,7 @@ body {
     align-items: center;
 }
 
-h1 {
+.signup-form-container h1 {
     margin-top: 20px;
     font-size: 17px;
     font-weight: bold;
@@ -33,13 +33,13 @@ h1 {
     padding-bottom: 24px;
 }
 
-label {
+.signup-form-container label {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-input {
+.signup-form-container input {
     padding-inline: 14px;
     border: 0.25px solid gray;
     display: block;

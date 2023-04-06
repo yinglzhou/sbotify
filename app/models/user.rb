@@ -12,6 +12,7 @@
 #
 class User < ApplicationRecord
     has_secure_password
+    has_one_attached :profile_pic
     before_validation :ensure_session_token
     validates :email, 
         uniqueness: true,

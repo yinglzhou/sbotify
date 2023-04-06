@@ -8,6 +8,8 @@ import { Provider } from 'react-redux';
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
 import App from './App';
+import * as albumActions from './store/album';
+import * as artistActions from './store/artist';
 
 
 const store = configureStore();
@@ -16,7 +18,8 @@ if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
-
+  window.albumActions = albumActions;
+  window.artistActions = artistActions;
 }
 
 function Root() {
