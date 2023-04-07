@@ -21,9 +21,12 @@ function App() {
     <>
       <Switch>
         <Route exact path="/">
-          <Navigation />
-          <SideNav />
-          <MainContent />
+          {/* <div id="main"> */}
+            <Navigation />
+            <SideNav />
+            <MainContent />
+          {/* </div> */}
+
         </Route>
 
         <Route path="/login">

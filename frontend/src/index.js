@@ -10,6 +10,7 @@ import * as sessionActions from './store/session';
 import App from './App';
 import * as albumActions from './store/album';
 import * as artistActions from './store/artist';
+import { Time } from './components/MainContent';
 
 
 const store = configureStore();
@@ -20,6 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.sessionActions = sessionActions;
   window.albumActions = albumActions;
   window.artistActions = artistActions;
+  // window.time = Time;
 }
 
 function Root() {

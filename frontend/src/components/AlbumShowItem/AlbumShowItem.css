@@ -1,0 +1,6 @@
+.album-components {
+    border: 1px solid green;
+    max-width: 185px;
+    overflow: hidden;
+	font-family: sans-serif, "Helvetica Neue", Helvetica;
+}

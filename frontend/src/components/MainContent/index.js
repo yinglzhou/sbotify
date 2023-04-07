@@ -1,12 +1,25 @@
 import './MainContent.css';
 import { useSelector } from 'react-redux';
-import AlbumShow from '../AlbumShow';
-const MainContent = () => {
-// const sessionUser = useSelector(state => state.session.user);
+import AlbumShow from '../AlbumShow/AlbumShow';
 
+// function Time() {
+export const Time = () => {
+        const date = new Date();
+        const hours = date.getHours();
+    if (hours >= 3 && hours < 12) {
+        return 'Morning'
+    } else if (hours >= 12 && hours < 18) {
+        return 'Afternoon'
+    } else {
+        return 'Evening'
+    }
+}
+
+
+const MainContent = () => {
     return (
         <div id='main-content-container'>
-            <h1>Main Content: Hello!</h1>
+            {/* <h1>Good {Time()}</h1> */}
             <div id='album-content-container'>
                 <h2>Albums</h2>
                 <AlbumShow />

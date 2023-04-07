@@ -1,13 +1,13 @@
- 
-const GET_ALBUMS = 'albums/getAlbums';
-const GET_ALBUM = 'albums/getAlbum';
+ import { receiveArtists } from "./artist";
+export const GET_ALBUMS = 'albums/getAlbums';
+export const GET_ALBUM = 'albums/getAlbum';
 
-const receiveAlbums = albums => ({
+export const receiveAlbums = albums => ({
     type: GET_ALBUMS,
     albums
 });
 
-const receiveAlbum = album => ({
+export const receiveAlbum = album => ({
     type: GET_ALBUM,
     album
 });
@@ -16,10 +16,9 @@ const receiveAlbum = album => ({
 export const fetchAllAlbums = () => async dispatch => {
     const res = await fetch('/api/albums');
     const data = await res.json();
-    // console.log(data);
-    // const x = 
-    dispatch(receiveAlbums(data));
-    // console.log(x)
+    console.log(data)
+    dispatch(receiveAlbums(data.albums));
+    dispatch(receiveArtists(data.artists));
 };
 
 

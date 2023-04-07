@@ -1,9 +1,7 @@
 class Api::AlbumsController < ApplicationController
     def index
         @albums = Album.all 
-        # @albums.each do |album|
-        #     album['artist'] = album.artist.name
-        # end
+        @artists = Artist.all
         render :index
     end
 

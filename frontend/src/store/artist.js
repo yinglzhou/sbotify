@@ -1,13 +1,13 @@
 
-const GET_ARTISTS = 'artists/getArtists';
-const GET_ARTIST = 'artists/getArtist';
+export const GET_ARTISTS = 'artists/getArtists';
+export const GET_ARTIST = 'artists/getArtist';
 
-const receiveArtists = artists => ({
+export const receiveArtists = artists => ({
     type: GET_ARTISTS,
     artists
 });
 
-const receiveArtist = artist => ({
+export const receiveArtist = artist => ({
     type: GET_ARTIST,
     artist
 });
