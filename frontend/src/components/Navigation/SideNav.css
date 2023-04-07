@@ -29,6 +29,8 @@
     transform: translateY(-50%);
     text-decoration: none;
     margin-left: 66px;
+    transition: 0.3s;
+
 }
 .side-options a:hover {
     color:white;

@@ -27,6 +27,7 @@
     font-size: 15px;
     font-weight: bold;
     /* border: 2px solid rgb(137, 226, 137); */
+    transition: 0.3s;
 }
 
 #signup a:hover {
@@ -41,6 +42,8 @@
     background-color: white;
     padding: 16px;
     border-radius: 30px;
+    transition: 0.3s;
+
 }
 
 #login a{

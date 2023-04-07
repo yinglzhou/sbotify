@@ -1,14 +1,11 @@
 #main-content-container {
-    width: 86%;
+    /* max-width:max-content; */
     height: 100%;
-    background-color: #1f1f1f;
-    /* position: relative; */
+    background-color: #171717;
     position:absolute;
     z-index: 1;
     padding-left: 269px;
     padding-top: 61px;
-    /* left: 240px; */
-    /* top: 61px; */
 }
 #main-content-container h1 {
     font-family: sans-serif;

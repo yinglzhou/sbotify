@@ -10,9 +10,16 @@ const AlbumShowItem = ({album}) => {
 
     return (
         <div className='album-components'>
-            <img src={require('../assets/ghostie.jpg')} alt="ghost" width="185" height="185"/>
-            <p>{album.name}</p>
-            <p>{artist.name}</p>
+
+            <div className='inner-album-components'>
+                    <div className='album-pics'>
+                        <img src={require('../assets/ghostie.jpg')} alt="ghost"/>
+                    </div>
+                    <div className='titleartist'>{album.name}</div>
+                    <div className='titleartist' id='artistname'>{artist.name}</div>
+                
+
+            </div>
         </div>
     )
 }

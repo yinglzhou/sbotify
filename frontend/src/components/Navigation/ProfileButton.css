@@ -12,6 +12,8 @@
     border-radius: 20px;
     width: 95px;
     height: 28px;
+    transition: 0.3s;
+
     
 }
 .profilebutton:hover{
@@ -51,6 +53,8 @@
 .profile-dropdown li {
     /* border: 1px solid white; */
     padding: 14px;
+    transition: 0.3s;
+
 }
 .profile-dropdown li:hover {
     /* border: 1px solid white; */

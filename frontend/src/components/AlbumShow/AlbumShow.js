@@ -14,7 +14,6 @@ const AlbumShow = () => {
     
     return (
         <div>
-            {/* <h1>Hello from album show</h1> */}
             <ul id='album-container'>
                 {albums.map(album => (
                     <AlbumShowItem key={album.id} album={album}/>

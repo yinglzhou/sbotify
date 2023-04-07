@@ -19,7 +19,6 @@ export const Time = () => {
 const MainContent = () => {
     return (
         <div id='main-content-container'>
-            {/* <h1>Good {Time()}</h1> */}
             <div id='album-content-container'>
                 <h2>Albums</h2>
                 <AlbumShow />

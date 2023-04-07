@@ -1,6 +1,54 @@
 .album-components {
-    border: 1px solid green;
-    max-width: 185px;
-    overflow: hidden;
+    /* border: 1px solid white; */
+    border-radius: 7px;
+    max-width: 200px;
+    /* overflow: hidden; */
 	font-family: sans-serif, "Helvetica Neue", Helvetica;
+}
+
+.inner-album-components {
+    /* border: 1px solid red; */
+    border-radius: 6px;
+    background-color: #1f1f1f;
+    /* background-color: #e8dfdf; */
+    padding: 20px;
+    padding-bottom: 35px;
+    width: max-content;
+
+    transition: 0.3s;
+}
+.inner-album-components:hover {
+    background-color: #434343;
+
+}
+
+.titleartist {
+    padding-top: 5px;
+    margin-top: 5px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 172px;
+    height: 16px;
+}
+
+
+.album-pics {
+    width: 175px;
+    /* border: 2px solid green; */
+    margin-bottom: 20px;
+    height: 175px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 15px 26px rgba(0,0,0,0.6);
+}
+.album-pics img{
+    width: 175px;
+    height: 175px;
+}
+
+#artistname {
+    font-size: 14px;
+    color: #929191;
 }
