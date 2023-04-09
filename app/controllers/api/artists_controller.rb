@@ -7,8 +7,8 @@ class Api::ArtistsController < ApplicationController
 
     def show
         @artist = Artist.find(params[:id])
-        # using albums association here
         @albums = @artist.albums.includes(:artist)
+        # :artist is an association from the album model
         render :show
     end
 

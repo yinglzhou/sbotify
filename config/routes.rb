@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :artists, only: [:show, :index]
     resources :albums, only: [:show, :index]
     resources :songs, only: [:show, :index]
+
+    get 'albums/:id/songs', to: 'albums#songs', as: 'album_songs'
   end
   
   get '*path', to: "static_pages#frontend_index"

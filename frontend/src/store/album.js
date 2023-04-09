@@ -1,4 +1,4 @@
- import { receiveArtists } from "./artist";
+import { receiveArtists } from "./artist";
 export const GET_ALBUMS = 'albums/getAlbums';
 export const GET_ALBUM = 'albums/getAlbum';
 
