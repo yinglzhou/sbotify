@@ -27,7 +27,7 @@ const AlbumSongs = () => {
                     <img src={require('../assets/ghostie.jpg')} alt="ghost"></img>
                         <div id='next-to-image'>
                             <h6>Album</h6>
-                            <div id='album-title-hidden'>{album}</div>
+                            <div id='album-title-hidden' title={album}>{album}</div>
                             <h6>{artist} • {numsongs} songs</h6>
                         </div>
                 </div>
