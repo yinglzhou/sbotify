@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import './AlbumSongs.css';
 
 
-const AlbumSongs = () => {
+const AlbumSongs = ({sessionUser}) => {
     const {albumId} = useParams();
     const dispatch = useDispatch();
     const songs = useSelector(state => state.songs && state.songs.songs ? Object.values(state.songs.songs) : [])
@@ -18,6 +18,10 @@ const AlbumSongs = () => {
     useEffect(()=>{
         dispatch(fetchAlbumSongs(albumId))
     },[albumId])
+
+    if (sessionUser) {
+        
+    }
 
     return (
         <div id='main-content-container-songs'>

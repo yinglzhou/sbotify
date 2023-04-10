@@ -1,20 +1,15 @@
 .album-components {
-    /* border: 1px solid white; */
     border-radius: 7px;
     max-width: 200px;
-    /* overflow: hidden; */
 	font-family: sans-serif, "Helvetica Neue", Helvetica;
 }
 
 .inner-album-components {
-    /* border: 1px solid red; */
     border-radius: 6px;
     background-color: #1f1f1f;
-    /* background-color: #e8dfdf; */
     padding: 20px;
     padding-bottom: 35px;
     width: max-content;
-    /* text-decoration: none; */
     transition: 0.3s;
 }
 

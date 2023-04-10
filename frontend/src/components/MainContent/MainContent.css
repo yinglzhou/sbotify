@@ -1,9 +1,9 @@
 #main-content-container {
-    height: 100%;
+    height: 100vmax;
     background-color: #171717;
-    position:absolute;
+    position: absolute;
     z-index: 1;
-    padding-left: 269px;
+    padding-left: 18vw;
     padding-top: 61px;
 }
 #main-content-container h1 {
@@ -23,4 +23,14 @@
 
 #album-content-container {
     padding: 30px;
+}
+
+#greeting {
+    font-family: sans-serif;
+    font-size: 35px;
+    /* font-weight: bold; */
+    color: white;
+    padding-top: 20px;
+    padding-left: 20px;
+    color: white;
 }

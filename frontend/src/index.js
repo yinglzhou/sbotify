@@ -11,8 +11,7 @@ import App from './App';
 import * as albumActions from './store/album';
 import * as artistActions from './store/artist';
 import * as songActions from './store/song';
-import { Time } from './components/MainContent';
-
+import * as playbarActions from './store/playbar';
 
 const store = configureStore();
 
@@ -23,6 +22,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.albumActions = albumActions;
   window.artistActions = artistActions;
   window.songActions = songActions;
+  window.playbarActions = playbarActions;
 }
 
 function Root() {

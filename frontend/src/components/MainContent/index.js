@@ -16,9 +16,11 @@ export const Time = () => {
 }
 
 
-const MainContent = () => {
+const MainContent = ({sessionUser}) => {
+
     return (
         <div id='main-content-container'>
+            {sessionUser && <div id='greeting'>Good {Time()}</div>}
             <div id='album-content-container'>
                 <h2>Albums</h2>
                 <AlbumShow />

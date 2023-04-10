@@ -2,7 +2,7 @@
 #nav-bar {
     background-color: #101010; 
 	font-family: sans-serif, "Helvetica Neue", Helvetica;
-    width: 100%;
+    width: 100vw;
     height: 62px;
     position: fixed;
     top: 0;
@@ -26,7 +26,6 @@
     color: #a7a7a7;
     font-size: 15px;
     font-weight: bold;
-    /* border: 2px solid rgb(137, 226, 137); */
     transition: 0.3s;
 }
 
@@ -38,12 +37,10 @@
     margin-top: -18px;
     margin-right: 38px;
     margin-left: 15px;
-    /* border: 2px solid white; */
     background-color: white;
     padding: 16px;
     border-radius: 30px;
     transition: 0.3s;
-
 }
 
 #login a{
@@ -55,10 +52,9 @@
 }
 
 .container {
-    width: 100%;
+    width: 100vw;
     height: 57px;
     position: fixed;
-    /* border: 0.5px solid rgb(45, 143, 45); */
     display: flex;
     justify-content: flex-end;
     align-items: center;

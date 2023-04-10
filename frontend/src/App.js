@@ -7,18 +7,19 @@ import SideNav from "./components/Navigation/SideNav";
 import MainContent from "./components/MainContent";
 import AlbumSongs from "./components/AlbumSongs/AlbumSongs";
 import { useEffect } from "react";
+import PlayBar from "./components/PlayBar/PlayBar";
 
 function App() {
-  const sessionUser = useSelector(state => state.session.user)
+  const sessionUser = useSelector(state => state.session ? state.session.user : null)
 
-  // const {albumId} = useParams();
   return (
     <>
       <Switch>
         <Route exact path="/">
             <Navigation />
             <SideNav />
-            <MainContent />
+            <MainContent sessionUser={sessionUser}/>
+            {sessionUser && <PlayBar/>}
         </Route>
 
         <Route path="/login">
@@ -31,8 +32,8 @@ function App() {
 
         <Route path={`/albums/:albumId`}>
           <Navigation/>
-          <SideNav/>
-          <AlbumSongs/>
+            <SideNav/>
+            <AlbumSongs sessionUser={sessionUser}/>
         </Route>
 
       </Switch>
