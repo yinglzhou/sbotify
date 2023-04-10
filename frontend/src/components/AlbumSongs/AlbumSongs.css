@@ -1,0 +1,107 @@
+#main-content-container-songs {
+    width: 86.4%;
+    /* width:100vw; */
+    height: 100vh;
+    background-color: #05111A;
+    position:absolute;
+    z-index: 1;
+    padding-left: 260px;
+    margin-right: 9px;
+    padding-top: 62px;
+}
+#album-banner {
+    display: flex;
+    border-bottom: 1px solid gray;
+    background-color: gray;
+    height: 238px;
+    padding: 20px;
+    padding-left: 30px;
+}
+
+#next-to-image {
+    color: white;
+    padding-left: 20px;
+    padding-top: 57px;
+}
+#next-to-image h6 {
+    font-size: 0.9rem;
+}
+#album-title-hidden{
+    width: 100vw;
+    font-size: 6rem;
+    font-weight: bold;
+    padding-top: 12px;
+    padding-bottom: 28px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#album-banner img{
+    width: 232px;
+    height: 232px;
+}
+#song-component-container{
+    display:flex;
+    flex-direction: column;
+}
+#play-like-options{
+    display:flex;
+    height: 56px;
+    background-color: #05111A;
+    color: white;
+    padding: 24px;
+    padding-left: 32px;
+}
+#album-play-button {
+    font-size: 56px;
+}
+#album-play-button:hover {
+    transform: scale(1.05);
+}
+.heart-options {
+    font-size: 32px;
+    padding: 15px;
+    color: #BEC0C2;
+}
+.heart-options:hover {
+    color: white;
+}
+#heart-album {
+    margin-left: 10px;
+    padding-right: 8px;
+}
+
+#song-heading{
+    display: grid;
+    grid-template-columns: [index] 30px 4fr [last] minmax(150px,0.45fr);
+    border-bottom: 1px solid #BEC0C2;
+    padding: 15px;
+    padding-bottom: 7px;
+    font-size: 15px;
+    color: #BEC0C2;
+    /* background-color: #05111A; */
+}
+
+#individual-songs {
+    color: #BEC0C2;
+    display: grid;
+    grid-template-columns: [index] 30px 4fr [last] minmax(120px,0.2fr);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#album-grid {
+    padding-left: 32px;
+}
+#individual-song-holder {
+    /* border: 1px solid white; */
+    border-radius: 5px;
+    padding-left: 15px;
+    margin-right: 60px;
+}
+
+#individual-song-holder:hover {
+    background-color: #313131;
+}
+
+#individual-title {
+    color: white;
+}

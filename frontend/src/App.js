@@ -1,32 +1,24 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useParams } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 import SideNav from "./components/Navigation/SideNav";
 import MainContent from "./components/MainContent";
+import AlbumSongs from "./components/AlbumSongs/AlbumSongs";
+import { useEffect } from "react";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user)
-  
-  let appear;
-  if (sessionUser) {
-    appear = true
-  } else {
-    appear = false
-  }
 
+  // const {albumId} = useParams();
   return (
     <>
       <Switch>
         <Route exact path="/">
-          {/* <div id="main"> */}
             <Navigation />
             <SideNav />
             <MainContent />
-          {/* </div> */}
-
         </Route>
 
         <Route path="/login">
@@ -36,6 +28,13 @@ function App() {
         <Route path="/signup">
           <SignupFormPage />
         </Route>
+
+        <Route path={`/albums/:albumId`}>
+          <Navigation/>
+          <SideNav/>
+          <AlbumSongs/>
+        </Route>
+
       </Switch>
     </>
   );

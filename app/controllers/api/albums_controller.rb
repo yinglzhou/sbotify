@@ -13,6 +13,7 @@ class Api::AlbumsController < ApplicationController
     def songs
         @album = Album.find(params[:id])
         @songs = @album.songs.includes(:album)
+        @artist = @album.artist
         render :show
     end
 end

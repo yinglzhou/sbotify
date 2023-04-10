@@ -1,16 +1,19 @@
-import { useEffect } from 'react'
-import './AlbumShowItem.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchArtist } from '../../store/artist'
+import './AlbumShowItem.css';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 const AlbumShowItem = ({album}) => {
     const artistId = album.artistId;
     const artist = useSelector(state => state.artists[artistId])
 
     if (!artist) return null;
 
+    // const handleClick = () => {
+
+    // }
     return (
         <div className='album-components'>
-
+            <Link to={`/albums/${album.id}`} className='nav-link'>
             <div className='inner-album-components'>
                     <div className='album-pics'>
                         <img src={require('../assets/ghostie.jpg')} alt="ghost"/>
@@ -20,6 +23,7 @@ const AlbumShowItem = ({album}) => {
                 
 
             </div>
+            </Link>
         </div>
     )
 }
