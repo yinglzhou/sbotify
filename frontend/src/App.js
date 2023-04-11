@@ -34,6 +34,7 @@ function App() {
           <Navigation/>
             <SideNav/>
             <AlbumSongs sessionUser={sessionUser}/>
+            {sessionUser && <PlayBar/>}
         </Route>
 
       </Switch>

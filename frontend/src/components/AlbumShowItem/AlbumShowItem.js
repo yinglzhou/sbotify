@@ -15,7 +15,7 @@ const AlbumShowItem = ({album}) => {
             <Link to={`/albums/${album.id}`} className='nav-link'>
             <div className='inner-album-components'>
                     <div className='album-pics'>
-                        <img src={album.albumCover} alt="ghost"/>
+                        <img src={album.albumCover} alt="x"/>
                     </div>
                     <div className='titleartist'>{album.name}</div>
                     <div className='titleartist' id='artistname'>{artist.name}</div>

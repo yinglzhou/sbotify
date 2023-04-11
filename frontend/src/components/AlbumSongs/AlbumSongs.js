@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { fetchAlbumSongs } from "../../store/song";
 import { useSelector } from "react-redux";
 import './AlbumSongs.css';
+import { playSong } from "../../store/playbar";
 
 
 const AlbumSongs = ({sessionUser}) => {
@@ -24,12 +25,17 @@ const AlbumSongs = ({sessionUser}) => {
     // if (sessionUser) {
         
     // }
+    const handleClick = (song) => (e) => {
+        e.preventDefault();
+        dispatch(playSong(song))
+        console.log(`playing ${song.title}`);
+    }
 
     return (
         <div id='main-content-container-songs'>
 
                 <div id='album-banner'>
-                    <img src={cover} alt="ghost"></img>
+                    <img src={cover} alt="cover"></img>
                         <div id='next-to-image'>
                             <h6>Album</h6>
                             <div id='album-title-hidden' title={album}>{album}</div>
@@ -59,14 +65,12 @@ const AlbumSongs = ({sessionUser}) => {
                             {songs.map((song, i) => {
                                 return (
                                 <>
-                                    <div id='individual-song-holder'>
+                                    <div id='individual-song-holder' onClick={handleClick(song)}>
                                         <div id='individual-songs'>
-                                            {/* <div id='song-hover'> */}
 
                                                 <div>{i + 1}</div>
                                                 <div id='individual-title'>{song.title}</div>
                                                 <div>{song.duration}</div>
-                                            {/* </div> */}
                                         </div>
                                     </div>
                                 </>

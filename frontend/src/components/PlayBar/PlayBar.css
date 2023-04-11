@@ -3,16 +3,41 @@
     z-index: 5;
     background-color: aliceblue;
     width: 100vw;
-    height: 90px;
     bottom: 0;
-    background-color: rgb(78, 77, 77);
+    background-color: rgb(18, 18, 18);
     border-top: 1px solid rgba(128, 128, 128, 0.693);
+}
+#mini-album-cover {
+    width: 56px;
+    height: 56px;
+}
+
+#main-playbar p {
+    color: white;
 }
 #playbar-flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 25px;
+    padding: 15px;
+}
+#left-playbar{
+    display: flex;
+    gap: 15px;
+}
+#titlewartist{
+    color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+}
+#just-title {
+    font-size: 14px;
+}
+#just-artist {
+    font-size: 13px;
+    color: #989898;
 }
 
 #playbar-middle {

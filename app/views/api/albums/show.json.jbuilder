@@ -9,6 +9,11 @@ if @songs
         @songs.each do |song|
             json.set! song.id do 
                 json.extract! song, :id, :title, :duration, :album_id, :artist_id
+                if @artist
+                    json.extract! @artist, :name
+                end
+                json.mp3 song.mp3.attached? ? song.mp3.url : nil
+                json.albumCover @album.album_cover.attached? ? @album.album_cover.url : nil
             end
         end
     end

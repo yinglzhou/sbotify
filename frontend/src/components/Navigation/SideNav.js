@@ -12,6 +12,7 @@ const SideNav = () => {
 
             <div className="side-options">
                 <a href="/">Home</a>
+                {/* fix this */}
             </div>
         </div>
     )

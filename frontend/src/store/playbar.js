@@ -1,4 +1,3 @@
-
 export const SET_CURRENT_SONG = 'playbar/SET_CURRENT_SONG';
 export const SET_PLAY_STATUS = 'playbar/SET_PLAY_STATUS';
 export const SET_CURRENT_TIME = 'playbar/SET_CURRENT_TIME';
