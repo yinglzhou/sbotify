@@ -11,6 +11,8 @@ const playlogo = (<i className="fa-solid fa-circle-play"></i>)
 const pauselogo = (<i className="fa-solid fa-circle-pause"></i>)
 const forward= (<i className="fa-solid fa-forward-step"></i>)
 const backward = (<i className="fa-solid fa-backward-step"></i>)
+const volumeup = (<i className="fa-solid fa-volume-high"></i>)
+const mute = (<i className="fa-solid fa-volume-xmark"></i>)
 return (
     <>
         <AudioPlayer
@@ -26,7 +28,9 @@ return (
                 play: playlogo,
                 pause: pauselogo,
                 previous: backward,
-                next: forward
+                next: forward,
+                volume: volumeup,
+                volumeMute: mute
               }} 
         />
     </>

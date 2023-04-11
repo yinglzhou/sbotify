@@ -5,7 +5,8 @@
     width: 100vw;
     bottom: 0;
     background-color: rgb(18, 18, 18);
-    border-top: 1px solid rgba(128, 128, 128, 0.693);
+
+    border-top: 1px solid rgba(128, 128, 128, 0.19);
 }
 #mini-album-cover {
     width: 56px;
@@ -14,6 +15,9 @@
 
 #main-playbar p {
     color: white;
+}
+#playbar-middle {
+    margin-right: 50px;
 }
 #playbar-flex-container {
     display: flex;

@@ -1,6 +1,6 @@
 #main-content-container-songs {
     width: 82vw;
-    background-color: #05111A;
+    background-color: #121212;
     position: absolute;
     z-index: 1;
     padding-left: 18vw;
@@ -9,8 +9,7 @@
 }
 #album-banner {
     display: flex;
-    border-bottom: 1px solid gray;
-    background-color: gray;
+    background-color: #1a1a1a;
     height: 238px;
     padding: 20px;
     padding-left: 30px;
@@ -49,7 +48,7 @@
 #play-like-options{
     display:flex;
     height: 56px;
-    background-color: #05111A;
+    background-color: #121212;
     color: white;
     padding: 24px;
     padding-left: 32px;
@@ -76,7 +75,7 @@
 #song-heading{
     display: grid;
     grid-template-columns: [index] 30px 4fr [last] minmax(150px,0.45fr);
-    border-bottom: 1px solid #BEC0C2;
+    border-bottom: 1px solid #bec0c21f;
     padding: 15px;
     padding-bottom: 7px;
     font-size: 15px;

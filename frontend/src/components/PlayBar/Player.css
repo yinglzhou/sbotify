@@ -8,7 +8,7 @@
     flex-direction: column;
     line-height: 1;
     font-family: inherit;
-    width: 35vw;
+    width: 600px;
   }
   .rhap_container:focus:not(:focus-visible) {
     outline: 0;
@@ -22,24 +22,6 @@
     flex-direction: column;
     flex: 1 1 auto;
   }
-/*   
-  .rhap_stacked .rhap_controls-section {
-    margin-top: 8px;
-  }
-  
-  .rhap_horizontal {
-    flex-direction: row;
-  }
-  .rhap_horizontal .rhap_controls-section {
-    margin-left: 8px;
-  }
-  
-  .rhap_horizontal-reverse {
-    flex-direction: row-reverse;
-  }
-  .rhap_horizontal-reverse .rhap_controls-section {
-    margin-right: 8px;
-  } */
   
   .rhap_stacked-reverse {
     flex-direction: column-reverse;
@@ -147,6 +129,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 120px;
   }
   
   .rhap_main-controls-button {
@@ -164,13 +147,15 @@
   .rhap_volume-controls {
     display: flex;
     flex: 1 0 auto;
-    justify-content: flex-end;
     align-items: center;
+    position: relative;
+    left: 30vw;
+    top: 10px;
   }
   
   .rhap_volume-button {
     flex: 0 0 26px;
-    font-size: 26px;
+    font-size: 15px;
     width: 26px;
     height: 26px;
     color: #868686;
@@ -178,7 +163,6 @@
   }
   
   .rhap_volume-container {
-    position:fixed;
     display: flex;
     align-items: center;
     flex: 0 1 100px;
@@ -189,7 +173,7 @@
   .rhap_volume-bar-area {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 100px;
     height: 14px;
     cursor: pointer;
   }
@@ -202,35 +186,36 @@
     position: relative;
     width: 100%;
     height: 4px;
-    background: #dddddd;
+    background: #cccbcb;
     border-radius: 10px;
   }
   
   .rhap_volume-indicator {
     box-sizing: border-box;
     position: absolute;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     margin-left: -6px;
     left: 0;
-    top: -4px;
+    top: -3px;
     background: #868686;
-    opacity: 0.9;
     border-radius: 50px;
     box-shadow: rgba(134, 134, 134, 0.5) 0 0 3px;
     cursor: pointer;
   }
+
   .rhap_volume-indicator:hover {
     opacity: 0.9;
   }
   
-  .rhap_volume-filled {
+  /* .rhap_volume-filled {
     height: 100%;
-    position: absolute;
+    position: relative;
+    left: 280px;
     z-index: 2;
-    background-color: #868686;
+    background-color: #fffcfc;
     border-radius: 2px;
-  }
+  } */
   
   /* Utils */
   .rhap_button-clear {
