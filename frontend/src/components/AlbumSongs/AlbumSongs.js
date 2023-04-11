@@ -10,25 +10,26 @@ import './AlbumSongs.css';
 const AlbumSongs = ({sessionUser}) => {
     const {albumId} = useParams();
     const dispatch = useDispatch();
+
     const songs = useSelector(state => state.songs && state.songs.songs ? Object.values(state.songs.songs) : [])
     const album = useSelector(state => state.songs && state.songs.album ? state.songs.album.name : null)
     const artist = useSelector(state => state.songs && state.songs.artist ? state.songs.artist.name : null)
+    const cover = useSelector(state => state.songs && state.songs.album ? state.songs.album.albumCover : null)
 
     const numsongs = songs.length;
     useEffect(()=>{
         dispatch(fetchAlbumSongs(albumId))
     },[albumId])
 
-    if (sessionUser) {
+    // if (sessionUser) {
         
-    }
+    // }
 
     return (
         <div id='main-content-container-songs'>
-            {/* <div id='album-content-container'> */}
 
                 <div id='album-banner'>
-                    <img src={require('../assets/ghostie.jpg')} alt="ghost"></img>
+                    <img src={cover} alt="ghost"></img>
                         <div id='next-to-image'>
                             <h6>Album</h6>
                             <div id='album-title-hidden' title={album}>{album}</div>

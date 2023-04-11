@@ -1,5 +1,6 @@
 json.album do 
     json.extract! @album, :id, :name, :artist_id
+    json.albumCover @album.album_cover.attached? ? @album.album_cover.url : nil
 end
 
 

@@ -18,6 +18,7 @@ class Song < ApplicationRecord
         format: { with: /\A\d:\d\d$\z/ }
                         # has to be like "##:##"
 
+    has_one_attached :mp3
     belongs_to :album
     # dependent: :destroy
 
