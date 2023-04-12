@@ -3,7 +3,7 @@ import './PlayBar.css';
 import Player from './Player';
 
 const PlayBar = () => {
-const albumart = useSelector(state => state.playbar.currentSong ? state.playbar.currentSong.albumCover : require('./assets/no-cover.jpeg'))
+const albumart = useSelector(state => state.playbar.currentSong ? state.playbar.currentSong.albumCover : require('./assets/no-cover.png'))
 const title = useSelector(state => state.playbar.currentSong ? state.playbar.currentSong.title : null);
 const artist = useSelector(state => state.playbar.currentSong ? state.playbar.currentSong.name : null)
 

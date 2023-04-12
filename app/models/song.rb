@@ -20,9 +20,12 @@ class Song < ApplicationRecord
 
     has_one_attached :mp3
     belongs_to :album
-    # dependent: :destroy
-
     belongs_to :artist
-    # dependent: :destroy
+
+    has_many :playlist_tracks,
+    primary_key: :id,
+    foreign_key: :song_id,
+    class_name: :PlaylistTrack,
+    dependent: :destroy
 
 end

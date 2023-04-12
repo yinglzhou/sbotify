@@ -9,7 +9,16 @@ Rails.application.routes.draw do
     resources :artists, only: [:show, :index]
     resources :albums, only: [:show, :index]
     resources :songs, only: [:show, :index]
+    resources :playlists, only: [:index, :show, :create, :update, :destroy]
+    # index - all the playlist names only
+    # show - 
 
+
+
+
+    # resources :playlist_tracks, only: [:index]
+    # index is going to get all the songs in the playlist 
+    # query string narrow down all playlist songs with playlist id 
     get 'albums/:id/songs', to: 'albums#songs', as: 'album_songs'
   end
   

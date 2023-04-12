@@ -23,6 +23,16 @@ require "open-uri"
       email: 'demo@user.io', 
       password: 'password'
     )
+    User.create!(
+      name: 'Kelly', 
+      email: 'kelly@kelly.io', 
+      password: 'password'
+    )
+    User.create!(
+      name: 'Max', 
+      email: 'max@max.io', 
+      password: 'password'
+    )
 
     puts "Creating artists..."
     Artist.create!(name: "NIKI") #1
@@ -219,7 +229,12 @@ require "open-uri"
     # Song.create!(title: "Repeat After Me (Interlude)", duration: "3:15", album_id: 11, artist_id: 4)
     # Song.create!(title: "After Hours", duration: "6:10", album_id: 11, artist_id: 4)
     # Song.create!(title: "Until I Bleed Out", duration: "3:10", album_id: 11, artist_id: 4)
-    
+    puts "Creating playlists..."
+    Playlist.create!(name: 'sour apples', owner_id: 1)
+    Playlist.create!(name: 'sour grapes', owner_id: 2)
+    Playlist.create!(name: 'sour strawberries', owner_id: 3)
+    Playlist.create!(name: 'sour lemons', owner_id: 1)
+    Playlist.create!(name: 'sour melons', owner_id: 3)
 
     album1.album_cover.attach(
       io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/album-covers/Nicole.png"),

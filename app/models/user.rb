@@ -27,6 +27,14 @@ class User < ApplicationRecord
         length: { in: 6..255 }, 
         allow_nil: true
 
+    has_many :playlists,
+    primary_key: :id,
+    foreign_key: :owner_id,
+    class_name: :Playlist,
+    dependent: :destroy
+    
+    # the class name is wherever it points to
+
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
