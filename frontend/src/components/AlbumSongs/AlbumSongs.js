@@ -60,11 +60,13 @@ const AlbumSongs = ({sessionUser}) => {
                 <div id='song-component-container'>
 
                     <div id='play-like-options'>
-                        {isPlaying && 
-                        // onClick={handlePause()}
+                        {sessionUser && isPlaying && 
                             <div id='album-play-button'><i className="fa-solid fa-circle-pause" style={{color: '#1ED760',}} /></div>}
-                        {!isPlaying && 
+                        {sessionUser && !isPlaying && 
                             <div onClick={handleClickGreen()} id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
+                        {!sessionUser && <div id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
+                        
+
                         <div className="heart-options" id='heart-album'><i className="fa-regular fa-heart" 
                         /></div>
                         <div className="heart-options"><i className="fa-solid fa-ellipsis" 
