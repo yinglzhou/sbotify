@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import './SideNav.css'
+import PlaylistShow from '../PlaylistShow/PlaylistShow';
 
-const SideNav = () => {
+const SideNav = ({sessionUser}) => {
     return (
         <div id="side-bar">
             <Link to="/">
@@ -28,6 +29,11 @@ const SideNav = () => {
                 </div>
             </div>
 
+            <div id='side-option-bottom-border'/>
+
+            <div className='side-options-holder-playlists'>
+                {sessionUser && <PlaylistShow />}
+            </div>
         </div>
     )
 }

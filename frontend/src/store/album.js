@@ -27,6 +27,7 @@ export const fetchAlbum = (albumId) => async dispatch => {
     const data = await res.json();
     dispatch(receiveAlbum(data))
 };
+
 const albumReducer = (state = {}, action) => {
     switch (action.type) {
         case GET_ALBUMS:

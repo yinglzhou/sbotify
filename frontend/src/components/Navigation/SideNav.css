@@ -14,14 +14,13 @@
 }
 
 .side-options {
-    /* border: 1px solid white; */
     position: relative;
-    /* margin-top: 20px; */
     height: 35px;
     display: flex;
     align-items: center;
     gap: 20px;
     color:#a7a7a7;
+    transition: 0.3s;
 }
 .side-options:hover {
     color: white;
@@ -48,20 +47,9 @@
     font-size: 15px;
     font-weight: bold;
 }
-
-
-/* .side-options-text {
-    color: #a7a7a7;
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    text-decoration: none;
-    margin-left: 66px;
-    transition: 0.3s;
+#side-option-bottom-border {
+    width: 15vw;
+    margin-top: 10px;
+    margin-left: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.308);
 }
-.side-options div:hover {
-    color:white;
-    cursor: default;
-} */

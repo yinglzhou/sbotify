@@ -17,7 +17,7 @@ function App() {
       <Switch>
         <Route exact path="/">
             <Navigation />
-            <SideNav />
+            <SideNav sessionUser={sessionUser}/>
             <MainContent sessionUser={sessionUser}/>
             {sessionUser && <PlayBar/>}
         </Route>
@@ -32,9 +32,15 @@ function App() {
 
         <Route path={`/albums/:albumId`}>
           <Navigation/>
-            <SideNav/>
+            <SideNav sessionUser={sessionUser}/>
             <AlbumSongs sessionUser={sessionUser}/>
             {sessionUser && <PlayBar/>}
+        </Route>
+
+        <Route path={'/playlists/:playlistId'}>
+          <Navigation/>
+          <SideNav sessionUser={sessionUser}/>
+          <PlayBar />
         </Route>
 
       </Switch>
