@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { fetchAlbumSongs } from "../../store/song";
 import { useSelector } from "react-redux";
 import './AlbumSongs.css';
-import { playSong } from "../../store/playbar";
+import { playAlbum, playSong, pauseSong, resetSongId } from "../../store/playbar";
 
 
 const AlbumSongs = ({sessionUser}) => {
@@ -16,21 +16,35 @@ const AlbumSongs = ({sessionUser}) => {
     const album = useSelector(state => state.songs && state.songs.album ? state.songs.album.name : null)
     const artist = useSelector(state => state.songs && state.songs.artist ? state.songs.artist.name : null)
     const cover = useSelector(state => state.songs && state.songs.album ? state.songs.album.albumCover : null)
+    const isPlaying = useSelector(state => state.playbar ? state.playbar.isPlaying : null)
 
     const numsongs = songs.length;
     useEffect(()=>{
         dispatch(fetchAlbumSongs(albumId))
     },[albumId])
 
-    // if (sessionUser) {
-        
-    // }
     const handleClick = (song) => (e) => {
         e.preventDefault();
+        dispatch(playAlbum(songs))
         dispatch(playSong(song))
         console.log(`playing ${song.title}`);
     }
 
+    const handleClickGreen = ()=>(e) => {
+        e.preventDefault();
+        dispatch(playSong(songs[0]))
+        dispatch(playAlbum(songs))
+        dispatch(resetSongId())
+        // debugger
+    }
+
+    const handlePause = ()=> (e) => {
+        e.preventDefault();
+        dispatch(pauseSong())
+    }
+    // const handlePause = (e) => {
+    //     dispatch(pauseSong())
+    // }
     return (
         <div id='main-content-container-songs'>
 
@@ -46,7 +60,11 @@ const AlbumSongs = ({sessionUser}) => {
                 <div id='song-component-container'>
 
                     <div id='play-like-options'>
-                        <div id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>
+                        {isPlaying && 
+                        // onClick={handlePause()}
+                            <div id='album-play-button'><i className="fa-solid fa-circle-pause" style={{color: '#1ED760',}} /></div>}
+                        {!isPlaying && 
+                            <div onClick={handleClickGreen()} id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
                         <div className="heart-options" id='heart-album'><i className="fa-regular fa-heart" 
                         /></div>
                         <div className="heart-options"><i className="fa-solid fa-ellipsis" 

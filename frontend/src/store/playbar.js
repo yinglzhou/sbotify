@@ -2,10 +2,31 @@ export const SET_CURRENT_SONG = 'playbar/SET_CURRENT_SONG';
 export const SET_PLAY_STATUS = 'playbar/SET_PLAY_STATUS';
 export const SET_CURRENT_TIME = 'playbar/SET_CURRENT_TIME';
 export const SET_DURATION = 'playbar/SET_DURATION';
+export const SET_CURRENT_ALBUM_PLAYBAR = 'playbar/SET_CURRENT_ALBUM_PLAYBAR';
+export const SKIP_TO_NEXT_SONG = 'playbar/SKIP_TO_NEXT_SONG';
+export const SKIP_TO_PREV_SONG = 'playbar/SKIP_TO_SKIP_SONG';
+export const RESET_SONG_INDEX = 'playbar/RESET_SONG_INDEX';
+
+export const skipToNextSong = () => ({
+    type: SKIP_TO_NEXT_SONG
+})
+export const resetSongIndex = () => ({
+    type: RESET_SONG_INDEX
+})
+
+export const skipToPrevSong = () => ({
+    type: SKIP_TO_PREV_SONG
+})
+
 
 export const receiveCurrentSong = (song) => ({
     type: SET_CURRENT_SONG,
     payload: song
+});
+
+export const receiveCurrentAlbum = (arrOfSongs) => ({
+    type: SET_CURRENT_ALBUM_PLAYBAR,
+    payload: arrOfSongs
 });
 
 export const receivePlayState = (isPlaying) => ({
@@ -23,13 +44,24 @@ export const receiveDuration = (duration) => ({
     payload: duration
 });
 
+export const resetSongId = () => async dispatch => {
+    dispatch(resetSongIndex())
+}
+
 export const playSong = (song) => async dispatch => {
     dispatch(receiveCurrentSong(song));
     dispatch(receivePlayState(true));
 };
 
-export const pauseSong = () => async dispatch => {
+export const isPlayingSong = () => async dispatch => {
     dispatch(receivePlayState(true));
+}
+export const playAlbum = (arrOfSongs) => async dispatch => {
+    dispatch(receiveCurrentAlbum(arrOfSongs));
+}
+
+export const pauseSong = () => async dispatch => {
+    dispatch(receivePlayState(false));
 };
 
 export const setCurrentTime = (time) => async dispatch => {
@@ -41,6 +73,8 @@ export const setDuration = (duration) => async dispatch => {
 };
 
 const initialState = {
+    currentAlbum: null,
+    currentSongIndex: 0,
     currentSong: null,
     isPlaying: false,
     currentTime: 0,
@@ -50,7 +84,38 @@ const initialState = {
 const playbarReducer = (state=initialState, action) => {
     switch (action.type) {
         case SET_CURRENT_SONG:
-            return { ...state, currentSong: action.payload };
+            let currentSongId = state.currentAlbum.indexOf(action.payload)
+            
+            return { ...state, currentSong: action.payload, currentSongIndex: currentSongId}
+            
+        case SET_CURRENT_ALBUM_PLAYBAR:
+            return { ...state, currentAlbum: action.payload }
+        case RESET_SONG_INDEX:
+            return {...state, currentSongIndex: 0}
+        case SKIP_TO_NEXT_SONG:
+            let next_current_song_id = state.currentSongIndex + 1;
+            
+            if (next_current_song_id > state.currentAlbum.length - 1) {
+                next_current_song_id = 0;
+            }
+            let next_song = state.currentAlbum[next_current_song_id];
+
+            return {...state, 
+                currentSongIndex: next_current_song_id,
+                currentSong: next_song
+             }
+        case SKIP_TO_PREV_SONG:
+            let prev_current_song_id = state.currentSongIndex - 1;
+            
+            if (prev_current_song_id < 0) {
+                prev_current_song_id = state.currentAlbum.length - 1;
+            }
+            
+            let prev_song = state.currentAlbum[prev_current_song_id];
+            return {...state, 
+                currentSongIndex: prev_current_song_id,
+                currentSong: prev_song
+             }
         case SET_PLAY_STATUS:
             return { ...state, isPlaying: action.payload }
         case SET_CURRENT_TIME:

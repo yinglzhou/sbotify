@@ -24,11 +24,7 @@ return (
                     <div><Player/></div>
                 </div>
 
-                <div>
-                {/* <p>
-                    volume
-
-                    </p> */}
+                <div id='right-playbar-placeholder'>
                 </div>
             </div>
         </div>

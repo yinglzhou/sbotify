@@ -25,7 +25,6 @@ export const fetchAllAlbums = () => async dispatch => {
 export const fetchAlbum = (albumId) => async dispatch => {
     const res = await fetch(`/api/albums/${albumId}`);
     const data = await res.json();
-    // console.log(data)
     dispatch(receiveAlbum(data))
 };
 const albumReducer = (state = {}, action) => {
