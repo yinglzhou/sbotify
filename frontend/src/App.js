@@ -8,6 +8,7 @@ import MainContent from "./components/MainContent";
 import AlbumSongs from "./components/AlbumSongs/AlbumSongs";
 import PlayBar from "./components/PlayBar/PlayBar";
 import PlaylistTrackShow from "./components/PlaylistTracksShow/PlaylistTracksShow";
+import Search from "./components/SearchShowPage/SearchShowPage";
 
 function App() {
   const sessionUser = useSelector(state => state.session ? state.session.user : null)
@@ -22,6 +23,9 @@ function App() {
             {sessionUser && <PlayBar/>}
         </Route>
 
+        <Route path='/search'>
+          <Search/>
+        </Route>
         <Route path="/login">
           <LoginFormPage />
         </Route>

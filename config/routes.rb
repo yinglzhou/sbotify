@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   namespace :api, defaults: { format: :json } do
+    get 'songs/search', to: "songs#search"
     resources :users, only: [:create]
     resource :session, only: [:show, :create, :destroy]
     resources :artists, only: [:show, :index]
