@@ -1,0 +1,11 @@
+#delete-dropdown {
+    /* border: 1px solid white; */
+    position: absolute;
+    top:424px;
+    width: 196px;
+    z-index: 10000;
+    background-color: #282828;
+    font-size: 14px;
+    border-radius: 3px;
+    left:24.3vw;
+}

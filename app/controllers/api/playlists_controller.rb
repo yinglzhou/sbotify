@@ -18,9 +18,15 @@ class Api::PlaylistsController < ApplicationController
         end
     end
 
-    # def update
-    #     render :update
-    # end
+    def update
+        @playlist = Playlist.find(params[:id])
+        if @playlist.update(playlist_params)
+            render json: @playlist
+        else 
+            render json: { errors: @playlist.errors.full_messages }, status: :unprocessable_entity
+        end
+        render :update
+    end
 
 
     def show
@@ -34,7 +40,7 @@ class Api::PlaylistsController < ApplicationController
         # @playlist = current_user.playlists.find(params[:id])
         @playlist = Playlist.find(params[:id])
 
-        unless @review
+        unless @playlist
             render json: { message: 'Unauthorized' }, status: :unauthorized
             return
         end
@@ -42,17 +48,12 @@ class Api::PlaylistsController < ApplicationController
         render :show
     end
 
-    # def tracks
-    #     @playlist = Playlist.find(params[:id])
-    #     @playlist_tracks = @playlist.playlist_tracks.includes(song: [:album, :artist])
-    #     render :show
-    # end
-
     private 
     def playlist_params
         params.require(:playlist).permit(
             :name,
             :owner_id
+            # :optional_description
         )
     end
 

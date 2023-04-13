@@ -1,19 +1,21 @@
 import { useDispatch } from 'react-redux';
 import './PlaylistTrackShow.css';
 import { useEffect } from 'react';
-import { fetchPlaylist } from '../../store/playlist';
+import { deletePlaylist, fetchPlaylist, removePlaylist, fetchAllPlaylists } from '../../store/playlist';
 import { useParams } from 'react-router-dom';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { playPlaylist, playSong } from '../../store/playbar';
-import {fetchPlaylistTracks} from '../../store/playlist_track'
+import {fetchPlaylistTracks} from '../../store/playlist_track';
+import { useHistory } from 'react-router-dom';
 
 const PlaylistTrackShow = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const {playlistId} = useParams();
-// debugger
+
     useEffect(()=>{
         dispatch(fetchPlaylist(playlistId))
-        // dispatch(fetchPlaylistTracks(playlistId))
     }, [playlistId])
 
     const tracks = useSelector(state => state.playlist_tracks ? Object.values(state.playlist_tracks) : [])
@@ -21,11 +23,37 @@ const PlaylistTrackShow = () => {
     const numsongs = tracks.length
     const creator = useSelector(state => state.session && state.session.user ? state.session.user.name : null)
     
+    const [showMenu, setShowMenu] = useState(false);
+    function openMenu() {
+        if (showMenu) return;
+        setShowMenu(true)
+    };
+
+    useEffect(() => {
+        if (!showMenu) return;
+        const closeMenu = () => {
+            setShowMenu(false);
+        };
+
+        document.addEventListener('click', closeMenu);
+
+        return () => document.removeEventListener('click', closeMenu);
+    }, [showMenu])
+
     const handleClick = (track) => (e) => {
         e.preventDefault();
         dispatch(playPlaylist(tracks))
         dispatch(playSong(track))
         console.log(`playing ${track.title}`);
+    }
+    const handleDelete = (playlistId) => (e) => {
+        dispatch(deletePlaylist(playlistId))
+        .then(()=>(dispatch(fetchAllPlaylists())))
+        .then(() => history.push("/"))
+    }
+
+    const handleEdit = (playlistId) => (e) => {
+        
     }
     return (
         <div className='main-content-container'>
@@ -53,8 +81,19 @@ const PlaylistTrackShow = () => {
 
                         {/* <div className="heart-options" id='heart-album'><i className="fa-regular fa-heart" 
                         /></div> */}
-                        <div className="heart-options"><i className="fa-solid fa-ellipsis" 
+                        <div className="heart-options" onClick={openMenu}><i className="fa-solid fa-ellipsis" 
                         /></div>
+                        {showMenu && 
+                        (<div id='delete-dropdown'>
+                            <ul className='profile-dropdown'>
+                                <li>
+                                    <div onClick={handleEdit(playlistId)}>Edit Playlist</div>
+                                </li>
+                                <li>
+                                    <div onClick={handleDelete(playlistId)}>Delete Playlist</div>
+                                </li>
+                            </ul>
+                        </div>)}
                     </div>
 
                     <div id='album-grid'>
