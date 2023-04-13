@@ -38,12 +38,12 @@ const SideNav = ({sessionUser}) => {
             </Link>
 
             <div className='side-options-holder'>
+                    <Link to='/' className='side-option-text'>
                 <div className="side-options">
                     <div className='side-icon'><i className="fa-solid fa-house"></i></div>
-                    <Link to='/' className='side-option-text'>
                         <div >Home</div>
-                    </Link>
                 </div>
+                    </Link>
                 <div className="side-options">
                     {/* <div className='side-icon' id='book-icon'><i className="fa-solid fa-book"></i></div> */}
                     {/* <div className='side-option-text'>Your Library</div> */}
@@ -51,9 +51,9 @@ const SideNav = ({sessionUser}) => {
             </div>
 
             <div className='side-options-holder'>
-                <div className='side-options'>
+                <div className='side-options' onClick={handlePlaylist}>
                     <div className='side-icon' id='square-plus'><i className="fa-solid fa-square-plus"></i></div>
-                    <div className='side-option-text' onClick={handlePlaylist}>Create Playlist</div>
+                    <div className='side-option-text'>Create Playlist</div>
                 </div>
             </div>
 
