@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { NavLink} from "react-router-dom";
 import './Navigation.css'
 import ProfileButton from "./ProfileButton";
+import SearchBar from "./SearchBar";
 
 const Navigation = () => {
     const sessionUser = useSelector(state => state.session.user);
@@ -15,6 +16,7 @@ const Navigation = () => {
         bar =             
         <div id="nav-bar">
             <div className="container">
+            <SearchBar/>
                 <div className='profile-button-holder'>
                     {sessionLinks}
                 </div>
@@ -23,6 +25,7 @@ const Navigation = () => {
     } else {
         sessionLinks = (
             <div className="links">
+                <SearchBar/>
                 <div id="signup">
                     <NavLink to="/signup">Sign Up</NavLink>
                 </div>

@@ -48,8 +48,8 @@ const ProfileButton = ({user}) => {
                         <li>
                             <div>Profile</div>
                         </li>
-                        <li>
-                            <div onClick={logout}>Log out</div>
+                        <li onClick={logout}>
+                            <div >Log out</div>
                         </li>
                     </ul>
                 </div>

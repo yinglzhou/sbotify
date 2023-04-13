@@ -8,4 +8,11 @@ class Api::SongsController < ApplicationController
         @song = Song.find(params[:id])
         render :show
     end
+
+
+    def search 
+        @songs = Song.where('lower(title) LIKE ?', "%#{params[:q]}%") #:q is name of query string (anything after ? in url)
+        render :search
+    end
+
 end
