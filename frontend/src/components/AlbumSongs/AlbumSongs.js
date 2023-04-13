@@ -42,9 +42,6 @@ const AlbumSongs = ({sessionUser}) => {
         e.preventDefault();
         dispatch(pauseSong())
     }
-    // const handlePause = (e) => {
-    //     dispatch(pauseSong())
-    // }
     return (
         <div id='main-content-container-songs'>
 
@@ -67,10 +64,10 @@ const AlbumSongs = ({sessionUser}) => {
                         {!sessionUser && <div id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
                         
 
-                        <div className="heart-options" id='heart-album'><i className="fa-regular fa-heart" 
+                        {/* <div className="heart-options" id='heart-album'><i className="fa-regular fa-heart" 
                         /></div>
                         <div className="heart-options"><i className="fa-solid fa-ellipsis" 
-                        /></div>
+                        /></div> */}
                     </div>
 
                     <div id='album-grid'>

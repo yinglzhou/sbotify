@@ -14,7 +14,9 @@ const SideNav = ({sessionUser}) => {
             <div className='side-options-holder'>
                 <div className="side-options">
                     <div className='side-icon'><i className="fa-solid fa-house"></i></div>
-                    <div className='side-option-text'>Home</div>
+                    <Link to='/' className='side-option-text'>
+                        <div >Home</div>
+                    </Link>
                 </div>
                 <div className="side-options">
                     <div className='side-icon' id='book-icon'><i className="fa-solid fa-book"></i></div>

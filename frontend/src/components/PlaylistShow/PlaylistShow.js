@@ -7,7 +7,12 @@ import PlaylistShowItem from '../PlaylistShowItem/PlaylistShowItem';
 
 const PlaylistShow = () => {
     const dispatch = useDispatch();
+    const sessionUserId = useSelector(state => state.session ? state.session.user.id : null)
     const playlists = useSelector(state => state.playlists && state.playlists.playlists ? Object.values(state.playlists.playlists) : [])
+    
+    const user_playlists = playlists.filter((playlist) => {
+        return playlist.ownerId === sessionUserId;
+    });
 
     useEffect(()=>{
         dispatch(fetchAllPlaylists());
@@ -15,13 +20,11 @@ const PlaylistShow = () => {
 
     console.log(playlists)
     return (
-        // <div>
             <ul id='playlist-container'>
-                {playlists.map(playlist => (
+                {user_playlists.map(playlist => (
                     <PlaylistShowItem key={playlist.id} playlist={playlist}/>
                 ))}
             </ul>
-        // </div>
     )
 
 }

@@ -1,9 +1,9 @@
 class Api::PlaylistsController < ApplicationController
-    before_action :require_logged_in, only: [:index]
+    # before_action :require_logged_in, only: [:index, :show]
 
     def index
-        @playlists = current_user.playlists.all
-        # @playlists = Playlist.all
+        # @playlists = current_user.playlists.all
+        @playlists = Playlist.all
         render :index
     end
 
@@ -26,7 +26,7 @@ class Api::PlaylistsController < ApplicationController
     def show
         # @playlist = current_user.playlists.find(params[:id])
         @playlist = Playlist.find(params[:id])
-        @playlist_tracks = @playlist.playlist_tracks
+        @playlist_tracks = @playlist.playlist_tracks.includes(song: :album)
         render :show
     end
 
@@ -41,6 +41,12 @@ class Api::PlaylistsController < ApplicationController
         @playlist.destroy
         render :show
     end
+
+    # def tracks
+    #     @playlist = Playlist.find(params[:id])
+    #     @playlist_tracks = @playlist.playlist_tracks.includes(song: [:album, :artist])
+    #     render :show
+    # end
 
     private 
     def playlist_params

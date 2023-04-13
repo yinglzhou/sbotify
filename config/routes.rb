@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     # index is going to get all the songs in the playlist 
     # query string narrow down all playlist songs with playlist id 
     get 'albums/:id/songs', to: 'albums#songs', as: 'album_songs'
+    get 'playlists/:id/tracks', to: 'playlists#tracks', as: 'playlist_tracks'
   end
   
   get '*path', to: "static_pages#frontend_index"

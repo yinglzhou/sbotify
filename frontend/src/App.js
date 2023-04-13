@@ -1,4 +1,4 @@
-import { Route, Switch, useParams } from "react-router-dom";
+import { Redirect, Route, Switch, useParams } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 import SideNav from "./components/Navigation/SideNav";
 import MainContent from "./components/MainContent";
 import AlbumSongs from "./components/AlbumSongs/AlbumSongs";
-import { useEffect } from "react";
 import PlayBar from "./components/PlayBar/PlayBar";
+import PlaylistTrackShow from "./components/PlaylistTracksShow/PlaylistTracksShow";
 
 function App() {
   const sessionUser = useSelector(state => state.session ? state.session.user : null)
@@ -40,6 +40,8 @@ function App() {
         <Route path={'/playlists/:playlistId'}>
           <Navigation/>
           <SideNav sessionUser={sessionUser}/>
+          {sessionUser && <PlaylistTrackShow/>}
+          {!sessionUser && <MainContent/>}
           <PlayBar />
         </Route>
 

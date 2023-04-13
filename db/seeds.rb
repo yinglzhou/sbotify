@@ -236,6 +236,30 @@ require "open-uri"
     Playlist.create!(name: 'sour lemons', owner_id: 1)
     Playlist.create!(name: 'sour melons', owner_id: 3)
 
+    puts "Creating playlist tracks..."
+    PlaylistTrack.create!(playlist_id: 1, song_id: 2)
+    PlaylistTrack.create!(playlist_id: 1, song_id: 3)
+    PlaylistTrack.create!(playlist_id: 1, song_id: 4)
+    PlaylistTrack.create!(playlist_id: 1, song_id: 5)
+    PlaylistTrack.create!(playlist_id: 1, song_id: 6)
+    PlaylistTrack.create!(playlist_id: 1, song_id: 7)
+    PlaylistTrack.create!(playlist_id: 1, song_id: 8)
+
+    PlaylistTrack.create!(playlist_id: 2, song_id: 11)
+    PlaylistTrack.create!(playlist_id: 2, song_id: 12)
+    PlaylistTrack.create!(playlist_id: 2, song_id: 13)
+    PlaylistTrack.create!(playlist_id: 2, song_id: 14)
+    PlaylistTrack.create!(playlist_id: 2, song_id: 16)
+    PlaylistTrack.create!(playlist_id: 2, song_id: 17)
+    PlaylistTrack.create!(playlist_id: 2, song_id: 18)
+
+    PlaylistTrack.create!(playlist_id: 4, song_id: 21)
+    PlaylistTrack.create!(playlist_id: 4, song_id: 22)
+    PlaylistTrack.create!(playlist_id: 4, song_id: 23)
+    PlaylistTrack.create!(playlist_id: 4, song_id: 24)
+    PlaylistTrack.create!(playlist_id: 4, song_id: 26)
+    
+    puts "Adding covers and mp3 files..."
     album1.album_cover.attach(
       io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/album-covers/Nicole.png"),
       filename: 'Nicole.png')

@@ -32,7 +32,7 @@ const artistReducer = (state = {}, action) => {
             return {...state, ...action.artists}
         case GET_ARTIST:
             let newState = {...state}
-            debugger
+            // debugger
             newState[action.artist.artist.id] = action.artist.artist
             return newState
         default:

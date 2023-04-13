@@ -45,6 +45,7 @@
 .side-option-text {
     color: inherit;
     font-size: 15px;
+    text-decoration: none;
     font-weight: bold;
 }
 #side-option-bottom-border {

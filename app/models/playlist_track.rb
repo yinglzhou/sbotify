@@ -14,7 +14,7 @@ class PlaylistTrack < ApplicationRecord
     foreign_key: :playlist_id,
     class_name: :Playlist 
 
-    belong_to :song,
+    belongs_to :song,
     primary_key: :id,
     foreign_key: :song_id,
     class_name: :Song
