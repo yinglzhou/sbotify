@@ -17,27 +17,25 @@ a sbotify user is able to browse through existing data of albums that contains s
 ![gif of profiles](app/assets/album-song.gif)
 
 ``` javascript
-     <ul id='album-container'>
-        {albums.map(album => (
-         <AlbumShowItem key={album.id} album={album}/>
-         ))}
-     </ul>
+<ul id='album-container'>
+    {albums.map(album => (
+     <AlbumShowItem key={album.id} album={album}/>
+     ))}
+</ul>
 ```
 
 Each <AlbumShowItem/>
 ``` javascript
-        <div className='album-components'>
-            <Link to={`/albums/${album.id}`} className='nav-link'>
-            <div className='inner-album-components'>
-                    <div className='album-pics'>
-                        <img src={album.albumCover} alt="x"/>
-                    </div>
-                    <div className='titleartist'>{album.name}</div>
-                    <div className='titleartist' id='artistname'>{artist.name}</div>
-                
-
-            </div>
-            </Link>
-        </div>
+<div className='album-components'>
+     <Link to={`/albums/${album.id}`} className='nav-link'>
+          <div className='inner-album-components'>
+               <div className='album-pics'>
+                    <img src={album.albumCover} alt="x"/>
+               </div>
+               <div className='titleartist'>{album.name}</div>
+               <div className='titleartist' id='artistname'>{artist.name}</div>
+          </div>
+     </Link>
+</div>
 
 ```
