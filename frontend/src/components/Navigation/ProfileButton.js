@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import {useDispatch} from 'react-redux';
 import './ProfileButton.css'
 import * as sessionActions from '../../store/session';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import MainContent from '../MainContent';
 
 const ProfileButton = ({user}) => {
@@ -10,6 +10,7 @@ const ProfileButton = ({user}) => {
     const dispatch = useDispatch();
     const [caret, setCaret] = useState(<i className="fa-solid fa-caret-down" style={{color: 'white'}}></i>);
 
+    const history = useHistory()
     function openMenu() {
         if (showMenu) return;
         setShowMenu(true)
@@ -31,6 +32,7 @@ const ProfileButton = ({user}) => {
     const logout = (e) => {
         e.preventDefault();
         dispatch(sessionActions.logout());
+        history.push("/")
     }
 
     

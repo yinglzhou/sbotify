@@ -1,0 +1,65 @@
+.album-components {
+    border-radius: 7px;
+    max-width: 200px;
+	font-family: sans-serif, "Helvetica Neue", Helvetica;
+}
+#results-for{
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+#search-results-flex{
+    margin-left: 30px;
+    margin-top: 25px;
+    display: flex;
+    gap: 35px;
+}
+.inner-search-components {
+    border-radius: 6px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    width: max-content;
+    transition: 0.3s;
+}
+
+.inner-search-components:hover {
+    background-color: #434343;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+.titleartist {
+    padding-top: 5px;
+    margin-top: 5px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 172px;
+    height: 16px;
+}
+
+
+.album-pics {
+    width: 175px;
+    /* border: 2px solid green; */
+    margin-bottom: 20px;
+    height: 175px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 15px 26px rgba(0,0,0,0.6);
+}
+.album-pics img{
+    width: 175px;
+    height: 175px;
+}
+
+#artistname {
+    font-size: 14px;
+    color: #929191;
+}

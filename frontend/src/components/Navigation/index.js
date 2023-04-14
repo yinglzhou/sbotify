@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
-import { NavLink} from "react-router-dom";
+import { NavLink, useLocation} from "react-router-dom";
 import './Navigation.css'
 import ProfileButton from "./ProfileButton";
 import SearchBar from "./SearchBar";
 
 const Navigation = () => {
     const sessionUser = useSelector(state => state.session.user);
+    const location = useLocation();
 
     let sessionLinks;
     let bar;
@@ -16,7 +17,7 @@ const Navigation = () => {
         bar =             
         <div id="nav-bar">
             <div className="container">
-            <SearchBar/>
+            {location.pathname === '/search' && <SearchBar />}
                 <div className='profile-button-holder'>
                     {sessionLinks}
                 </div>
@@ -25,7 +26,7 @@ const Navigation = () => {
     } else {
         sessionLinks = (
             <div className="links">
-                <SearchBar/>
+                {location.pathname === '/search' && <SearchBar />}
                 <div id="signup">
                     <NavLink to="/signup">Sign Up</NavLink>
                 </div>

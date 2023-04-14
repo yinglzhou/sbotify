@@ -1,0 +1,29 @@
+
+#search-icon-bar-holder{
+    position: relative;
+    right: 600px;
+}
+#search-bar-outline{
+    border-radius: 25px;
+    width:350px;
+    height:40px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+#magnify {
+    color: rgb(108, 103, 103);
+    font-size: 25px;
+    margin-top: 6px;
+    padding-left: 20px;
+}
+#search-input:focus{
+    outline: none;
+}
+#search-bar-outline input {
+    margin-left: 10px;;
+    width:200px;
+    border-style: hidden;
+    background-color: white;
+    font-family: sans-serif;
+}

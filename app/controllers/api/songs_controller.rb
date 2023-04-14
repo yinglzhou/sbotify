@@ -11,8 +11,11 @@ class Api::SongsController < ApplicationController
 
 
     def search 
-        @songs = Song.where('lower(title) LIKE ?', "%#{params[:q]}%") #:q is name of query string (anything after ? in url)
+        @songs = Song.where('lower(title) LIKE ?', "%#{params[:q]}%").includes(:album, :artist)
+        #:q is name of query string (anything after ? in url)
+        
         render :search
     end
+
 
 end

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './SideNav.css'
 import PlaylistShow from '../PlaylistShow/PlaylistShow';
 import { useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ import { createPlaylist, fetchAllPlaylists } from '../../store/playlist';
 const SideNav = ({sessionUser}) => {
     const dispatch = useDispatch();
     const playlists = useSelector(state => state.playlists && state.playlists.playlists ? Object.values(state.playlists.playlists) : [])
+    const history = useHistory();
 
     const handlePlaylist = (e) => {
         const myPlaylists = playlists.filter(playlist => playlist.ownerId === sessionUser.id && playlist.name.startsWith('My Playlist'));
@@ -27,6 +28,7 @@ const SideNav = ({sessionUser}) => {
         };
         dispatch(createPlaylist(playlist))
         .then(()=>(dispatch(fetchAllPlaylists())))
+    
     }
 
     return (
@@ -39,15 +41,22 @@ const SideNav = ({sessionUser}) => {
 
             <div className='side-options-holder'>
                     <Link to='/' className='side-option-text'>
-                <div className="side-options">
-                    <div className='side-icon'><i className="fa-solid fa-house"></i></div>
-                        <div >Home</div>
-                </div>
+                        <div className="side-options">
+                            <div className='side-icon'><i className="fa-solid fa-house"></i></div>
+                            <div >Home</div>
+                        </div>
                     </Link>
-                <div className="side-options">
+
+                    <Link to='/search' className='side-option-text'>
+                        <div className="side-options">
+                            <div className='side-icon' id='book-icon'><i className="fa-solid fa-magnifying-glass"></i></div>
+                            <div className='side-option-text'>Search</div>
+                        </div>
+                    </Link>
+                {/* <div className="side-options"> */}
                     {/* <div className='side-icon' id='book-icon'><i className="fa-solid fa-book"></i></div> */}
                     {/* <div className='side-option-text'>Your Library</div> */}
-                </div>
+                {/* </div> */}
             </div>
 
             <div className='side-options-holder'>
