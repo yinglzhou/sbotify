@@ -26,6 +26,27 @@
     color: white;
     cursor: default;
 }
+.iconn {
+    display: flex;
+    gap: 10px;
+    color: white;
+    margin-top: 23px;
+    margin-left: 23px;
+    width: 130px;
+}
+#iconn-logo{
+    font-size: 40px;
+}
+#iconn-sbotify{
+    font-size: 30px;
+    align-self: center;
+}
+#iconn-sbotify:after {
+    content: 'sbotify';
+}
+#iconn-sbotify:hover:after {
+    content: 'spotify';
+}
 
 .side-options-holder {
     margin-top: 25px;
@@ -53,4 +74,8 @@
     margin-top: 10px;
     margin-left: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.308);
+}
+
+.side-options-holder-links {
+    margin-top: 490px;
 }

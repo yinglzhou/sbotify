@@ -13,12 +13,24 @@ const SignupFormPage = () => {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const dispatch = useDispatch();
+    const [fieldErrors, setFieldErrors] = useState({
+        email:"",
+        confirmEmail:"",
+        name: "",
+        password: ""
+    })
 
     if (sessionUser) return <Redirect to="/"/>
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email === confirmEmail) {
+            setFieldErrors({
+                email: "",
+                confirmEmail: "",
+                name: "",
+                password: ""
+            })
             setErrors([]);
             return dispatch(sessionActions.signup({email, name, password}))
                 .catch(async (res) => {
@@ -28,7 +40,8 @@ const SignupFormPage = () => {
                     } catch {
                         data = await res.text();
                     }
-                    if (data?.errors) setErrors(data.errors);
+                    if (data?.errors) setFieldErrors()
+                    // setErrors(data.errors);
                     else if (data) setErrors([data]);
                     else setErrors([res.statusText]);
                 });
@@ -43,6 +56,7 @@ const SignupFormPage = () => {
                     src={require('./assets/spot-logo-black.png')}
                 />
             </Link>
+            
             <h1>Sign up with your email address</h1>
             <form onSubmit={handleSubmit} id='form'>
                 <ul className="errors">
@@ -60,7 +74,6 @@ const SignupFormPage = () => {
                             // required
                             />
                 </div>
-
                 <div className="labels">
                     <label>Confirm your email</label>
                         <input
@@ -81,6 +94,7 @@ const SignupFormPage = () => {
                             placeholder="Create a password."
                             // required
                         />
+            
                 </div>
 
                 <div className="labels">

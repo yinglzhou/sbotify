@@ -33,10 +33,14 @@ const SideNav = ({sessionUser}) => {
 
     return (
         <div id="side-bar">
-            <Link to="/">
-                <img className="icon"
+            <Link to="/" className='side-option-text'>
+                {/* <img className="icon"
                     src={require('./assets/spot-logo.png')}
-                />
+                /> */}
+                <div className="iconn" >
+                    <div id='iconn-logo'><i className="fa-brands fa-spotify"></i></div>
+                    <div id='iconn-sbotify' data-hover='spotify'></div>
+                </div>
             </Link>
 
             <div className='side-options-holder'>
@@ -48,10 +52,12 @@ const SideNav = ({sessionUser}) => {
                     </Link>
 
                     <Link to='/search' className='side-option-text'>
+                        
                         <div className="side-options">
                             <div className='side-icon' id='book-icon'><i className="fa-solid fa-magnifying-glass"></i></div>
                             <div className='side-option-text'>Search</div>
                         </div>
+                        
                     </Link>
                 {/* <div className="side-options"> */}
                     {/* <div className='side-icon' id='book-icon'><i className="fa-solid fa-book"></i></div> */}
@@ -70,6 +76,21 @@ const SideNav = ({sessionUser}) => {
 
             <div className='side-options-holder-playlists'>
                 {sessionUser && <PlaylistShow />}
+            </div>
+            <div className='side-options-holder-links'>
+            <a href="https://github.com/yinglzhou/sbotify" target="_blank" className='side-option-text'>
+                <div className='side-options' >
+                    <div className='side-icon' id='square-plus'><i className="fa-brands fa-github"></i></div>
+                    <div className='side-option-text'>Github</div>
+                </div>
+                </a>
+                <a href="https://linkedin.com/in/yinglzhou" target="_blank" className='side-option-text'>
+
+                <div className='side-options' >
+                    <div className='side-icon' id='square-plus'><i className="fa-brands fa-linkedin"></i></div>
+                    <div className='side-option-text'>LinkedIn</div>
+                </div>
+                </a>
             </div>
         </div>
     )
