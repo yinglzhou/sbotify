@@ -39,7 +39,7 @@ Each AlbumShowItem
 </div>
 ```
 ## Playbar
-A logged-in sbotify user will be able to play songs that are in albums or playlists through the playbar. 
+A logged-in sbotify user will be able to play songs that are in albums or playlists through the playbar.  
 ![playbar](app/assets/playbar.png)
 ``` javascript
 <div id='main-playbar'>
