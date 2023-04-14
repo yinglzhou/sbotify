@@ -1,24 +1,17 @@
-# README
+# Welcome to sbotify
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Introduction
 
-Things you may want to cover:
+sbotify is a clone of the Spotify web player. Spotify is a music streaming service that allows users to browse through and play songs from albums, artists, various pre-made playlists. A Spotify user that is not logged in is only allowed to browse and search for these features. They can not play any songs. Once logged in, the user is able to not only play songs, but curate playlists that will show up in their library. They can update or delete existing playlist that they've created. sbotify contains many features that the Spotify web player has and uses the following technologies:
 
-* Ruby version
+* Languages: Javascript, Ruby, HTML, CSS,
+* Frontend: React-Redux
+* Database: PostgreSQL
+* Hosting: Render
+* Asset Storage: AWS (S3)
 
-* System dependencies
+# Feature List
+## Albums and Songs
+a sbotify user is able to browse through existing data of albums that contains songs whether they are logged in or not:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![gif of profiles](app/assets/album-song.gif)
