@@ -45,9 +45,9 @@ const ProfileButton = ({user}) => {
             {showMenu && (
                 <div id='profile-dropdown-container'>
                     <ul className='profile-dropdown'>
-                        <li>
+                        {/* <li>
                             <div>Profile</div>
-                        </li>
+                        </li> */}
                         <li onClick={logout}>
                             <div >Log out</div>
                         </li>

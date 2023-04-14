@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import { playPlaylist, playSong } from '../../store/playbar';
 import {fetchPlaylistTracks} from '../../store/playlist_track';
 import { useHistory } from 'react-router-dom';
+import EditPlaylistModal from '../EditPlaylistModal/EditPlaylistModal';
 
 const PlaylistTrackShow = () => {
     const dispatch = useDispatch();
@@ -40,6 +41,8 @@ const PlaylistTrackShow = () => {
         return () => document.removeEventListener('click', closeMenu);
     }, [showMenu])
 
+    // const [showEditModal, setShowEditModal] = useState(false);
+
     const handleClick = (track) => (e) => {
         e.preventDefault();
         dispatch(playPlaylist(tracks))
@@ -52,9 +55,10 @@ const PlaylistTrackShow = () => {
         .then(() => history.push("/"))
     }
 
-    const handleEdit = (playlistId) => (e) => {
-        
-    }
+    // const handleEditClick = () => {
+    //     setShowMenu(false);
+    //     setShowEditModal(true)
+    // }
     return (
         <div className='main-content-container'>
             <div id='album-banner'>
@@ -86,9 +90,9 @@ const PlaylistTrackShow = () => {
                         {showMenu && 
                         (<div id='delete-dropdown'>
                             <ul className='profile-dropdown'>
-                                <li>
-                                    <div onClick={handleEdit(playlistId)}>Edit Playlist</div>
-                                </li>
+                                {/* <li>
+                                    <div onClick={handleEditClick}>Edit Playlist</div>
+                                </li> */}
                                 <li>
                                     <div onClick={handleDelete(playlistId)}>Delete Playlist</div>
                                 </li>
@@ -125,7 +129,13 @@ const PlaylistTrackShow = () => {
                     </div>
                 </div>
 
-
+            {/* {showEditModal && 
+                <EditPlaylistModal 
+                show={showEditModal} 
+                handleClose={setShowEditModal} 
+                playlistname={playlist_name}
+                playlistId={playlistId}
+                />} */}
 
 
         </div>

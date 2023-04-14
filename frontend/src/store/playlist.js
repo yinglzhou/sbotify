@@ -4,7 +4,12 @@ import { receivePlaylistTracks } from "./playlist_track";
 export const GET_PLAYLISTS = 'playlists/getPlaylists';
 export const GET_PLAYLIST = 'playlists/getPlaylist';
 export const REMOVE_PLAYLIST = 'playlists/removePlaylist';
+export const SET_PLAYLIST = 'playlist/setPlaylist';
 
+export const setPlaylist = playlist => ({
+  type: SET_PLAYLIST,
+  playlist
+});
 
 export const receivePlaylists = playlists => ({
     type: GET_PLAYLISTS,
@@ -34,9 +39,18 @@ export const createPlaylist = (playlist) => async dispatch => {
     const data = await res.json();
     dispatch(receivePlaylist(data))
 };
-// export const updatePlaylist = (updatedPlaylist) => async dispatch => {
-//     const res = await csrfFetch(`/api/playlists/${}`)
-// }
+export const updatePlaylist = (playlistId, updatedPlaylist) => async dispatch => {
+    const res = await csrfFetch(`/api/playlists/${playlistId}`, {
+        method:'PATCH',
+        body: JSON.stringify(updatedPlaylist),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+    const data = await res.json();
+    dispatch(setPlaylist(data));
+    return data
+}
 
 export const deletePlaylist = (playlistId) => async dispatch => {
     const res = await csrfFetch(`/api/playlists/${playlistId}`, {
@@ -67,6 +81,8 @@ const playlistReducer = (state={}, action) => {
         case GET_PLAYLIST:
             nextState['playlist'] = action.playlist
             return nextState
+        case SET_PLAYLIST:
+            return {...state, [action.playlist.id]: action.playlist};
         case REMOVE_PLAYLIST:
             delete nextState[action.playlistId];
             return nextState;

@@ -2,28 +2,33 @@
     all: unset;
     display: flex;
     flex-direction: row;
-    border: 2px solid green;
-    background-color: rgba(0,0,0,0.7);
+    /* border: 2px solid green; */
+    background-color: rgba(45, 45, 45, 0.7);
     gap: 8px;
     justify-content: center;
     padding: 1px;
     position: relative;
     align-items: center;
     border-radius: 20px;
-    width: 95px;
+    width: 120px;
     height: 28px;
     transition: 0.3s;
-
     
 }
 .profilebutton:hover{
-    background-color: #282828;
+    background-color: #5f5e5e;
 }
 #caret {
     margin-left: 6px;
     margin-right: 12px;
 }
 #user-name {
+    /* border: 1px solid white; */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* width: 58px; */
+    /* height: 20px; */
+    overflow: hidden;
     font-size: 14px;
     color: white;
 }
@@ -40,7 +45,7 @@
     /* height: 248px; */
     height: auto;
     margin-top: 8px;
-    background-color: #565656;
+    background-color: #282828;
     border-radius: 3px;
     z-index: 10000;
 }
@@ -52,20 +57,20 @@
 
 .profile-dropdown li {
     /* border: 1px solid white; */
-    padding: 14px;
+    padding: 4px;
     transition: 0.3s;
-
 }
-.profile-dropdown li:hover {
+.profile-dropdown div{
+    padding: 10px;
+}
+.profile-dropdown div:hover {
     /* border: 1px solid white; */
     background-color: #6a6a6a;
-    /* width: 170px; */
     border-radius: 3px;
 }
 
 .profile-dropdown div {
     cursor: pointer;
     color: white;
-    font-size: 14px;
-    margin-left: 5px;
+    font-size: 13.5px;
 }
