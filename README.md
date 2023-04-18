@@ -14,7 +14,7 @@ sbotify is a clone of the Spotify web player. Spotify is a music streaming servi
 ## Albums and Songs
 a sbotify user is able to browse through existing data of albums that contains songs whether they are logged in or not:
 
-![gif of profiles](app/assets/album-song.gif)
+![gif of album](app/assets/album-song.gif)
 
 ``` javascript
 <ul id='album-container'>
@@ -39,8 +39,8 @@ Each AlbumShowItem
 </div>
 ```
 ## Playbar
-A logged-in sbotify user will be able to play songs that are in albums or playlists through the playbar. 
-
+A logged-in sbotify user will be able to play songs that are in albums or playlists through the playbar.  
+![playbar](app/assets/playbar.png)
 ``` javascript
 <div id='main-playbar'>
     <div id='playbar-flex-container'>
@@ -90,6 +90,7 @@ This is the actual Player that uses the react-h5-audio-player.
 ## Playlists
 When logged in, the user has access to playlists that they created on the SideNav component. They are also able to create and delete their own playlists:
 
+![gif of playlist](app/assets/playlist.gif)
 ``` javascript
 <ul id='playlist-container'>
     {user_playlists.map(playlist => (
