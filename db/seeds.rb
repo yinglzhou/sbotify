@@ -10,11 +10,27 @@ require "open-uri"
 # ApplicationRecord.transaction do 
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
+    puts "Destroying Users..."
     User.destroy_all
+    puts "Destroying Artists..."
+    Artist.destroy_all
+    puts "Destroying Albums..."
+    Album.destroy_all
+    puts "Destroying Songs..."
+    Song.destroy_all
+    puts "Destroying Playlists..."
+    Playlist.destroy_all
+    puts "Destroying PlaylistTracks..."
+    PlaylistTrack.destroy_all
   
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
+    ApplicationRecord.connection.reset_pk_sequence!('artists')
+    ApplicationRecord.connection.reset_pk_sequence!('albums')
+    ApplicationRecord.connection.reset_pk_sequence!('songs')
+    ApplicationRecord.connection.reset_pk_sequence!('playlists')
+    ApplicationRecord.connection.reset_pk_sequence!('playlist_tracks')
   
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
