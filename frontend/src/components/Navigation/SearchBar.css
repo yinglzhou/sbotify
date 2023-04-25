@@ -1,7 +1,8 @@
 
 #search-icon-bar-holder{
     position: relative;
-    right: 600px;
+    right: 29vw;
+    margin-top: -15px;
 }
 #search-bar-outline{
     border-radius: 25px;
