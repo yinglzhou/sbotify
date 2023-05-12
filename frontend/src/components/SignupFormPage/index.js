@@ -22,6 +22,16 @@ const SignupFormPage = () => {
 
     if (sessionUser) return <Redirect to="/"/>
 
+    // const handleNameChange = (e) => {
+    //     const { value } = e.target;
+    //     setName(value);
+    //     if (!value.trim()) {
+    //         setFieldErrors({name: "Name is required"});
+    //       } else {
+    //         setFieldErrors("");
+    //     }
+    // }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email === confirmEmail) {
@@ -40,13 +50,24 @@ const SignupFormPage = () => {
                     } catch {
                         data = await res.text();
                     }
-                    if (data?.errors) setFieldErrors()
-                    // setErrors(data.errors);
-                    else if (data) setErrors([data]);
+                    if (data?.errors) {
+                        setErrors(data.errors);
+                        if (name.length < 1) {
+                            setErrors((prevErrors) => [...prevErrors, "Please enter a name"]);
+                        }
+                        setFieldErrors(data.errors);
+                    } else if (data) {
+                        setErrors(data);
+                        if (name.length < 1) {
+                            setErrors((prevErrors) => [...prevErrors, "Please enter a name"]);
+                        }
+                    }
                     else setErrors([res.statusText]);
                 });
         }
-        return setErrors([`The email addresses don't match`])
+        setErrors([`The email addresses don't match`])
+        setFieldErrors({confirmEmail: `The email addresses don't match`})
+        return  
     }
 
     return (
@@ -59,9 +80,14 @@ const SignupFormPage = () => {
             
             <h1>Sign up with your email address</h1>
             <form onSubmit={handleSubmit} id='form'>
-                <ul className="errors">
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
+                {/* <ul className="errors">
+                    {console.log(errors)}
+                    {errors.map((error, index) =>
+                        <span key={index}>
+                            <li>{error}</li>
+                        </span>
+                    )}
+                </ul> */}
 
                 <div className="all-labels">
                 <div className="labels">
@@ -71,8 +97,17 @@ const SignupFormPage = () => {
                             value={confirmEmail}
                             onChange={(e) => setConfirmEmail(e.target.value)}
                             placeholder="Enter your email."
-                            // required
                             />
+
+                    <ul className="errors">
+                        {errors
+                        .filter((error)=> error.includes("Email") || error.includes("addresses"))
+                        .map((error, index) =>
+                            <div key={index}>
+                                <li>{error}</li>
+                            </div>
+                        )}
+                    </ul>
                 </div>
                 <div className="labels">
                     <label>Confirm your email</label>
@@ -83,6 +118,15 @@ const SignupFormPage = () => {
                             placeholder="Enter your email again."
                             // required
                         />
+                        <ul className="errors">
+                        {errors
+                        .filter((error)=> error.includes("addresses"))
+                        .map((error, index) =>
+                            <div key={index}>
+                                <li>{error}</li>
+                            </div>
+                        )}
+                    </ul>
                 </div>
 
                 <div className="labels">
@@ -94,7 +138,15 @@ const SignupFormPage = () => {
                             placeholder="Create a password."
                             // required
                         />
-            
+                    <ul className="errors">
+                        {errors
+                        .filter((error)=> error.includes("Password"))
+                        .map((error, index) =>
+                            <div key={index}>
+                                <li>{error}</li>
+                            </div>
+                        )}
+                    </ul>
                 </div>
 
                 <div className="labels">
@@ -104,8 +156,16 @@ const SignupFormPage = () => {
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Enter a profile name."
-                            // required
                         />
+                        <ul className="errors">
+                        {errors
+                        .filter((error)=> error.includes("name"))
+                        .map((error, index) =>
+                            <div key={index}>
+                                <li>{error}</li>
+                            </div>
+                        )}
+                    </ul>
                     <p>This appears on your profile.</p>
                 </div>
 
