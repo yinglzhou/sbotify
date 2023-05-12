@@ -22,16 +22,6 @@ const SignupFormPage = () => {
 
     if (sessionUser) return <Redirect to="/"/>
 
-    // const handleNameChange = (e) => {
-    //     const { value } = e.target;
-    //     setName(value);
-    //     if (!value.trim()) {
-    //         setFieldErrors({name: "Name is required"});
-    //       } else {
-    //         setFieldErrors("");
-    //     }
-    // }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email === confirmEmail) {
@@ -80,14 +70,6 @@ const SignupFormPage = () => {
             
             <h1>Sign up with your email address</h1>
             <form onSubmit={handleSubmit} id='form'>
-                {/* <ul className="errors">
-                    {console.log(errors)}
-                    {errors.map((error, index) =>
-                        <span key={index}>
-                            <li>{error}</li>
-                        </span>
-                    )}
-                </ul> */}
 
                 <div className="all-labels">
                 <div className="labels">

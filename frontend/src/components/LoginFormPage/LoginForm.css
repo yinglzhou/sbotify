@@ -9,6 +9,8 @@
 #login-form {
     display: flex;
     flex-direction: column;
+    width: 350px;
+
 }
 
 .all-labels {
@@ -61,11 +63,4 @@
     background-color: #1ed760;
     padding: 15px;
     border-radius: 35px;
-}
-.errors {
-    font-size: 14px;
-    color: red;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
 }
