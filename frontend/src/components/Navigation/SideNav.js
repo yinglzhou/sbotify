@@ -13,7 +13,6 @@ const SideNav = ({sessionUser}) => {
 
     const handlePlaylist = (e) => {
         const myPlaylists = playlists.filter(playlist => playlist.ownerId === sessionUser.id && playlist.name.startsWith('My Playlist'));
-        // debugger
         let name ='';
         if (myPlaylists.length === 0) {
             name = 'My Playlist #0';
@@ -34,9 +33,6 @@ const SideNav = ({sessionUser}) => {
     return (
         <div id="side-bar">
             <Link to="/" className='side-option-text'>
-                {/* <img className="icon"
-                    src={require('./assets/spot-logo.png')}
-                /> */}
                 <div className="iconn" >
                     <div id='iconn-logo'><i className="fa-brands fa-spotify"></i></div>
                     <div id='iconn-sbotify' data-hover='spotify'></div>
