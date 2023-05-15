@@ -17,7 +17,6 @@ const Player = () => {
     const volumeup = (<i className="fa-solid fa-volume-high"></i>)
     const mute = (<i className="fa-solid fa-volume-xmark"></i>)
     
-    // console.log(album)
 
     const handleNext = (e) => {
         e.preventDefault();

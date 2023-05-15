@@ -84,6 +84,11 @@ const LoginFormPage = () => {
                 <button id="login-submit-button" onClick={handleSubmit}>LOG IN</button>
                 
             </form>
+                <div id="account-ask">
+                    <p>Don't an account? 
+                        <a href="/signup"> Sign up for sbotify</a>.
+                    </p>
+                </div>
         </div>
     )
 }

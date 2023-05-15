@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { createPlaylist, fetchAllPlaylists } from '../../store/playlist';
+import { Redirect } from 'react-router-dom';
 
 const SideNav = ({sessionUser}) => {
     const dispatch = useDispatch();
@@ -12,22 +13,26 @@ const SideNav = ({sessionUser}) => {
     const history = useHistory();
 
     const handlePlaylist = (e) => {
-        const myPlaylists = playlists.filter(playlist => playlist.ownerId === sessionUser.id && playlist.name.startsWith('My Playlist'));
-        let name ='';
-        if (myPlaylists.length === 0) {
-            name = 'My Playlist #0';
-        } else {
-            name = myPlaylists[myPlaylists.length - 1].name
+        if (!sessionUser){
+            history.push('/login');
+            return
         }
-        let lastidx = name.length - 1;
-        let number = Number(name[lastidx])
-        const playlist = {
-            name: `My Playlist #${number + 1}`,
-            owner_id: sessionUser.id
-        };
-        dispatch(createPlaylist(playlist))
-        .then(()=>(dispatch(fetchAllPlaylists())))
-    
+            const myPlaylists = playlists.filter(playlist => playlist.ownerId === sessionUser.id && playlist.name.startsWith('My Playlist'));
+            let name ='';
+            if (myPlaylists.length === 0) {
+                name = 'My Playlist #0';
+            } else {
+                name = myPlaylists[myPlaylists.length - 1].name
+            }
+            let lastidx = name.length - 1;
+            let number = Number(name[lastidx])
+            const playlist = {
+                name: `My Playlist #${number + 1}`,
+                owner_id: sessionUser.id
+            };
+            dispatch(createPlaylist(playlist))
+            .then(()=>(dispatch(fetchAllPlaylists())))
+            
     }
 
     return (

@@ -44,8 +44,7 @@
 }
 
 #login-submit-button {
-    position: relative;
-    left: 35px;
+    align-self: center;
     font-size: 15px;
     font-weight: bold;
     width: 124px;
