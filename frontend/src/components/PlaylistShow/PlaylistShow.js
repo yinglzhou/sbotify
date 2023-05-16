@@ -17,8 +17,7 @@ const PlaylistShow = () => {
     useEffect(()=>{
         dispatch(fetchAllPlaylists());
     }, [])
-
-    console.log(playlists)
+    
     return (
             <ul id='playlist-container'>
                 {user_playlists.map(playlist => (

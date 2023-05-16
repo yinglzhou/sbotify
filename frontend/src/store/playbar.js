@@ -3,6 +3,7 @@ export const SET_PLAY_STATUS = 'playbar/SET_PLAY_STATUS';
 export const SET_CURRENT_TIME = 'playbar/SET_CURRENT_TIME';
 export const SET_DURATION = 'playbar/SET_DURATION';
 export const SET_CURRENT_ALBUM_PLAYBAR = 'playbar/SET_CURRENT_ALBUM_PLAYBAR';
+export const SET_CURRENT_ALBUM_ID_PLAYBAR = 'playbar/SET_CURRENT_ALBUM_ID_PLAYBAR';
 export const SKIP_TO_NEXT_SONG = 'playbar/SKIP_TO_NEXT_SONG';
 export const SKIP_TO_PREV_SONG = 'playbar/SKIP_TO_SKIP_SONG';
 export const RESET_SONG_INDEX = 'playbar/RESET_SONG_INDEX';
@@ -28,6 +29,10 @@ export const receiveCurrentSong = (song) => ({
 export const receiveCurrentAlbum = (arrOfSongs) => ({
     type: SET_CURRENT_ALBUM_PLAYBAR,
     payload: arrOfSongs
+});
+export const receiveCurrentAlbumId = (albumId) => ({
+    type: SET_CURRENT_ALBUM_ID_PLAYBAR,
+    payload: albumId
 });
 export const receiveCurrentPlaylist = (arrOfSongs) => ({
     type: SET_CURRENT_PLAYLIST_PLAYBAR,
@@ -61,8 +66,9 @@ export const playSong = (song) => async dispatch => {
 export const isPlayingSong = () => async dispatch => {
     dispatch(receivePlayState(true));
 }
-export const playAlbum = (arrOfSongs) => async dispatch => {
+export const playAlbum = (arrOfSongs, albumId) => async dispatch => {
     dispatch(receiveCurrentAlbum(arrOfSongs));
+    dispatch(receiveCurrentAlbumId(albumId));
 }
 
 export const playPlaylist = (arrOfSongs) => async dispatch => {
@@ -83,6 +89,7 @@ export const setDuration = (duration) => async dispatch => {
 
 const initialState = {
     currentAlbum: null,
+    currentAlbumId: null,
     currentSongIndex: 0,
     currentSong: null,
     isPlaying: false,
@@ -93,6 +100,7 @@ const initialState = {
 const playbarReducer = (state=initialState, action) => {
     switch (action.type) {
         case SET_CURRENT_SONG:
+            console.log('resetting song')
             let currentSongId;
             if (state.currentAlbum) {
                 currentSongId = state.currentAlbum.indexOf(action.payload)
@@ -105,6 +113,8 @@ const playbarReducer = (state=initialState, action) => {
             
         case SET_CURRENT_ALBUM_PLAYBAR:
             return { ...state, currentAlbum: action.payload }
+        case SET_CURRENT_ALBUM_ID_PLAYBAR:
+            return { ...state, currentAlbumId: action.payload }
         case SET_CURRENT_PLAYLIST_PLAYBAR:
             return { ...state, currentPlaylist: action.payload }
         case RESET_SONG_INDEX:
@@ -169,6 +179,7 @@ const playbarReducer = (state=initialState, action) => {
 
 
         case SET_PLAY_STATUS:
+            console.log('setting play-state')
             return { ...state, isPlaying: action.payload }
         case SET_CURRENT_TIME:
             return { ...state, currentTime: action.payload }

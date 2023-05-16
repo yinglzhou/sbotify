@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { fetchAlbumSongs } from "../../store/song";
 import { useSelector } from "react-redux";
 import './AlbumSongs.css';
-import { playAlbum, playSong, pauseSong, resetSongId } from "../../store/playbar";
+import { playAlbum, playSong, pauseSong, resetSongId, receivePlayState, isPlayingSong } from "../../store/playbar";
 
 
 const AlbumSongs = ({sessionUser}) => {
@@ -17,6 +17,7 @@ const AlbumSongs = ({sessionUser}) => {
     const artist = useSelector(state => state.songs && state.songs.artist ? state.songs.artist.name : null)
     const cover = useSelector(state => state.songs && state.songs.album ? state.songs.album.albumCover : null)
     const isPlaying = useSelector(state => state.playbar ? state.playbar.isPlaying : null)
+    const currentAlbumId = useSelector(state => state.playbar ? state.playbar.currentAlbumId : null)
 
     const numsongs = songs.length;
     useEffect(()=>{
@@ -25,23 +26,34 @@ const AlbumSongs = ({sessionUser}) => {
 
     const handleClick = (song) => (e) => {
         e.preventDefault();
-        dispatch(playAlbum(songs))
+        dispatch(playAlbum(songs, albumId))
         dispatch(playSong(song))
         console.log(`playing ${song.title}`);
     }
+    const sameAlbumCheck = (albumId === currentAlbumId)
 
     const handleClickGreen = ()=>(e) => {
         e.preventDefault();
-        dispatch(playSong(songs[0]))
-        dispatch(playAlbum(songs))
-        dispatch(resetSongId())
-        // debugger
+        if (!isPlaying) {
+            dispatch(playSong(songs[0]))
+            dispatch(playAlbum(songs, albumId))
+            dispatch(resetSongId())
+            dispatch(receivePlayState(true))
+        }
+
+        if (isPlaying && sameAlbumCheck) {
+            dispatch(receivePlayState(false))
+        }
+
+        if (isPlaying && !sameAlbumCheck) {
+            dispatch(playSong(songs[0]))
+            dispatch(playAlbum(songs, albumId))
+            dispatch(resetSongId())
+            dispatch(receivePlayState(true))
+        }
     }
 
-    const handlePause = ()=> (e) => {
-        e.preventDefault();
-        dispatch(pauseSong())
-    }
+
     return (
         <div id='main-content-container-songs'>
 
@@ -53,21 +65,16 @@ const AlbumSongs = ({sessionUser}) => {
                             <h6>{artist} • {numsongs} songs</h6>
                         </div>
                 </div>
-
                 <div id='song-component-container'>
 
                     <div id='play-like-options'>
-                        {sessionUser && isPlaying && 
-                            <div id='album-play-button'><i className="fa-solid fa-circle-pause" style={{color: '#1ED760',}} /></div>}
-                        {sessionUser && !isPlaying && 
+                        {sessionUser && isPlaying && sameAlbumCheck &&
+                            <div onClick={handleClickGreen()} id='album-play-button'><i className="fa-solid fa-circle-pause" style={{color: '#1ED760',}} /></div>}
+                        {sessionUser && (!isPlaying || !sameAlbumCheck) &&
                             <div onClick={handleClickGreen()} id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
+                            
                         {!sessionUser && <div id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
                         
-
-                        {/* <div className="heart-options" id='heart-album'><i className="fa-regular fa-heart" 
-                        /></div>
-                        <div className="heart-options"><i className="fa-solid fa-ellipsis" 
-                        /></div> */}
                     </div>
 
                     <div id='album-grid'>
