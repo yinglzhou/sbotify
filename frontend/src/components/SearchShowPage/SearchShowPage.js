@@ -16,12 +16,13 @@ const Search = () => {
 
     const searchResults = useSelector((state) => state.searchResults );
     let hist = history.location.search.split('=')[1]
-    
+
     return(
         <>
         <div className='main-content-container'>
             {hist && <div id='results-for'>Results for "{hist}"</div>}
             <div id='album-container'>
+
             {Object.values(searchResults).map((ele) => {
                 return (
                 <div className='album-components'>

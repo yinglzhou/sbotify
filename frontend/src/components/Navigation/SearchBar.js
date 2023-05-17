@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
-import { fetchSearchResults } from "../../store/search";
+import { clearSearchResults, fetchSearchResults } from "../../store/search";
 import './SearchBar.css'
 
 const SearchBar = () => {
@@ -13,14 +13,18 @@ const SearchBar = () => {
     async function handleSearch(e) {
         e.preventDefault();
         const query = e.target.value;
-        await setSearchText(query);
-        dispatch(fetchSearchResults(query))
+        setSearchText(query);
+        if (query.trim() !== '') {
+            dispatch(fetchSearchResults(query));
+        } else {
+            dispatch(clearSearchResults());
+        }
     }
 
     function handleSearchSubmit(e) {
         e.preventDefault();
-        if(searchText.length > 0) {
-            history.push(`/search?songs=${searchText}`)
+        if (searchText.trim() !== '') {
+            history.push(`/search?songs=${searchText}`);
         }
     }
     function handleKeyPress(e) {
