@@ -17,10 +17,13 @@ const Search = () => {
     const searchResults = useSelector((state) => state.searchResults );
     let hist = history.location.search.split('=')[1]
 
+    const noResults = Object.keys(searchResults).length === 0;
+
     return(
         <>
         <div className='main-content-container'>
-            {hist && <div id='results-for'>Results for "{hist}"</div>}
+            {hist && !noResults && <div id='results-for'>Songs with "{hist}"</div>}
+            {hist && noResults && <div id='results-for'>No songs containing "{hist}"</div>}
             <div id='album-container'>
 
             {Object.values(searchResults).map((ele) => {
@@ -33,8 +36,6 @@ const Search = () => {
                     </div>
                     <div className='titleartist'>{ele.title}</div>
                     <div className='titleartist' id='artistname'>{ele.artistName}</div>
-                
-
                 </div>
                 {/* </Link> */}
                 </div>)

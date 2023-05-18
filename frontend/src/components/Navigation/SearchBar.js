@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { clearSearchResults, fetchSearchResults } from "../../store/search";
 import './SearchBar.css'
+import { useEffect } from "react";
 
 const SearchBar = () => {
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const SearchBar = () => {
                         onChange={handleSearch} 
                         type="text" 
                         placeholder="What do you want to listen to?"
-                        onKeyDown={handleKeyPress}
+                        // onKeyDown={handleKeyPress}
                         ></input>
                     </div>
             </div>
