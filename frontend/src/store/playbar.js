@@ -97,7 +97,7 @@ const initialState = {
     duration: 0
 }
 
-const playbarReducer = (state=initialState, action) => {
+const playbarReducer = (state={}, action) => {
     switch (action.type) {
         case SET_CURRENT_SONG:
             console.log('resetting song')

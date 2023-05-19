@@ -63,3 +63,21 @@
     font-size: 14px;
     color: #929191;
 }
+
+#search-result-pic-container{
+    position: relative;
+}
+@keyframes playbutton {
+    0% {top: 75%;
+        right: 5%;}
+    100% {top: 73%;
+        right: 5%;}
+}
+#search-album-play-button{
+    font-size: 40px;
+    position: absolute;
+    top: 73%;
+    right: 5%;
+    animation-name: playbutton;
+    animation-duration: 33ms;
+}

@@ -28,7 +28,7 @@ const AlbumSongs = ({sessionUser}) => {
         e.preventDefault();
         dispatch(playAlbum(songs, albumId))
         dispatch(playSong(song))
-        console.log(`playing ${song.title}`);
+        // console.log(`playing ${song.title}`);
     }
     const sameAlbumCheck = (albumId === currentAlbumId)
 
@@ -41,9 +41,9 @@ const AlbumSongs = ({sessionUser}) => {
             dispatch(receivePlayState(true))
         }
 
-        if (isPlaying && sameAlbumCheck) {
-            dispatch(receivePlayState(false))
-        }
+        // if (isPlaying && sameAlbumCheck) {
+        //     dispatch(receivePlayState(false))
+        // }
 
         if (isPlaying && !sameAlbumCheck) {
             dispatch(playSong(songs[0]))

@@ -8,7 +8,7 @@ const AlbumShowItem = ({album}) => {
 
     if (!artist) return null;
 
-    console.log(album)
+    // console.log(album)
 
     return (
         <div className='album-components'>

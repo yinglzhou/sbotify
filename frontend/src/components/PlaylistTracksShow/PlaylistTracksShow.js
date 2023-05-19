@@ -47,7 +47,7 @@ const PlaylistTrackShow = () => {
         e.preventDefault();
         dispatch(playPlaylist(tracks))
         dispatch(playSong(track))
-        console.log(`playing ${track.title}`);
+        // console.log(`playing ${track.title}`);
     }
     const handleDelete = (playlistId) => (e) => {
         dispatch(deletePlaylist(playlistId))

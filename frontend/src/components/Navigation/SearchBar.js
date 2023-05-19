@@ -10,14 +10,16 @@ const SearchBar = () => {
     const history = useHistory();
     const [searchText, setSearchText] = useState(""); 
 
-
     async function handleSearch(e) {
         e.preventDefault();
         const query = e.target.value;
         setSearchText(query);
         if (query.trim() !== '') {
+            debugger
+            history.push(`/search?songs=${query}`);
             dispatch(fetchSearchResults(query));
         } else {
+            history.push(`/search`);
             dispatch(clearSearchResults());
         }
     }
@@ -44,7 +46,7 @@ const SearchBar = () => {
                         onChange={handleSearch} 
                         type="text" 
                         placeholder="What do you want to listen to?"
-                        // onKeyDown={handleKeyPress}
+                        onKeyDown={handleKeyPress}
                         ></input>
                     </div>
             </div>

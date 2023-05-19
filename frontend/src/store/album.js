@@ -16,7 +16,7 @@ export const receiveAlbum = album => ({
 export const fetchAllAlbums = () => async dispatch => {
     const res = await fetch('/api/albums');
     const data = await res.json();
-    console.log(data)
+    // console.log(data)
     dispatch(receiveAlbums(data.albums));
     dispatch(receiveArtists(data.artists));
 };
