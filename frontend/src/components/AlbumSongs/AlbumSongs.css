@@ -86,7 +86,7 @@
 #individual-songs {
     color: #BEC0C2;
     display: grid;
-    grid-template-columns: [index] 30px 4fr [last] minmax(120px,0.2fr);
+    grid-template-columns: [index] 30px 4fr [last] minmax(86px,0.2fr);
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -105,4 +105,14 @@
 
 #individual-title {
     color: white;
+}
+
+#song-ellipsis-holder{
+    display: grid;
+    grid-template-columns: [index] 4fr [last] 24px;
+    align-items: center;
+}
+#track-ellipsis{
+    color: white;
+    font-size: 20px;
 }

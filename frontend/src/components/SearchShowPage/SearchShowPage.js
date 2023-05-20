@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import './SearchShowPage.css'
+import { playSong } from '../../store/playbar';
 
 const Search = () => {
     const dispatch = useDispatch();
@@ -27,6 +28,10 @@ const Search = () => {
         setIsHovered(null)
     }
 
+    const handlePlay = (ele) => () => {
+        
+        dispatch(playSong(ele))
+    }
     return(
         <>
         <div className='main-content-container'>
@@ -46,7 +51,10 @@ const Search = () => {
                         <div className='album-pics'>
                             <img src={ele.albumCover} alt="x"/>
                         </div>
-                        {isHovered?.id === ele.id && <div id='search-album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
+                        {isHovered?.id === ele.id && 
+                        <div id='search-album-play-button'
+                        onClick={handlePlay(ele)}
+                        ><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
                     </div>
                     
                     <div className='titleartist'>{ele.title}</div>

@@ -25,27 +25,51 @@ const PlaylistTrackShow = () => {
     const creator = useSelector(state => state.session && state.session.user ? state.session.user.name : null)
     
     const [showMenu, setShowMenu] = useState(false);
+    const [showSongMenu, setShowSongMenu] = useState(false);
+    const [isHovered, setIsHovered] = useState(null);
+    const handleHover = (el) => {
+        setIsHovered(el)
+    }
+    const handleLeave = () => {
+        setIsHovered(null)
+    }
+
     function openMenu() {
         if (showMenu) return;
         setShowMenu(true)
     };
+    function openSongMenu() {
+        setShowSongMenu(prevState => !prevState);
+    };
 
     useEffect(() => {
+        // debugger
         if (!showMenu) return;
         const closeMenu = () => {
             setShowMenu(false);
         };
-
         document.addEventListener('click', closeMenu);
+        return () => {document.removeEventListener('click', closeMenu);
 
-        return () => document.removeEventListener('click', closeMenu);
+    };
     }, [showMenu])
+    useEffect(() => {
+        // debugger
+        if (!showSongMenu) return;
+        const closeSongMenu = () => {
+            setShowSongMenu(false);
+        };
+        document.addEventListener('click', closeSongMenu);
+        return () => {document.removeEventListener('click', closeSongMenu);
+
+    };}, [showSongMenu])
 
     // const [showEditModal, setShowEditModal] = useState(false);
 
     const handleClick = (track) => (e) => {
         e.preventDefault();
         dispatch(playPlaylist(tracks))
+        console.log("ITS HERE")
         dispatch(playSong(track))
         // console.log(`playing ${track.title}`);
     }
@@ -59,6 +83,7 @@ const PlaylistTrackShow = () => {
     //     setShowMenu(false);
     //     setShowEditModal(true)
     // }
+
     return (
         <div className='main-content-container'>
             <div id='album-banner'>
@@ -112,18 +137,31 @@ const PlaylistTrackShow = () => {
                             {tracks.map((track, i) => {
                                 return (
                                 <>
-                                    <div id='individual-song-holder' onClick={handleClick(track)} >
-                                        <div id='individual-songs'>
-
-                                                <div>{i + 1}</div>
-                                                <div id='individual-title'>{track.title}</div>
-                                                <div>{track.duration}</div>
+                                    <div id='individual-song-holder'  
+                                        onMouseEnter={() => handleHover(track)}
+                                        onMouseLeave={() => handleLeave(track)}>
+                                        <div id='song-ellipsis-holder'>
+                                                <div id='individual-songs' onClick={handleClick(track)}>
+                                                    <div>{i + 1}</div>
+                                                    <div id='individual-title'>{track.title}</div>
+                                                    <div>{track.duration}</div>
+                                                </div>
+                                                {isHovered?.id === track.id && 
+                                                <div id='track-ellipsis' onClick={openSongMenu}><i className="fa-solid fa-ellipsis"/></div>}
                                         </div>
                                     </div>
+                                    {showSongMenu && 
+                                    (<div id='song-remove-dropdown'>
+                                        <ul className='profile-dropdown'>
+                                            <li>
+                                                <div>Remove this from playlist</div>
+                                            </li>
+                                        </ul>
+                                    </div>)}
                                 </>
                                 
                                 
-                            )})}
+                                )})}
                         </div>
 
                     </div>
