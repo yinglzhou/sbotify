@@ -10,5 +10,18 @@ class Api::PlaylistTracksController < ApplicationController
         render json: { message: 'Song removed from playlist' }
     end
 
+    def create 
+        playlist = Playlist.find(params[:playlist_id])
+        @playlist_track = PlaylistTrack.new(playlist_track_params)
+        if @playlist_track.save
+            render json: playlist_track, status: :created
+        else
+            render json: { errors: @playlist.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
 
+    private
+    def playlist_track_params
+        params.require(:playlist_track).permit(:track_id, :song_id)
+    end
 end
