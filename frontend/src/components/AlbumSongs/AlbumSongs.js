@@ -1,23 +1,67 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchAlbumSongs } from "../../store/song";
 import { useSelector } from "react-redux";
 import './AlbumSongs.css';
 import { playAlbum, playSong, pauseSong, resetSongId, receivePlayState, isPlayingSong } from "../../store/playbar";
+import PlaylistShow from "../PlaylistShow/PlaylistShow";
 
 
 const AlbumSongs = ({sessionUser}) => {
     const {albumId} = useParams();
     const dispatch = useDispatch();
-
     const songs = useSelector(state => state.songs && state.songs.songs ? Object.values(state.songs.songs) : [])
     const album = useSelector(state => state.songs && state.songs.album ? state.songs.album.name : null)
     const artist = useSelector(state => state.songs && state.songs.artist ? state.songs.artist.name : null)
     const cover = useSelector(state => state.songs && state.songs.album ? state.songs.album.albumCover : null)
     const isPlaying = useSelector(state => state.playbar ? state.playbar.isPlaying : null)
     const currentAlbumId = useSelector(state => state.playbar ? state.playbar.currentAlbumId : null)
+    const playlists = useSelector(state => state.playlists && state.playlists.playlists ? Object.values(state.playlists.playlists) : [])
+
+    const user_playlists = playlists.filter((playlist) => {
+        return playlist.ownerId === sessionUser.id;
+    });
+
+
+    const [showSongMenu, setShowSongMenu] = useState(false);
+    const [isHovered, setIsHovered] = useState(null);
+    const [showPlaylistOption, setShowPlaylistOption] = useState(false);
+
+    const handleHover = (el) => {
+        setIsHovered(el)
+    }
+    const handleLeave = () => {
+        setIsHovered(null)
+    }
+    const handleHoverOption = () => {
+        setShowPlaylistOption(true)
+    }
+
+    function openSongMenu() {
+        setShowSongMenu(prevState => !prevState);
+    };
+    useEffect(() => {
+        // debugger
+        if (!showSongMenu) return;
+        const closeSongMenu = () => {
+            setShowSongMenu(false);
+        };
+        document.addEventListener('click', closeSongMenu);
+        return () => {document.removeEventListener('click', closeSongMenu);
+
+    };}, [showSongMenu])
+    useEffect(() => {
+        if (!showPlaylistOption) return;
+        const closePlaylistMenu = () => {
+            setShowPlaylistOption(false);
+        };
+        document.addEventListener('click', closePlaylistMenu);
+        return () => {document.removeEventListener('click', closePlaylistMenu);
+
+    };}, [showPlaylistOption])
+
 
     const numsongs = songs.length;
     useEffect(()=>{
@@ -89,14 +133,41 @@ const AlbumSongs = ({sessionUser}) => {
                             {songs.map((song, i) => {
                                 return (
                                 <>
-                                    <div id='individual-song-holder' onClick={handleClick(song)}>
-                                        <div id='individual-songs'>
-
+                                    <div id='individual-song-holder' 
+                                    onMouseEnter={() => handleHover(song)}
+                                    onMouseLeave={() => handleLeave(song)}>
+                                    <div id='song-ellipsis-holder'>
+                                        <div id='individual-songs' onClick={handleClick(song)}>
                                                 <div>{i + 1}</div>
                                                 <div id='individual-title'>{song.title}</div>
                                                 <div>{song.duration}</div>
                                         </div>
+                                        {isHovered?.id === song.id && 
+                                                <div id='track-ellipsis' onClick={openSongMenu}><i className="fa-solid fa-ellipsis"/></div>}
                                     </div>
+                                    </div>
+                                    {showSongMenu && 
+                                    (<div id='song-remove-dropdown'>
+                                        <ul className='profile-dropdown'>
+                                            <li key={'add-to-playlist'}>
+                                                <div 
+                                                onMouseEnter={handleHoverOption}
+                                                >Add to playlist</div>
+                                            </li>
+                                        </ul>
+                                    </div>)}
+
+                                    {showPlaylistOption && sessionUser &&
+                                    (<div id='playlist-option-dropdown'>
+                                        <ul className='profile-dropdown' >
+                                            {user_playlists.map(playlist => (
+                                                <li key={playlist.id}>
+
+                                                <div id='individual-playlist-options'>{playlist.name}</div>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>)}
                                 </>
                                 
                                 

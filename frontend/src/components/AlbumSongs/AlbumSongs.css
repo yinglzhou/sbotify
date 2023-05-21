@@ -116,3 +116,13 @@
     color: white;
     font-size: 20px;
 }
+#playlist-option-dropdown {
+    position: absolute;
+    top:424px;
+    width: 196px;
+    z-index: 10000;
+    background-color: #282828;
+    font-size: 14px;
+    border-radius: 3px;
+    left:69.3vw;
+}
