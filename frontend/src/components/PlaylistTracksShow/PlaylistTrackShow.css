@@ -11,11 +11,11 @@
 }
 #song-remove-dropdown {
     position: absolute;
-    top:424px;
+    top: 531px;
     width: 196px;
     z-index: 10000;
     background-color: #282828;
     font-size: 14px;
     border-radius: 3px;
-    left:24.3vw;
+    left: 83.3vw;
 }
