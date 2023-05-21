@@ -1,4 +1,4 @@
-class PlaylistTracksController < ApplicationController 
+class Api::PlaylistTracksController < ApplicationController 
     def destroy
         playlist_track = PlaylistTrack.find_by(playlist_id: params[:playlist_id])
         unless playlist_track

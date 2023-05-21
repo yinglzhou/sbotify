@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { playPlaylist, playSong } from '../../store/playbar';
-import {fetchPlaylistTracks} from '../../store/playlist_track';
+import {deletePlaylistTrack, fetchPlaylistTracks} from '../../store/playlist_track';
 import { useHistory } from 'react-router-dom';
 import EditPlaylistModal from '../EditPlaylistModal/EditPlaylistModal';
 
@@ -77,6 +77,9 @@ const PlaylistTrackShow = () => {
         dispatch(deletePlaylist(playlistId))
         .then(()=>(dispatch(fetchAllPlaylists())))
         .then(() => history.push("/"))
+    }
+    const handleDeleteTrack = (playlistId, playlistTrackId) => (e) => {
+        dispatch(deletePlaylistTrack(playlistId, playlistTrackId))
     }
 
     // const handleEditClick = () => {
@@ -154,7 +157,7 @@ const PlaylistTrackShow = () => {
                                     (<div id='song-remove-dropdown'>
                                         <ul className='profile-dropdown'>
                                             <li>
-                                                <div>Remove this from playlist</div>
+                                                <div onClick={handleDeleteTrack(playlistId, track.id)}>Remove this from playlist</div>
                                             </li>
                                         </ul>
                                     </div>)}
