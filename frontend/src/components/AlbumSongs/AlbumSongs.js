@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import './AlbumSongs.css';
 import { playAlbum, playSong, pauseSong, resetSongId, receivePlayState, isPlayingSong } from "../../store/playbar";
 import PlaylistShow from "../PlaylistShow/PlaylistShow";
+import { createPlaylistTrack } from "../../store/playlist_track";
 
 
 const AlbumSongs = ({sessionUser}) => {
@@ -97,6 +98,14 @@ const AlbumSongs = ({sessionUser}) => {
         }
     }
 
+    const handleAddToPlaylist = (playlistId, songId) => ()=> {
+        const data = {
+            playlist_id: playlistId,
+            song_id: songId
+        }
+        dispatch(createPlaylistTrack(playlistId, data))
+    }
+
 
     return (
         <div id='main-content-container-songs'>
@@ -155,6 +164,7 @@ const AlbumSongs = ({sessionUser}) => {
                                                 >Add to playlist</div>
                                             </li>
                                         </ul>
+
                                     </div>)}
 
                                     {showPlaylistOption && sessionUser &&
@@ -163,7 +173,7 @@ const AlbumSongs = ({sessionUser}) => {
                                             {user_playlists.map(playlist => (
                                                 <li key={playlist.id}>
 
-                                                <div id='individual-playlist-options'>{playlist.name}</div>
+                                                <div id='individual-playlist-options' onClick={handleAddToPlaylist(playlist.id, song.id)}>{playlist.name}</div>
                                                 </li>
                                             ))}
                                         </ul>

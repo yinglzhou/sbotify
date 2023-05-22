@@ -12,16 +12,16 @@ class Api::PlaylistTracksController < ApplicationController
 
     def create 
         playlist = Playlist.find(params[:playlist_id])
-        @playlist_track = PlaylistTrack.new(playlist_track_params)
+        @playlist_track = playlist.playlist_tracks.build(playlist_id: params[:playlist_id], song_id: params[:song_id])
         if @playlist_track.save
-            render json: playlist_track, status: :created
+            render json: @playlist_track, status: :created
         else
-            render json: { errors: @playlist.errors.full_messages }, status: :unprocessable_entity
+            render json: { errors: @playlist_track.errors.full_messages }, status: :unprocessable_entity
         end
     end
 
     private
     def playlist_track_params
-        params.require(:playlist_track).permit(:track_id, :song_id)
+        params.require(:playlist_track).permit(:playlist_id, :song_id)
     end
 end

@@ -13,6 +13,7 @@ import * as artistActions from './store/artist';
 import * as songActions from './store/song';
 import * as playbarActions from './store/playbar';
 import * as playlistActions from './store/playlist';
+import * as playlistTrackActions from './store/playlist_track';
 
 const store = configureStore();
 
@@ -25,6 +26,7 @@ if (process.env.NODE_ENV !== 'production') {
   window.songActions = songActions;
   window.playbarActions = playbarActions;
   window.playlistActions = playlistActions;
+  window.playlistTrackActions = playlistTrackActions;
 }
 
 function Root() {
