@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { fetchAlbumSongs } from "../../store/song";
 import { useSelector } from "react-redux";
 import './AlbumSongs.css';
@@ -13,6 +13,7 @@ import { createPlaylistTrack } from "../../store/playlist_track";
 const AlbumSongs = ({sessionUser}) => {
     const {albumId} = useParams();
     const dispatch = useDispatch();
+    const history = useHistory();
     const songs = useSelector(state => state.songs && state.songs.songs ? Object.values(state.songs.songs) : [])
     const album = useSelector(state => state.songs && state.songs.album ? state.songs.album.name : null)
     const artist = useSelector(state => state.songs && state.songs.artist ? state.songs.artist.name : null)
@@ -21,14 +22,16 @@ const AlbumSongs = ({sessionUser}) => {
     const currentAlbumId = useSelector(state => state.playbar ? state.playbar.currentAlbumId : null)
     const playlists = useSelector(state => state.playlists && state.playlists.playlists ? Object.values(state.playlists.playlists) : [])
 
+
     const user_playlists = playlists.filter((playlist) => {
-        return playlist.ownerId === sessionUser.id;
+        if (sessionUser) return playlist.ownerId === sessionUser.id;
     });
 
 
-    const [showSongMenu, setShowSongMenu] = useState(false);
+
+    const [showSongMenu, setShowSongMenu] = useState("");
     const [isHovered, setIsHovered] = useState(null);
-    const [showPlaylistOption, setShowPlaylistOption] = useState(false);
+    const [showPlaylistOption, setShowPlaylistOption] = useState("");
 
     const handleHover = (el) => {
         setIsHovered(el)
@@ -36,18 +39,18 @@ const AlbumSongs = ({sessionUser}) => {
     const handleLeave = () => {
         setIsHovered(null)
     }
-    const handleHoverOption = () => {
-        setShowPlaylistOption(true)
+    const handleHoverOption = (song) => {
+        setShowPlaylistOption(song.id)
     }
 
-    function openSongMenu() {
-        setShowSongMenu(prevState => !prevState);
+    function openSongMenu(song) {
+        console.log(song)
+        setShowSongMenu(song.id);
     };
     useEffect(() => {
-        // debugger
         if (!showSongMenu) return;
         const closeSongMenu = () => {
-            setShowSongMenu(false);
+            setShowSongMenu("");
         };
         document.addEventListener('click', closeSongMenu);
         return () => {document.removeEventListener('click', closeSongMenu);
@@ -56,7 +59,7 @@ const AlbumSongs = ({sessionUser}) => {
     useEffect(() => {
         if (!showPlaylistOption) return;
         const closePlaylistMenu = () => {
-            setShowPlaylistOption(false);
+            setShowPlaylistOption("");
         };
         document.addEventListener('click', closePlaylistMenu);
         return () => {document.removeEventListener('click', closePlaylistMenu);
@@ -79,6 +82,11 @@ const AlbumSongs = ({sessionUser}) => {
 
     const handleClickGreen = ()=>(e) => {
         e.preventDefault();
+        // if (!sessionUser){
+        //     history.push('/login');
+        //     return
+        // }
+        
         if (!isPlaying) {
             dispatch(playSong(songs[0]))
             dispatch(playAlbum(songs, albumId))
@@ -86,9 +94,9 @@ const AlbumSongs = ({sessionUser}) => {
             dispatch(receivePlayState(true))
         }
 
-        // if (isPlaying && sameAlbumCheck) {
-        //     dispatch(receivePlayState(false))
-        // }
+        if (isPlaying && sameAlbumCheck) {
+            dispatch(receivePlayState(false))
+        }
 
         if (isPlaying && !sameAlbumCheck) {
             dispatch(playSong(songs[0]))
@@ -103,6 +111,7 @@ const AlbumSongs = ({sessionUser}) => {
             playlist_id: playlistId,
             song_id: songId
         }
+        console.log(data)
         dispatch(createPlaylistTrack(playlistId, data))
     }
 
@@ -152,24 +161,25 @@ const AlbumSongs = ({sessionUser}) => {
                                                 <div>{song.duration}</div>
                                         </div>
                                         {isHovered?.id === song.id && 
-                                                <div id='track-ellipsis' onClick={openSongMenu}><i className="fa-solid fa-ellipsis"/></div>}
+                                                <div id='track-ellipsis' onClick={() => openSongMenu(song)}><i className="fa-solid fa-ellipsis"/></div>}
                                     </div>
                                     </div>
-                                    {showSongMenu && 
+                                    {showSongMenu === song.id && 
                                     (<div id='song-remove-dropdown'>
                                         <ul className='profile-dropdown'>
                                             <li key={'add-to-playlist'}>
                                                 <div 
-                                                onMouseEnter={handleHoverOption}
+                                                onMouseEnter={() => handleHoverOption(song)}
                                                 >Add to playlist</div>
                                             </li>
                                         </ul>
 
                                     </div>)}
 
-                                    {showPlaylistOption && sessionUser &&
+                                    {showPlaylistOption === song.id && sessionUser &&
                                     (<div id='playlist-option-dropdown'>
                                         <ul className='profile-dropdown' >
+                                            {/* {console.log(song.title)} */}
                                             {user_playlists.map(playlist => (
                                                 <li key={playlist.id}>
 

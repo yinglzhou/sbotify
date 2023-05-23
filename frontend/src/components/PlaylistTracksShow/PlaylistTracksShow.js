@@ -5,7 +5,7 @@ import { deletePlaylist, fetchPlaylist, removePlaylist, fetchAllPlaylists } from
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { playPlaylist, playSong } from '../../store/playbar';
+import { playPlaylist, playSong, receivePlayState, resetSongId } from '../../store/playbar';
 import {deletePlaylistTrack, fetchPlaylistTracks} from '../../store/playlist_track';
 import { useHistory } from 'react-router-dom';
 import EditPlaylistModal from '../EditPlaylistModal/EditPlaylistModal';
@@ -22,11 +22,38 @@ const PlaylistTrackShow = () => {
     const tracks = useSelector(state => state.playlist_tracks ? Object.values(state.playlist_tracks) : [])
     const playlist_name = useSelector(state => state.playlists && state.playlists.playlist ? state.playlists.playlist.name : null)
     const numsongs = tracks.length
+    const isPlaying = useSelector(state => state.playbar ? state.playbar.isPlaying : null)
+    const currentPlaylistId = useSelector(state => state.playbar ? state.playbar.currentPlaylistId : null)
     const creator = useSelector(state => state.session && state.session.user ? state.session.user.name : null)
     
     const [showMenu, setShowMenu] = useState(false);
-    const [showSongMenu, setShowSongMenu] = useState(false);
+    const [showSongMenu, setShowSongMenu] = useState("");
     const [isHovered, setIsHovered] = useState(null);
+
+    const sameAlbumCheck = (playlistId === currentPlaylistId)
+
+    const handleClickGreen = ()=>(e) => {
+        e.preventDefault();
+        if (!isPlaying) {
+            dispatch(playSong(tracks[0]))
+            dispatch(playPlaylist(tracks, playlistId))
+            dispatch(resetSongId())
+            dispatch(receivePlayState(true))
+        }
+
+        if (isPlaying && sameAlbumCheck) {
+            dispatch(receivePlayState(false))
+        }
+
+        if (isPlaying && !sameAlbumCheck) {
+            dispatch(playSong(tracks[0]))
+            dispatch(playPlaylist(tracks, playlistId))
+            dispatch(resetSongId())
+            dispatch(receivePlayState(true))
+        }
+    }
+
+
     const handleHover = (el) => {
         setIsHovered(el)
     }
@@ -38,8 +65,8 @@ const PlaylistTrackShow = () => {
         if (showMenu) return;
         setShowMenu(true)
     };
-    function openSongMenu() {
-        setShowSongMenu(prevState => !prevState);
+    function openSongMenu(track) {
+        setShowSongMenu(track.id);
     };
 
     useEffect(() => {
@@ -102,13 +129,13 @@ const PlaylistTrackShow = () => {
             <div id='song-component-container'>
 
                     <div id='play-like-options'>
-                        {/* {sessionUser && isPlaying && 
-                            <div id='album-play-button'><i className="fa-solid fa-circle-pause" style={{color: '#1ED760',}} /></div>}
-                        {sessionUser && !isPlaying && 
-                            <div onClick={handleClickGreen()} id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>} */}
-                        {/* {!sessionUser &&  */}
-                        <div id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>
-                        { }
+                        {isPlaying && sameAlbumCheck &&
+                            <div onClick={handleClickGreen()} id='album-play-button'><i className="fa-solid fa-circle-pause" style={{color: '#1ED760',}} /></div>}
+                        {(!isPlaying || !sameAlbumCheck) &&
+                            <div onClick={handleClickGreen()} id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
+                            
+                        {/* {!sessionUser && <div id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>} */}
+                        
                         
 
                         {/* <div className="heart-options" id='heart-album'><i className="fa-regular fa-heart" 
@@ -144,16 +171,16 @@ const PlaylistTrackShow = () => {
                                         onMouseEnter={() => handleHover(track)}
                                         onMouseLeave={() => handleLeave(track)}>
                                         <div id='song-ellipsis-holder'>
-                                                <div id='individual-songs' onClick={handleClick(track)}>
+                                                <div id='individual-songs' onClick={() => handleClick(track)}>
                                                     <div>{i + 1}</div>
                                                     <div id='individual-title'>{track.title}</div>
                                                     <div>{track.duration}</div>
                                                 </div>
                                                 {isHovered?.id === track.id && 
-                                                <div id='track-ellipsis' onClick={openSongMenu}><i className="fa-solid fa-ellipsis"/></div>}
+                                                <div id='track-ellipsis' onClick={() => openSongMenu(track)}><i className="fa-solid fa-ellipsis"/></div>}
                                         </div>
                                     </div>
-                                    {showSongMenu && 
+                                    {showSongMenu === track.id && 
                                     (<div id='song-remove-dropdown'>
                                         <ul className='profile-dropdown'>
                                             <li>

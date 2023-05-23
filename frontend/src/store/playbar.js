@@ -1,3 +1,5 @@
+import { SET_PLAYLIST_ID, receivePlaylistId } from "./playlist";
+
 export const SET_CURRENT_SONG = 'playbar/SET_CURRENT_SONG';
 export const SET_PLAY_STATUS = 'playbar/SET_PLAY_STATUS';
 export const SET_CURRENT_TIME = 'playbar/SET_CURRENT_TIME';
@@ -71,8 +73,9 @@ export const playAlbum = (arrOfSongs, albumId) => async dispatch => {
     dispatch(receiveCurrentAlbumId(albumId));
 }
 
-export const playPlaylist = (arrOfSongs) => async dispatch => {
+export const playPlaylist = (arrOfSongs, playlistId) => async dispatch => {
     dispatch(receiveCurrentPlaylist(arrOfSongs));
+    dispatch(receivePlaylistId(playlistId));
 }
 
 export const pauseSong = () => async dispatch => {
@@ -117,6 +120,8 @@ const playbarReducer = (state={}, action) => {
             return { ...state, currentAlbumId: action.payload }
         case SET_CURRENT_PLAYLIST_PLAYBAR:
             return { ...state, currentPlaylist: action.payload }
+        case SET_PLAYLIST_ID:
+            return {...state, currentPlaylistId: action.playlistId}
         case RESET_SONG_INDEX:
             return {...state, currentSongIndex: 0}
         case SKIP_TO_NEXT_SONG:

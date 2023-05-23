@@ -63,8 +63,8 @@ return (
                 volumeMute: mute
             }} 
             autoPlay={isPlayingg}
-            // onPlay={() => dispatch(receivePlayState(true))}
-            // onPause={() => dispatch(receivePlayState(false))}
+            onPlay={() => dispatch(receivePlayState(true))}
+            onPause={() => dispatch(receivePlayState(false))}
             onClickNext={handleNext}
             onClickPrevious={handlePrevious}
         />

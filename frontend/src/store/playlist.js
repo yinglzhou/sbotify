@@ -5,6 +5,7 @@ export const GET_PLAYLISTS = 'playlists/getPlaylists';
 export const GET_PLAYLIST = 'playlists/getPlaylist';
 export const REMOVE_PLAYLIST = 'playlists/removePlaylist';
 export const SET_PLAYLIST = 'playlist/setPlaylist';
+export const SET_PLAYLIST_ID = 'playlist/SET_PLAYLIST_ID';
 
 export const setPlaylist = playlist => ({
   type: SET_PLAYLIST,
@@ -20,6 +21,11 @@ export const receivePlaylist = playlist => ({
     type: GET_PLAYLIST,
     playlist
 });
+
+export const receivePlaylistId = playlistId => ({
+    type: SET_PLAYLIST_ID,
+    playlistId
+})
 
 export const removePlaylist = playlistId => ({
     type: REMOVE_PLAYLIST,
