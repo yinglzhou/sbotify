@@ -15,7 +15,6 @@ const SearchBar = () => {
         const query = e.target.value;
         setSearchText(query);
         if (query.trim() !== '') {
-            debugger
             history.push(`/search?songs=${query}`);
             dispatch(fetchSearchResults(query));
         } else {

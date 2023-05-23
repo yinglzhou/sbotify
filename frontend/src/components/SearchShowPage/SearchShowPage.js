@@ -5,10 +5,12 @@ import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import './SearchShowPage.css'
 import { playSong } from '../../store/playbar';
+import { setLoginModalPic, setLoginModalStatus } from '../../store/ui';
 
 const Search = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const sessionUser = useSelector(state => state.session ? state.session.user : null)
     const [isHovered, setIsHovered] = useState(null);
     
     useEffect(() => {
@@ -29,7 +31,11 @@ const Search = () => {
     }
 
     const handlePlay = (ele) => () => {
-        
+        if (!sessionUser) {
+            // debugger
+            dispatch(setLoginModalPic(ele.albumCover))
+            dispatch(setLoginModalStatus(true))
+        }
         dispatch(playSong(ele))
     }
     return(

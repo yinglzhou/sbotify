@@ -12,7 +12,7 @@
 }
 
 #login-inner-container {
-    border-radius: 16px;
+    border-radius: 8px;
     /* border: 1px solid green; */
     width: 60vw;
     height: 60vh;
@@ -31,11 +31,12 @@
 }
 
 #login-album-art{
-    border-radius: 16px;
+    border-radius: 8px;
     /* border: 1px solid red; */
     width: 20vw;
     height: 20vw;
     margin-right: 5vw;
+    overflow: hidden;
 }
 
 #login-text-side{
@@ -66,8 +67,6 @@
 
 .login-modal-buttons{
     border-radius: 35px;
-    color: white;
-    /* border: 1px solid red; */
     text-align: center;
     width: fit-content;
     font-size: 15px;
@@ -81,39 +80,9 @@
     transform: scale(1.03);
 }
 
-#only-signup{
-}
-#only-login{
-}
 
-.login-modal-buttons a{
+#login-button-holder a{
     color: black;
     text-decoration: none;
 }
 
-
-
-
-/* #login-submit-button {
-    align-self: center;
-    font-size: 15px;
-    font-weight: bold;
-    width: 124px;
-    border: 2px solid white;
-    background-color: #1ed760;
-    padding: 15px;
-    border-radius: 35px;
-}
-
-#submit-button {
-    font-size: 17px;
-    font-weight: bold;
-    width: 175px;
-    border: 2px solid white;
-    background-color: #1ed760;
-    padding: 17px;
-    border-radius: 35px;
-    align-self: center;
-    transition: 0.3s;
-
-} */

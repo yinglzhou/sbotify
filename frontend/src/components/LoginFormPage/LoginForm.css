@@ -52,6 +52,7 @@
     background-color: #1ed760;
     padding: 15px;
     border-radius: 35px;
+    cursor: pointer;
 }
 #demo-login-button {
     margin-bottom: 20px;
@@ -62,4 +63,26 @@
     background-color: #1ed760;
     padding: 15px;
     border-radius: 35px;
+    cursor: pointer;
+}
+
+.login-iconn {
+    display: flex;
+    gap: 10px;
+    color: black;
+    margin-top: 23px;
+    width: 130px;
+}
+#login-iconn-logo{
+    font-size: 40px;
+}
+#login-iconn-sbotify{
+    font-size: 30px;
+    align-self: center;
+}
+#login-iconn-sbotify:after {
+    content: 'sbotify';
+}
+#login-iconn-sbotify:hover:after {
+    content: 'spotify';
 }

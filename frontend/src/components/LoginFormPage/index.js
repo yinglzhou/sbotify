@@ -45,10 +45,16 @@ const LoginFormPage = () => {
 
     return (
         <div className="signup-form-container">
-            <Link to="/">
+            {/* <Link to="/">
                 <img className="icon"
                     src={require('./assets/spot-logo-black.png')}
                 />
+            </Link> */}
+            <Link to="/" className='side-option-text'>
+                <div className="login-iconn" >
+                    <div id='login-iconn-logo'><i className="fa-brands fa-spotify"></i></div>
+                    <div id='login-iconn-sbotify' data-hover='spotify'></div>
+                </div>
             </Link>
 
             <h1>To continue, log in to Spotify.</h1>

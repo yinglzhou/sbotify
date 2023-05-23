@@ -62,10 +62,11 @@ const SignupFormPage = () => {
 
     return (
         <div className="signup-form-container">
-            <Link to="/">
-                <img className="icon"
-                    src={require('./assets/spot-logo-black.png')}
-                />
+            <Link to="/" className='side-option-text'>
+                <div className="login-iconn" >
+                    <div id='login-iconn-logo'><i className="fa-brands fa-spotify"></i></div>
+                    <div id='login-iconn-sbotify' data-hover='spotify'></div>
+                </div>
             </Link>
             
             <h1>Sign up with your email address</h1>

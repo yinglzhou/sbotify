@@ -28,6 +28,7 @@ function App() {
         </Route>
 
         <Route path='/search'>
+          {showLoginModal && <LoginPopUp/>}
           <Navigation>
             <SearchBar/>
           </Navigation>
