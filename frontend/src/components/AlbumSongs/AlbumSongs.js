@@ -8,6 +8,8 @@ import './AlbumSongs.css';
 import { playAlbum, playSong, pauseSong, resetSongId, receivePlayState, isPlayingSong } from "../../store/playbar";
 import PlaylistShow from "../PlaylistShow/PlaylistShow";
 import { createPlaylistTrack } from "../../store/playlist_track";
+import LoginPopUp from "../LoginPopUp/LoginPopUp";
+import { setLoginModalStatus } from "../../store/ui";
 
 
 const AlbumSongs = ({sessionUser}) => {
@@ -22,7 +24,6 @@ const AlbumSongs = ({sessionUser}) => {
     const currentAlbumId = useSelector(state => state.playbar ? state.playbar.currentAlbumId : null)
     const playlists = useSelector(state => state.playlists && state.playlists.playlists ? Object.values(state.playlists.playlists) : [])
 
-
     const user_playlists = playlists.filter((playlist) => {
         if (sessionUser) return playlist.ownerId === sessionUser.id;
     });
@@ -32,6 +33,7 @@ const AlbumSongs = ({sessionUser}) => {
     const [showSongMenu, setShowSongMenu] = useState("");
     const [isHovered, setIsHovered] = useState(null);
     const [showPlaylistOption, setShowPlaylistOption] = useState("");
+    
 
     const handleHover = (el) => {
         setIsHovered(el)
@@ -82,10 +84,6 @@ const AlbumSongs = ({sessionUser}) => {
 
     const handleClickGreen = ()=>(e) => {
         e.preventDefault();
-        // if (!sessionUser){
-        //     history.push('/login');
-        //     return
-        // }
         
         if (!isPlaying) {
             dispatch(playSong(songs[0]))
@@ -118,7 +116,7 @@ const AlbumSongs = ({sessionUser}) => {
 
     return (
         <div id='main-content-container-songs'>
-
+            {/* {showLoginModal && <LoginPopUp/>} */}
                 <div id='album-banner'>
                     <img src={cover} alt="cover"></img>
                         <div id='next-to-image'>
@@ -135,10 +133,11 @@ const AlbumSongs = ({sessionUser}) => {
                         {sessionUser && (!isPlaying || !sameAlbumCheck) &&
                             <div onClick={handleClickGreen()} id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
                             
-                        {!sessionUser && <div id='album-play-button'><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
+                        {!sessionUser && <div id='album-play-button' onClick={() => dispatch(setLoginModalStatus(true))}><i className="fa-solid fa-circle-play" style={{color: '#1ED760',}} /></div>}
                         
                     </div>
 
+                            
                     <div id='album-grid'>
                     
                         <div id='song-heading'>

@@ -8,6 +8,7 @@ import playbarReducer from './playbar';
 import playlistReducer from './playlist';
 import playlistTrackReducer from './playlist_track';
 import searchReducer from './search';
+import uiReducer from './ui';
 
 const rootReducer = combineReducers({
     session,
@@ -17,7 +18,8 @@ const rootReducer = combineReducers({
     playbar: playbarReducer,
     playlists: playlistReducer,
     playlist_tracks: playlistTrackReducer,
-    searchResults: searchReducer
+    searchResults: searchReducer,
+    ui: uiReducer
 });
 
 let enhancer;

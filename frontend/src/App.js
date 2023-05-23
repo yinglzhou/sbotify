@@ -10,9 +10,11 @@ import PlayBar from "./components/PlayBar/PlayBar";
 import PlaylistTrackShow from "./components/PlaylistTracksShow/PlaylistTracksShow";
 import Search from "./components/SearchShowPage/SearchShowPage";
 import SearchBar from "./components/Navigation/SearchBar";
+import LoginPopUp from "./components/LoginPopUp/LoginPopUp";
 
 function App() {
   const sessionUser = useSelector(state => state.session ? state.session.user : null)
+  const showLoginModal = useSelector(state => state.ui ? state.ui.showLoginModal : null) 
   const location = useLocation();
 
   return (
@@ -45,7 +47,8 @@ function App() {
         </Route>
 
         <Route path={`/albums/:albumId`}>
-          <Navigation/>
+            {showLoginModal && <LoginPopUp/>}
+            <Navigation/>
             <SideNav sessionUser={sessionUser}/>
             <AlbumSongs sessionUser={sessionUser}/>
             {sessionUser && <PlayBar/>}
