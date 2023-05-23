@@ -159,7 +159,7 @@ const AlbumSongs = ({sessionUser}) => {
                                                 <div id='individual-title'>{song.title}</div>
                                                 <div>{song.duration}</div>
                                         </div>
-                                        {isHovered?.id === song.id && 
+                                        {sessionUser && isHovered?.id === song.id && 
                                                 <div id='track-ellipsis' onClick={() => openSongMenu(song)}><i className="fa-solid fa-ellipsis"/></div>}
                                     </div>
                                     </div>

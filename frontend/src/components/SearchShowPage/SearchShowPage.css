@@ -80,4 +80,5 @@
     right: 5%;
     animation-name: playbutton;
     animation-duration: 33ms;
+    cursor: pointer;
 }

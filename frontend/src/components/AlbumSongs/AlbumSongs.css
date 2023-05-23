@@ -55,6 +55,7 @@
     padding-left: 32px;
 }
 #album-play-button {
+    cursor: pointer;
     font-size: 56px;
 }
 #album-play-button:hover {
@@ -97,6 +98,7 @@
     border-radius: 5px;
     padding-left: 15px;
     margin-right: 60px;
+    cursor: pointer;
 }
 
 #individual-song-holder:hover {
