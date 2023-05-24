@@ -9,6 +9,8 @@ export const SET_CURRENT_ALBUM_ID_PLAYBAR = 'playbar/SET_CURRENT_ALBUM_ID_PLAYBA
 export const SKIP_TO_NEXT_SONG = 'playbar/SKIP_TO_NEXT_SONG';
 export const SKIP_TO_PREV_SONG = 'playbar/SKIP_TO_SKIP_SONG';
 export const RESET_SONG_INDEX = 'playbar/RESET_SONG_INDEX';
+export const RESET_ALBUM = 'playbar/RESET_ALBUM';
+export const RESET_PLAYLIST = 'playbar/RESET_PLAYLIST';
 export const SET_CURRENT_PLAYLIST_PLAYBAR = 'playbar/SET_CURRENT_PLAYLIST_PLAYBAR';
 
 export const skipToNextSong = () => ({
@@ -16,6 +18,12 @@ export const skipToNextSong = () => ({
 })
 export const resetSongIndex = () => ({
     type: RESET_SONG_INDEX
+})
+export const resetAlbum = () => ({
+    type: RESET_ALBUM
+})
+export const resetPlaylist = () => ({
+    type: RESET_PLAYLIST
 })
 
 export const skipToPrevSong = () => ({
@@ -58,6 +66,12 @@ export const receiveDuration = (duration) => ({
 
 export const resetSongId = () => async dispatch => {
     dispatch(resetSongIndex())
+}
+export const resetCurrentAlbum = () => async dispatch => {
+    dispatch(resetAlbum())
+}
+export const resetCurrentPlaylist = () => async dispatch => {
+    dispatch(resetPlaylist())
 }
 
 export const playSong = (song) => async dispatch => {
@@ -124,6 +138,10 @@ const playbarReducer = (state={}, action) => {
             return {...state, currentPlaylistId: action.playlistId}
         case RESET_SONG_INDEX:
             return {...state, currentSongIndex: 0}
+        case RESET_ALBUM:
+            return {...state, currentAlbum: null}
+        case RESET_PLAYLIST:
+            return {...state, currentPlaylist: null}
         case SKIP_TO_NEXT_SONG:
             let next_current_song_id = state.currentSongIndex + 1;
             

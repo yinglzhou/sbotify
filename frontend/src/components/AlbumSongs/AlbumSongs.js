@@ -5,7 +5,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { fetchAlbumSongs } from "../../store/song";
 import { useSelector } from "react-redux";
 import './AlbumSongs.css';
-import { playAlbum, playSong, pauseSong, resetSongId, receivePlayState, isPlayingSong } from "../../store/playbar";
+import { playAlbum, playSong, pauseSong, resetSongId, receivePlayState, isPlayingSong, resetCurrentPlaylist } from "../../store/playbar";
 import PlaylistShow from "../PlaylistShow/PlaylistShow";
 import { createPlaylistTrack } from "../../store/playlist_track";
 import LoginPopUp from "../LoginPopUp/LoginPopUp";
@@ -84,7 +84,7 @@ const AlbumSongs = ({sessionUser}) => {
 
     const handleClickGreen = ()=>(e) => {
         e.preventDefault();
-        
+        dispatch(resetCurrentPlaylist())
         if (!isPlaying) {
             dispatch(playSong(songs[0]))
             dispatch(playAlbum(songs, albumId))
