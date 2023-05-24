@@ -21,11 +21,11 @@ class Api::PlaylistsController < ApplicationController
     def update
         @playlist = Playlist.find(params[:id])
         if @playlist.update(playlist_params)
-            render json: @playlist
+            render json: @playlist, status: :ok
         else 
             render json: { errors: @playlist.errors.full_messages }, status: :unprocessable_entity
         end
-        render :update
+        # render :update
     end
 
 

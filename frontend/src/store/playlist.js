@@ -6,6 +6,7 @@ export const GET_PLAYLIST = 'playlists/getPlaylist';
 export const REMOVE_PLAYLIST = 'playlists/removePlaylist';
 export const SET_PLAYLIST = 'playlist/setPlaylist';
 export const SET_PLAYLIST_ID = 'playlist/SET_PLAYLIST_ID';
+export const UPDATE_PLAYLIST = 'playlist/UPDATE_PLAYLIST';
 
 export const setPlaylist = playlist => ({
   type: SET_PLAYLIST,
@@ -32,6 +33,11 @@ export const removePlaylist = playlistId => ({
     playlistId
 });
 
+export const updatePlaylistAction = (playlist) => ({
+    type: UPDATE_PLAYLIST,
+    playlist
+})
+
 export const createPlaylist = (playlist) => async dispatch => {
     const res = await csrfFetch('/api/playlists', {
         method: 'POST',
@@ -54,8 +60,9 @@ export const updatePlaylist = (playlistId, updatedPlaylist) => async dispatch =>
         }
     });
     const data = await res.json();
-    dispatch(setPlaylist(data));
-    return data
+    debugger
+    dispatch(receivePlaylist(data));
+    // return data
 }
 
 export const deletePlaylist = (playlistId) => async dispatch => {

@@ -93,10 +93,12 @@ const AlbumSongs = ({sessionUser}) => {
         }
 
         if (isPlaying && sameAlbumCheck) {
+
             dispatch(receivePlayState(false))
         }
 
         if (isPlaying && !sameAlbumCheck) {
+
             dispatch(playSong(songs[0]))
             dispatch(playAlbum(songs, albumId))
             dispatch(resetSongId())

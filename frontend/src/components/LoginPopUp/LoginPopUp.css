@@ -73,6 +73,7 @@
     font-weight: bold;
     padding: 16px 35px 16px 35px;
     background-color: #1ed760;
+    cursor: pointer;
 }
 
 .login-modal-buttons:hover{

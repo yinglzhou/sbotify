@@ -2,47 +2,63 @@ import { useState } from 'react';
 import './EditPlaylistModal.css';
 import { updatePlaylist } from '../../store/playlist';
 import { useSelector } from 'react-redux';
-const EditPlaylistModal = ({show, handleClose, handleSave, playlistname, playlistId}) => {
-    const [playlistName, setPlaylistName] = useState(playlistname);
+import { setEditModalStatus } from '../../store/ui';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
+const EditPlaylistModal = () => {
+    const dispatch = useDispatch();
+    const {playlistId} = useParams();
     const ownerid = useSelector(state => state.session && state.session.user ? state.session.user.id : null)
+    const playlist_name = useSelector(state => state.playlists && state.playlists.playlist ? state.playlists.playlist.name : null)
+
+    const [playlistName, setPlaylistName] = useState(playlist_name);
 
     const handleName = (e) => {
         setPlaylistName(e.target.value);
     }
+    const handleClose = (e) => {
+        if (e.target.id !== 'edit-inner-container' && !e.target.closest('#edit-inner-container')) {
+            dispatch(setEditModalStatus(false))
+        }
+        
+    }
 
     const handleModalSave = () => {
-        updatePlaylist(playlistId, {name: playlistName, ownerId: ownerid})
-        handleClose();
+        // debugger
+        dispatch(updatePlaylist(playlistId, {name: playlistName}))
+        dispatch(setEditModalStatus(false))
     };
 
-    if (!show) { return null };
     return (
-        <div className='modal-container'>
-            <div className='modal-content'>
+        <div id='login-big-container' onClick={handleClose}>
+            <div id='edit-inner-container'>
                 <div id='edit-modal-header'>
                     <h3>Edit Details</h3>
-                    <button className="close-button" onClick={handleClose}>
-                        <i className="fa-regular fa-times" />
-                    </button>
-                </div>
-
-                <div className='edit-modal-middle'>
-                    <div>
-                        <img id='mini-album-cover'src={require('./assets/no-cover.png')}/>
+                    <div id="edit-close" onClick={() => dispatch(setEditModalStatus(false))}>
+                        <i className="fa-solid fa-xmark" />
                     </div>
                 </div>
 
-                <div className='update-fields'>
-                    <input
-                        id='playlist-name-update'
-                        type='text'
-                        value={playlistName}
-                        onChange={handleName}
-                    />
+                <div id='edit-image-text-container'>
+                    <div id='edit-album-art'>
+                        <img src={require('./assets/no-cover.png')}/>
+                    </div>
+
+                    <div id='edit-text-side'>
+                        <input
+                            id='playlist-name-update'
+                            type='text'
+                            value={playlistName}
+                            onChange={handleName}
+                            placeholder={playlistName}
+                            />
+                        <div id='edit-description-placeholder'></div>
+                    </div>
                 </div>
 
-                <div className='modal-submit'>
-                    <button className='save-button' onClick={handleModalSave}>Save</button>
+                <div className="login-modal-buttons" id='only-edit' onClick={handleModalSave}>
+                    Save
                 </div>
             </div>
         </div>

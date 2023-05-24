@@ -9,6 +9,7 @@ import { playPlaylist, playSong, receivePlayState, resetSongId } from '../../sto
 import {deletePlaylistTrack, fetchPlaylistTracks} from '../../store/playlist_track';
 import { useHistory } from 'react-router-dom';
 import EditPlaylistModal from '../EditPlaylistModal/EditPlaylistModal';
+import { setEditModalStatus } from '../../store/ui';
 
 const PlaylistTrackShow = () => {
     const dispatch = useDispatch();
@@ -70,7 +71,6 @@ const PlaylistTrackShow = () => {
     };
 
     useEffect(() => {
-        // debugger
         if (!showMenu) return;
         const closeMenu = () => {
             setShowMenu(false);
@@ -81,7 +81,6 @@ const PlaylistTrackShow = () => {
     };
     }, [showMenu])
     useEffect(() => {
-        // debugger
         if (!showSongMenu) return;
         const closeSongMenu = () => {
             setShowSongMenu(false);
@@ -91,12 +90,10 @@ const PlaylistTrackShow = () => {
 
     };}, [showSongMenu])
 
-    // const [showEditModal, setShowEditModal] = useState(false);
 
     const handleClick = (track) => (e) => {
         e.preventDefault();
         dispatch(playPlaylist(tracks))
-        console.log("ITS HERE")
         dispatch(playSong(track))
         // console.log(`playing ${track.title}`);
     }
@@ -108,11 +105,6 @@ const PlaylistTrackShow = () => {
     const handleDeleteTrack = (playlistId, playlistTrackId) => (e) => {
         dispatch(deletePlaylistTrack(playlistId, playlistTrackId))
     }
-
-    // const handleEditClick = () => {
-    //     setShowMenu(false);
-    //     setShowEditModal(true)
-    // }
 
     return (
         <div className='main-content-container'>
@@ -145,9 +137,9 @@ const PlaylistTrackShow = () => {
                         {showMenu && 
                         (<div id='delete-dropdown'>
                             <ul className='profile-dropdown'>
-                                {/* <li>
-                                    <div onClick={handleEditClick}>Edit Playlist</div>
-                                </li> */}
+                                <li>
+                                    <div onClick={() => dispatch(setEditModalStatus(true))}>Edit Playlist</div>
+                                </li>
                                 <li>
                                     <div onClick={handleDelete(playlistId)}>Delete Playlist</div>
                                 </li>
@@ -171,7 +163,7 @@ const PlaylistTrackShow = () => {
                                         onMouseEnter={() => handleHover(track)}
                                         onMouseLeave={() => handleLeave(track)}>
                                         <div id='song-ellipsis-holder'>
-                                                <div id='individual-songs' onClick={() => handleClick(track)}>
+                                                <div id='individual-songs' onClick={handleClick(track)}>
                                                     <div>{i + 1}</div>
                                                     <div id='individual-title'>{track.title}</div>
                                                     <div>{track.duration}</div>
@@ -196,14 +188,6 @@ const PlaylistTrackShow = () => {
 
                     </div>
                 </div>
-
-            {/* {showEditModal && 
-                <EditPlaylistModal 
-                show={showEditModal} 
-                handleClose={setShowEditModal} 
-                playlistname={playlist_name}
-                playlistId={playlistId}
-                />} */}
 
 
         </div>
