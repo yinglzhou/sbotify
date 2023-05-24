@@ -29,6 +29,7 @@ const PlaylistTrackShow = () => {
     
     const [showMenu, setShowMenu] = useState(false);
     const [showSongMenu, setShowSongMenu] = useState("");
+    const [activeTrackId, setActiveTrackId] = useState(null);
     const [isHovered, setIsHovered] = useState(null);
 
     const sameAlbumCheck = (playlistId === currentPlaylistId)
@@ -160,15 +161,15 @@ const PlaylistTrackShow = () => {
                                 return (
                                 <>
                                     <div id='individual-song-holder'  
-                                        onMouseEnter={() => handleHover(track)}
-                                        onMouseLeave={() => handleLeave(track)}>
+                                        onMouseEnter={() => setActiveTrackId(track.id)}
+                                        onMouseLeave={() => setActiveTrackId(null)}>
                                         <div id='song-ellipsis-holder'>
                                                 <div id='individual-songs' onClick={handleClick(track)}>
                                                     <div>{i + 1}</div>
                                                     <div id='individual-title'>{track.title}</div>
                                                     <div>{track.duration}</div>
                                                 </div>
-                                                {isHovered?.id === track.id && 
+                                                {activeTrackId === track.id && 
                                                 <div id='track-ellipsis' onClick={() => openSongMenu(track)}><i className="fa-solid fa-ellipsis"/></div>}
                                         </div>
                                     </div>

@@ -11,11 +11,33 @@
 }
 #song-remove-dropdown {
     position: absolute;
-    top: 531px;
     width: 196px;
     z-index: 10000;
     background-color: #282828;
     font-size: 14px;
     border-radius: 3px;
-    left: 83.3vw;
+    right: 6.5vw;
+    transform: translateY(-96%);
 }
+/* #song-remove-dropdown { */
+    /* position: absolute; */
+    /* width: 196px; */
+    /* z-index: 10000; */
+    /* background-color: #282828; */
+    /* font-size: 14px; */
+    /* border-radius: 3px; */
+    /* left: 83.3vw; */
+    /* left: calc(100% + 10px); Adjust the value to position the dropdown relative to the ellipsis */
+  /* top: 0; */
+  /* transform: translateX(-50%); */
+/* } */
+
+/* 
+position: relative;
+    top: 0vw;
+    width: 196px;
+    z-index: 10000;
+    background-color: red;
+    font-size: 14px;
+    border-radius: 3px;
+    left: 62vw; */
