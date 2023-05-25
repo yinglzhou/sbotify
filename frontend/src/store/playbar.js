@@ -117,7 +117,7 @@ const initialState = {
 const playbarReducer = (state={}, action) => {
     switch (action.type) {
         case SET_CURRENT_SONG:
-            console.log('resetting song')
+            // console.log('resetting song')
             let currentSongId;
             if (state.currentAlbum) {
                 currentSongId = state.currentAlbum.indexOf(action.payload)
@@ -202,7 +202,7 @@ const playbarReducer = (state={}, action) => {
 
 
         case SET_PLAY_STATUS:
-            console.log('setting play-state')
+            // console.log('setting play-state')
             return { ...state, isPlaying: action.payload }
         case SET_CURRENT_TIME:
             return { ...state, currentTime: action.payload }

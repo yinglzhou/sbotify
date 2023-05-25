@@ -46,7 +46,7 @@ const AlbumSongs = ({sessionUser}) => {
     }
 
     function openSongMenu(song) {
-        console.log(song)
+        // console.log(song)
         setShowSongMenu(song.id);
     };
     useEffect(() => {
@@ -111,7 +111,7 @@ const AlbumSongs = ({sessionUser}) => {
             playlist_id: playlistId,
             song_id: songId
         }
-        console.log(data)
+        // console.log(data)
         dispatch(createPlaylistTrack(playlistId, data))
     }
 
