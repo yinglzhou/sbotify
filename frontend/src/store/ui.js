@@ -25,7 +25,7 @@ export const setEditModalStatus = boolean => async dispatch => {
 export const setLoginModalPic = pic => async dispatch => {
     dispatch(loginModalPic(pic))
 }
-// debugger
+
 const uiReducer = (state={}, action) => {
     switch (action.type) {
         case SET_LOGIN_MODAL_STATUS:

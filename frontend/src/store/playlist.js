@@ -62,7 +62,6 @@ export const updatePlaylist = (playlistId, updatedPlaylist) => async dispatch =>
     const data = await res.json();
     debugger
     dispatch(receivePlaylist(data));
-    // return data
 }
 
 export const deletePlaylist = (playlistId) => async dispatch => {

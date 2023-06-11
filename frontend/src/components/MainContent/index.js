@@ -2,7 +2,6 @@ import './MainContent.css';
 import { useSelector } from 'react-redux';
 import AlbumShow from '../AlbumShow/AlbumShow';
 
-// function Time() {
 export const Time = () => {
         const date = new Date();
         const hours = date.getHours();

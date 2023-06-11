@@ -25,7 +25,6 @@ const EditPlaylistModal = () => {
     }
 
     const handleModalSave = () => {
-        // debugger
         dispatch(updatePlaylist(playlistId, {name: playlistName}))
         dispatch(setEditModalStatus(false))
     };

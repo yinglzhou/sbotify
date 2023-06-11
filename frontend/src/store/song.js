@@ -35,7 +35,6 @@ const songReducer = (state = {}, action) => {
             return {...state, ...action.songs}
         case GET_SONG:
             let nextState = {...state}
-            // console.log(action)
             nextState[action.song.song.id] = action.song.song
             return nextState
         default: 

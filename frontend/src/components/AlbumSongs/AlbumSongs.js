@@ -118,7 +118,6 @@ const AlbumSongs = ({sessionUser}) => {
 
     return (
         <div id='main-content-container-songs'>
-            {/* {showLoginModal && <LoginPopUp/>} */}
                 <div id='album-banner'>
                     <img src={cover} alt="cover"></img>
                         <div id='next-to-image'>
