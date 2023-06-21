@@ -1,6 +1,6 @@
 .main-content-container {
     width: 82vw;
-    height: 200vmax;
+    /* height: 200vmax; */
     background-color: #171717;
     position: absolute;
     z-index: 1;
@@ -29,6 +29,7 @@
 
 #album-content-container {
     padding: 30px;
+    padding-bottom: 15vh;
 }
 
 #greeting {

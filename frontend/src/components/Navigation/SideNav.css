@@ -77,5 +77,6 @@
 }
 
 .side-options-holder-links {
-    margin-top: 24vw;
+    /* margin-top: 24vw; */
+    margin-top: 24vh;
 }
