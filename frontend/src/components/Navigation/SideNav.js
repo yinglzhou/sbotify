@@ -37,6 +37,8 @@ const SideNav = ({sessionUser}) => {
 
     return (
         <div id="side-bar">
+            <div>
+
             <Link to="/" className='side-option-text'>
                 <div className="iconn" >
                     <div id='iconn-logo'><i className="fa-brands fa-spotify"></i></div>
@@ -77,6 +79,7 @@ const SideNav = ({sessionUser}) => {
 
             <div className='side-options-holder-playlists'>
                 {sessionUser && <PlaylistShow />}
+            </div>
             </div>
             <div className='side-options-holder-links'>
             <a href="https://github.com/yinglzhou/sbotify" target="_blank" className='side-option-text'>
