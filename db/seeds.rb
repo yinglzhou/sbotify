@@ -330,478 +330,478 @@ require "open-uri"
 
 
 
-    song1.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Before.mp3"),
-      filename: 'before.mp3')
-    song2.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/High+School+in+Jakarta.mp3"),
-      filename: 'hsinjak.mp3')
-    song3.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Backburner.mp3"),
-      filename: 'backburn.mp3')
-    song4.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Keeping+Tabs.mp3"),
-      filename: 'keepintabs.mp3')
-    song5.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/The+Apartment+We+Won't+Share.mp3"),
-      filename: 'tawws.mp3')
-    song6.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Facebook+Friends.mp3"),
-      filename: 'fbf.mp3')
-    song7.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Anaheim.mp3"),
-      filename: 'anaheim.mp3')
-    song8.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Milk+Teeth.mp3"),
-      filename: 'mt.mp3')
-    song9.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Autumn.mp3"),
-      filename: 'autumn.mp3')
-    song10.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Oceans+%26+Engines.mp3"),
-      filename: 'oae.mp3')
-    song11.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/On+The+Drive+Home.mp3"),
-      filename: 'otdh.mp3')
-    song12.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Take+A+Chance+With+Me.mp3"),
-      filename: 'tacwm.mp3')
+    # song1.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Before.mp3"),
+    #   filename: 'before.mp3')
+    # song2.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/High+School+in+Jakarta.mp3"),
+    #   filename: 'hsinjak.mp3')
+    # song3.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Backburner.mp3"),
+    #   filename: 'backburn.mp3')
+    # song4.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Keeping+Tabs.mp3"),
+    #   filename: 'keepintabs.mp3')
+    # song5.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/The+Apartment+We+Won't+Share.mp3"),
+    #   filename: 'tawws.mp3')
+    # song6.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Facebook+Friends.mp3"),
+    #   filename: 'fbf.mp3')
+    # song7.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Anaheim.mp3"),
+    #   filename: 'anaheim.mp3')
+    # song8.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Milk+Teeth.mp3"),
+    #   filename: 'mt.mp3')
+    # song9.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Autumn.mp3"),
+    #   filename: 'autumn.mp3')
+    # song10.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Oceans+%26+Engines.mp3"),
+    #   filename: 'oae.mp3')
+    # song11.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/On+The+Drive+Home.mp3"),
+    #   filename: 'otdh.mp3')
+    # song12.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Nicole/Take+A+Chance+With+Me.mp3"),
+    #   filename: 'tacwm.mp3')
 
-    song13.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Let+Me+Go.mp3"),
-      filename: 'lmg.mp3')
-    song14.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Scarred.mp3"),
-      filename: 'scarred.mp3')
-    song15.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/dec+11th.mp3"),
-      filename: 'dec11.mp3')
-    song16.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/This+Will+Do.mp3"),
-      filename: 'twd.mp3')
-    song17.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Get+To+You.mp3"),
-      filename: 'gty.mp3')
-    song18.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Tryna+Be.mp3"),
-      filename: 'trynabe.mp3')
-    song19.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Make+You+Mine.mp3"),
-      filename: 'makeyoumine.mp3')
-    song20.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/july+16th.mp3"),
-      filename: 'july16.mp3')
-    song21.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/For+Tonight.mp3"),
-      filename: 'fortonight.mp3')
-    song22.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Lost+Me.mp3"),
-      filename: 'lostme.mp3')
-    song23.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Lie+Again.mp3"),
-      filename: 'lieagain.mp3')
-    song24.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Another+Heartbreak.mp3"),
-      filename: 'anotherheartbreak.mp3')
-    song25.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/At+Least+We+Tried.mp3"),
-      filename: 'atleastwetried.mp3')
-    song26.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Remind+Me.mp3"),
-      filename: 'remindme.mp3')
-    song27.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Unholy+Matrimony.mp3"),
-      filename: 'unholy.mp3')
+    # song13.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Let+Me+Go.mp3"),
+    #   filename: 'lmg.mp3')
+    # song14.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Scarred.mp3"),
+    #   filename: 'scarred.mp3')
+    # song15.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/dec+11th.mp3"),
+    #   filename: 'dec11.mp3')
+    # song16.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/This+Will+Do.mp3"),
+    #   filename: 'twd.mp3')
+    # song17.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Get+To+You.mp3"),
+    #   filename: 'gty.mp3')
+    # song18.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Tryna+Be.mp3"),
+    #   filename: 'trynabe.mp3')
+    # song19.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Make+You+Mine.mp3"),
+    #   filename: 'makeyoumine.mp3')
+    # song20.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/july+16th.mp3"),
+    #   filename: 'july16.mp3')
+    # song21.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/For+Tonight.mp3"),
+    #   filename: 'fortonight.mp3')
+    # song22.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Lost+Me.mp3"),
+    #   filename: 'lostme.mp3')
+    # song23.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Lie+Again.mp3"),
+    #   filename: 'lieagain.mp3')
+    # song24.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Another+Heartbreak.mp3"),
+    #   filename: 'anotherheartbreak.mp3')
+    # song25.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/At+Least+We+Tried.mp3"),
+    #   filename: 'atleastwetried.mp3')
+    # song26.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Remind+Me.mp3"),
+    #   filename: 'remindme.mp3')
+    # song27.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Give+or+Take/Unholy+Matrimony.mp3"),
+    #   filename: 'unholy.mp3')
 
-    song28.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Seraph.mp3"),
-      filename: 'seraph.mp3')
+    # song28.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Seraph.mp3"),
+    #   filename: 'seraph.mp3')
     
-    song29.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/1+Shot.mp3"),
-      filename: '1shot.mp3')
+    # song29.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/1+Shot.mp3"),
+    #   filename: '1shot.mp3')
     
-    song30.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Mood.mp3"),
-      filename: 'mood.mp3')
+    # song30.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Mood.mp3"),
+    #   filename: 'mood.mp3')
 
-    song31.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Miss+Understood.mp3"),
-      filename: 'miss.mp3')
-    song32.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Avalon.mp3"),
-      filename: 'avalon.mp3')
-    song33.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Merry+Go.mp3"),
-      filename: 'merrygo.mp3')
+    # song31.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Miss+Understood.mp3"),
+    #   filename: 'miss.mp3')
+    # song32.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Avalon.mp3"),
+    #   filename: 'avalon.mp3')
+    # song33.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Merry+Go.mp3"),
+    #   filename: 'merrygo.mp3')
 
-    song34.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Ribbon.mp3"),
-      filename: 'ribbon.mp3')
-    song35.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Winterfall.mp3"),
-      filename: 'winterfall.mp3')
-    song36.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Calico.mp3"),
-      filename: 'calico.mp3')
-    song37.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Mr.+Insanity.mp3"),
-      filename: 'insanity.mp3')
-    song38.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Ballroom+Extravaganza.mp3"),
-      filename: 'ballroom.mp3')
-    song39.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Sometimes+I'm.mp3"),
-      filename: 'sometimes.mp3')
+    # song34.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Ribbon.mp3"),
+    #   filename: 'ribbon.mp3')
+    # song35.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Winterfall.mp3"),
+    #   filename: 'winterfall.mp3')
+    # song36.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Calico.mp3"),
+    #   filename: 'calico.mp3')
+    # song37.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Mr.+Insanity.mp3"),
+    #   filename: 'insanity.mp3')
+    # song38.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Ballroom+Extravaganza.mp3"),
+    #   filename: 'ballroom.mp3')
+    # song39.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Moodswings+In+To+Order/Sometimes+I'm.mp3"),
+    #   filename: 'sometimes.mp3')
 
 
-    song40.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/PINK+CITY.mp3"),
-      filename: 'pinkcity.mp3')
-    song41.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Heaven.mp3"),
-      filename: 'heaven.mp3')
-    song42.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Paradise.mp3"),
-      filename: 'paradise.mp3')
-    song43.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Magic.mp3"),
-      filename: 'magic.mp3')
-    song44.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/So+Sweet.mp3"),
-      filename: 'sosweet.mp3')
-    song45.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Chains.mp3"),
-      filename: 'chains.mp3')
-    song46.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Interlude.mp3"),
-      filename: 'interlude.mp3')
-    song47.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Beautiful+Life.mp3"),
-      filename: 'beautiful.mp3')
-    song48.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/PINK+MONEY.mp3"),
-      filename: 'pinkmoney.mp3')
-    song49.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/At+My+Worst.mp3"),
-      filename: 'atmyworst.mp3')
-    song50.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/17.mp3"),
-      filename: '17.mp3')
-    song51.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Lows.mp3"),
-      filename: 'lows.mp3')
-    song52.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Not+Alright.mp3"),
-      filename: 'notalright.mp3')
-    song53.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Give+It+To+Me.mp3"),
-      filename: 'giveittome.mp3')
-    song54.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Icy.mp3"),
-      filename: 'icy.mp3')
-    song55.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/PINK+FAMILY.mp3"),
-      filename: 'pinkfam.mp3')
-    song56.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/At+My+Worst+(feat.+Kehlani).mp3"),
-      filename: 'atmyworstke.mp3')
-    song57.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Honesty.mp3"),
-      filename: 'honesty.mp3')
+    # song40.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/PINK+CITY.mp3"),
+    #   filename: 'pinkcity.mp3')
+    # song41.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Heaven.mp3"),
+    #   filename: 'heaven.mp3')
+    # song42.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Paradise.mp3"),
+    #   filename: 'paradise.mp3')
+    # song43.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Magic.mp3"),
+    #   filename: 'magic.mp3')
+    # song44.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/So+Sweet.mp3"),
+    #   filename: 'sosweet.mp3')
+    # song45.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Chains.mp3"),
+    #   filename: 'chains.mp3')
+    # song46.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Interlude.mp3"),
+    #   filename: 'interlude.mp3')
+    # song47.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Beautiful+Life.mp3"),
+    #   filename: 'beautiful.mp3')
+    # song48.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/PINK+MONEY.mp3"),
+    #   filename: 'pinkmoney.mp3')
+    # song49.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/At+My+Worst.mp3"),
+    #   filename: 'atmyworst.mp3')
+    # song50.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/17.mp3"),
+    #   filename: '17.mp3')
+    # song51.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Lows.mp3"),
+    #   filename: 'lows.mp3')
+    # song52.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Not+Alright.mp3"),
+    #   filename: 'notalright.mp3')
+    # song53.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Give+It+To+Me.mp3"),
+    #   filename: 'giveittome.mp3')
+    # song54.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Icy.mp3"),
+    #   filename: 'icy.mp3')
+    # song55.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/PINK+FAMILY.mp3"),
+    #   filename: 'pinkfam.mp3')
+    # song56.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/At+My+Worst+(feat.+Kehlani).mp3"),
+    #   filename: 'atmyworstke.mp3')
+    # song57.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/PINK+PLANET/Honesty.mp3"),
+    #   filename: 'honesty.mp3')
     
-    song58.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/SOS.mp3"),
-      filename: 'sos.mp3')
-    song59.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Kill+Bill.mp3"),
-      filename: 'killbill.mp3')
-    song60.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Seek+%26+Destroy.mp3"),
-      filename: 'seek.mp3')
-    song61.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Low.mp3"),
-      filename: 'low.mp3')
-    song62.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Love+Language.mp3"),
-      filename: 'll.mp3')
-    song63.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Blind.mp3"),
-      filename: 'blind.mp3')
-    song64.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Used+(feat.+Don+Toliver).mp3"),
-      filename: 'used.mp3')
-    song65.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Snooze.mp3"),
-      filename: 'snooze.mp3')
-    song66.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Notice+Me.mp3"),
-      filename: 'noticeme.mp3')
-    song67.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Gone+Girl.mp3"),
-      filename: 'gg.mp3')
-    song68.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Smoking+on+my+Ex+Pack.mp3"),
-      filename: 'smokin.mp3')
-    song69.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Ghost+in+the+Machine+(feat.+Phoebe+Bridgers).mp3"),
-      filename: 'ghost.mp3')
-    song70.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/F2F.mp3"),
-      filename: 'f2f.mp3')
-    song71.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Nobody+Gets+Me.mp3"),
-      filename: 'nobody.mp3')
-    song72.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Conceited.mp3"),
-      filename: 'conceited.mp3')
-    song73.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Special.mp3"),
-      filename: 'special.mp3')
-    song74.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Too+Late.mp3"),
-      filename: 'toolate.mp3')
-    song75.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Far.mp3"),
-      filename: 'far.mp3')
-    song76.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Shirt.mp3"),
-      filename: 'shirt.mp3')
-    song77.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Open+Arms+(feat.+Travis+Scott).mp3"),
-      filename: 'open.mp3')
-    song78.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/I+Hate+U.mp3"),
-      filename: 'hate.mp3')
-    song79.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Good+Days.mp3"),
-      filename: 'good.mp3')
-    song80.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Forgiveless+(feat.+Ol'+Dirty+Bastard).mp3"),
-      filename: 'forgiv.mp3')
+    # song58.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/SOS.mp3"),
+    #   filename: 'sos.mp3')
+    # song59.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Kill+Bill.mp3"),
+    #   filename: 'killbill.mp3')
+    # song60.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Seek+%26+Destroy.mp3"),
+    #   filename: 'seek.mp3')
+    # song61.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Low.mp3"),
+    #   filename: 'low.mp3')
+    # song62.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Love+Language.mp3"),
+    #   filename: 'll.mp3')
+    # song63.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Blind.mp3"),
+    #   filename: 'blind.mp3')
+    # song64.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Used+(feat.+Don+Toliver).mp3"),
+    #   filename: 'used.mp3')
+    # song65.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Snooze.mp3"),
+    #   filename: 'snooze.mp3')
+    # song66.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Notice+Me.mp3"),
+    #   filename: 'noticeme.mp3')
+    # song67.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Gone+Girl.mp3"),
+    #   filename: 'gg.mp3')
+    # song68.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Smoking+on+my+Ex+Pack.mp3"),
+    #   filename: 'smokin.mp3')
+    # song69.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Ghost+in+the+Machine+(feat.+Phoebe+Bridgers).mp3"),
+    #   filename: 'ghost.mp3')
+    # song70.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/F2F.mp3"),
+    #   filename: 'f2f.mp3')
+    # song71.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Nobody+Gets+Me.mp3"),
+    #   filename: 'nobody.mp3')
+    # song72.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Conceited.mp3"),
+    #   filename: 'conceited.mp3')
+    # song73.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Special.mp3"),
+    #   filename: 'special.mp3')
+    # song74.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Too+Late.mp3"),
+    #   filename: 'toolate.mp3')
+    # song75.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Far.mp3"),
+    #   filename: 'far.mp3')
+    # song76.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Shirt.mp3"),
+    #   filename: 'shirt.mp3')
+    # song77.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Open+Arms+(feat.+Travis+Scott).mp3"),
+    #   filename: 'open.mp3')
+    # song78.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/I+Hate+U.mp3"),
+    #   filename: 'hate.mp3')
+    # song79.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Good+Days.mp3"),
+    #   filename: 'good.mp3')
+    # song80.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/SOS/Forgiveless+(feat.+Ol'+Dirty+Bastard).mp3"),
+    #   filename: 'forgiv.mp3')
 
 
-    song81.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/always.mp3"),
-      filename: 'always.mp3')
-    song82.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/more.mp3"),
-      filename: 'more.mp3')
-    song83.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/drunk.mp3"),
-      filename: 'drunk.mp3')
-    song84.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/talk.mp3"),
-      filename: 'talk.mp3')
-    song85.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/B.Y.S..mp3"),
-      filename: 'bys.mp3')
-    song86.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/us.mp3"),
-      filename: 'us.mp3')
+    # song81.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/always.mp3"),
+    #   filename: 'always.mp3')
+    # song82.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/more.mp3"),
+    #   filename: 'more.mp3')
+    # song83.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/drunk.mp3"),
+    #   filename: 'drunk.mp3')
+    # song84.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/talk.mp3"),
+    #   filename: 'talk.mp3')
+    # song85.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/B.Y.S..mp3"),
+    #   filename: 'bys.mp3')
+    # song86.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/always/us.mp3"),
+    #   filename: 'us.mp3')
 
 
-    song87.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Starboy+(feat.+Daft+Punk).mp3"),
-      filename: 'starboy.mp3')
-    song88.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Party+Monster.mp3"),
-      filename: 'party.mp3')
-    song89.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/False+Alarm.mp3"),
-      filename: 'false.mp3')
-    song90.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Reminder.mp3"),
-      filename: 'remind.mp3')
-    song91.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Reminder.mp3"),
-      filename: 'rockin.mp3')
-    song92.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Secrets.mp3"),
-      filename: 'secret.mp3')
-    song93.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/True+Colors.mp3"),
-      filename: 'truecolors.mp3')
-    song94.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Stargirl+Interlude+(feat.+Lana+Del+Rey).mp3"),
-      filename: 'stargirl.mp3')
-    song95.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Sidewalks+(feat.+Kendrick+Lamar).mp3"),
-      filename: 'sidewalks.mp3')
-    song96.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Six+Feet+Under.mp3"),
-      filename: 'sixfeet.mp3')
-    song97.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Love+To+Lay.mp3"),
-      filename: 'lovetolay.mp3')
-    song98.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/A+Lonely+Night.mp3"),
-      filename: 'lonelynight.mp3')
-    song99.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Attention.mp3"),
-      filename: 'attention.mp3')
-    song100.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Ordinary+Life.mp3"),
-      filename: 'ordinary.mp3')
-    song101.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Nothing+Without+You.mp3"),
-      filename: 'nothingwoyou.mp3')
-    song102.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/All+I+Know+(feat.+Future).mp3"),
-      filename: 'alliknow.mp3')
-    song103.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Die+For+You.mp3"),
-      filename: 'dieforyou.mp3')
-    song104.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/I+Feel+It+Coming+(feat.+Daft+Punk).mp3"),
-      filename: 'ifeelitcoming.mp3')
-    song105.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Die+For+You+(with+Ariana+Grande)+-+Remix.mp3"),
-      filename: 'dieforuremix.mp3')
-    song106.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Starboy+(feat.+Daft+Punk)+-+Remix.mp3"),
-      filename: 'starboyremix.mp3')
-    song107.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Reminder+(feat.+A%24AP+Rocky+%26+Young+Thug)+-+Remix.mp3"),
-      filename: 'reminder.mp3')
+    # song87.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Starboy+(feat.+Daft+Punk).mp3"),
+    #   filename: 'starboy.mp3')
+    # song88.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Party+Monster.mp3"),
+    #   filename: 'party.mp3')
+    # song89.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/False+Alarm.mp3"),
+    #   filename: 'false.mp3')
+    # song90.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Reminder.mp3"),
+    #   filename: 'remind.mp3')
+    # song91.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Reminder.mp3"),
+    #   filename: 'rockin.mp3')
+    # song92.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Secrets.mp3"),
+    #   filename: 'secret.mp3')
+    # song93.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/True+Colors.mp3"),
+    #   filename: 'truecolors.mp3')
+    # song94.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Stargirl+Interlude+(feat.+Lana+Del+Rey).mp3"),
+    #   filename: 'stargirl.mp3')
+    # song95.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Sidewalks+(feat.+Kendrick+Lamar).mp3"),
+    #   filename: 'sidewalks.mp3')
+    # song96.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Six+Feet+Under.mp3"),
+    #   filename: 'sixfeet.mp3')
+    # song97.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Love+To+Lay.mp3"),
+    #   filename: 'lovetolay.mp3')
+    # song98.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/A+Lonely+Night.mp3"),
+    #   filename: 'lonelynight.mp3')
+    # song99.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Attention.mp3"),
+    #   filename: 'attention.mp3')
+    # song100.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Ordinary+Life.mp3"),
+    #   filename: 'ordinary.mp3')
+    # song101.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Nothing+Without+You.mp3"),
+    #   filename: 'nothingwoyou.mp3')
+    # song102.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/All+I+Know+(feat.+Future).mp3"),
+    #   filename: 'alliknow.mp3')
+    # song103.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Die+For+You.mp3"),
+    #   filename: 'dieforyou.mp3')
+    # song104.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/I+Feel+It+Coming+(feat.+Daft+Punk).mp3"),
+    #   filename: 'ifeelitcoming.mp3')
+    # song105.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Die+For+You+(with+Ariana+Grande)+-+Remix.mp3"),
+    #   filename: 'dieforuremix.mp3')
+    # song106.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Starboy+(feat.+Daft+Punk)+-+Remix.mp3"),
+    #   filename: 'starboyremix.mp3')
+    # song107.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Starboy(Deluxe)/Reminder+(feat.+A%24AP+Rocky+%26+Young+Thug)+-+Remix.mp3"),
+    #   filename: 'reminder.mp3')
 
 
-    song108.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/u+should+feel+special.mp3"),
-      filename: 'special.mp3')
-    song109.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/obsessed.mp3"),
-      filename: 'obsessed.mp3')
-    song110.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/dumb+luck.mp3"),
-      filename: 'dumb.mp3')
-    song111.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/trust+(feat.+RINI).mp3"),
-      filename: 'trust.mp3')
-    song112.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/playing+tricks.mp3"),
-      filename: 'playing.mp3')
-    song113.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/insecurities.mp3"),
-      filename: 'insecure.mp3')
-    song114.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/girls+like+me+don't+cry.mp3"),
-      filename: 'girlslikeme.mp3')
+    # song108.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/u+should+feel+special.mp3"),
+    #   filename: 'special.mp3')
+    # song109.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/obsessed.mp3"),
+    #   filename: 'obsessed.mp3')
+    # song110.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/dumb+luck.mp3"),
+    #   filename: 'dumb.mp3')
+    # song111.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/trust+(feat.+RINI).mp3"),
+    #   filename: 'trust.mp3')
+    # song112.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/playing+tricks.mp3"),
+    #   filename: 'playing.mp3')
+    # song113.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/insecurities.mp3"),
+    #   filename: 'insecure.mp3')
+    # song114.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/girls+like+me+don't+cry/girls+like+me+don't+cry.mp3"),
+    #   filename: 'girlslikeme.mp3')
 
   
-    song115.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Wide+Open+(Foreword).mp3"),
-      filename: 'wide.mp3')
-    song116.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Switchblade.mp3"),
-      filename: 'switchblade.mp3')
-    song117.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Nightcrawlers.mp3"),
-      filename: 'nightcrawl.mp3')
-    song118.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Selene.mp3"),
-      filename: 'selene.mp3')
-    song119.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Switchblade.mp3"),
-      filename: 'tide.mp3')
-    song120.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Pandemonium.mp3"),
-      filename: 'panda.mp3')
-    song121.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Lose.mp3"),
-      filename: 'lose.mp3')
-    song122.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Plot+Twist.mp3"),
-      filename: 'plot.mp3')
-    song123.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/If+There's+Nothing+Left....mp3"),
-      filename: 'iftheres.mp3')
-    song124.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Drive+On.mp3"),
-      filename: 'driveon.mp3')
+    # song115.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Wide+Open+(Foreword).mp3"),
+    #   filename: 'wide.mp3')
+    # song116.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Switchblade.mp3"),
+    #   filename: 'switchblade.mp3')
+    # song117.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Nightcrawlers.mp3"),
+    #   filename: 'nightcrawl.mp3')
+    # song118.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Selene.mp3"),
+    #   filename: 'selene.mp3')
+    # song119.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Switchblade.mp3"),
+    #   filename: 'tide.mp3')
+    # song120.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Pandemonium.mp3"),
+    #   filename: 'panda.mp3')
+    # song121.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Lose.mp3"),
+    #   filename: 'lose.mp3')
+    # song122.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Plot+Twist.mp3"),
+    #   filename: 'plot.mp3')
+    # song123.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/If+There's+Nothing+Left....mp3"),
+    #   filename: 'iftheres.mp3')
+    # song124.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/MOONCHILD/Drive+On.mp3"),
+    #   filename: 'driveon.mp3')
 
 
-    song125.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/The+Beach.mp3"),
-      filename: 'beach.mp3')
-    song126.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/World+We+Created.mp3"),
-      filename: 'world.mp3')
-    song127.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Take+Time+(Interlude).mp3"),
-      filename: 'take.mp3')
-    song128.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Favorite+Mistake.mp3"),
-      filename: 'favorite.mp3')
-    song129.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/This+Ain't+Love.mp3"),
-      filename: 'thisaint.mp3')
-    song130.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Heartbreak+Anniversary.mp3"),
-      filename: 'heart.mp3')
-    song131.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Like+I+Want+You.mp3"),
-      filename: 'likeiwant.mp3')
-    song132.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Vanish.mp3"),
-      filename: 'vanish.mp3')
-    song133.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/When+It's+All+Said+And+Done.mp3"),
-      filename: 'whenitsall.mp3')
-    song134.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Still+Your+Best.mp3"),
-      filename: 'stillyour.mp3')
-    song135.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Last+Time+(feat.+Snoh+Aalegra).mp3"),
-      filename: 'lasttime.mp3')
-    song136.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Stuck+On+You.mp3"),
-      filename: 'stuck.mp3')
-    song137.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/All+To+Me.mp3"),
-      filename: 'all.mp3')
+    # song125.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/The+Beach.mp3"),
+    #   filename: 'beach.mp3')
+    # song126.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/World+We+Created.mp3"),
+    #   filename: 'world.mp3')
+    # song127.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Take+Time+(Interlude).mp3"),
+    #   filename: 'take.mp3')
+    # song128.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Favorite+Mistake.mp3"),
+    #   filename: 'favorite.mp3')
+    # song129.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/This+Ain't+Love.mp3"),
+    #   filename: 'thisaint.mp3')
+    # song130.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Heartbreak+Anniversary.mp3"),
+    #   filename: 'heart.mp3')
+    # song131.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Like+I+Want+You.mp3"),
+    #   filename: 'likeiwant.mp3')
+    # song132.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Vanish.mp3"),
+    #   filename: 'vanish.mp3')
+    # song133.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/When+It's+All+Said+And+Done.mp3"),
+    #   filename: 'whenitsall.mp3')
+    # song134.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Still+Your+Best.mp3"),
+    #   filename: 'stillyour.mp3')
+    # song135.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Last+Time+(feat.+Snoh+Aalegra).mp3"),
+    #   filename: 'lasttime.mp3')
+    # song136.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/Stuck+On+You.mp3"),
+    #   filename: 'stuck.mp3')
+    # song137.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/When+It's+All+Said+and+Done/All+To+Me.mp3"),
+    #   filename: 'all.mp3')
 
-    song138.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Alone+Again.mp3"),
-      filename: 'aloneagain.mp3')
-    song139.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Too+Late.mp3"),
-      filename: 'toolate.mp3')
-    song140.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Hardest+To+Love.mp3"),
-      filename: 'hardest.mp3')
-    song141.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Scared+To+Live.mp3"),
-      filename: 'scared.mp3')
-    song142.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Snowchild.mp3"),
-      filename: 'snowchi.mp3')
-    song143.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Escape+From+LA.mp3"),
-      filename: 'escape.mp3')
-    song144.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Heartless.mp3"),
-      filename: 'heartless.mp3')
-    song145.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Faith.mp3"),
-      filename: 'faith.mp3')
-    song146.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Blinding+Lights.mp3"),
-      filename: 'blinding.mp3')
-    song147.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/In+Your+Eyes.mp3"),
-      filename: 'inyoureyes.mp3')
-    song148.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Save+Your+Tears.mp3"),
-      filename: 'save.mp3')
-    song149.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Repeat+After+Me+(Interlude).mp3"),
-      filename: 'repeat.mp3')
-    song150.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/After+Hours.mp3"),
-      filename: 'afterhours.mp3')
-    song151.mp3.attach(
-      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Until+I+Bleed+Out.mp3"),
-      filename: 'untilibleed.mp3')
+    # song138.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Alone+Again.mp3"),
+    #   filename: 'aloneagain.mp3')
+    # song139.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Too+Late.mp3"),
+    #   filename: 'toolate.mp3')
+    # song140.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Hardest+To+Love.mp3"),
+    #   filename: 'hardest.mp3')
+    # song141.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Scared+To+Live.mp3"),
+    #   filename: 'scared.mp3')
+    # song142.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Snowchild.mp3"),
+    #   filename: 'snowchi.mp3')
+    # song143.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Escape+From+LA.mp3"),
+    #   filename: 'escape.mp3')
+    # song144.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Heartless.mp3"),
+    #   filename: 'heartless.mp3')
+    # song145.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Faith.mp3"),
+    #   filename: 'faith.mp3')
+    # song146.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Blinding+Lights.mp3"),
+    #   filename: 'blinding.mp3')
+    # song147.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/In+Your+Eyes.mp3"),
+    #   filename: 'inyoureyes.mp3')
+    # song148.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Save+Your+Tears.mp3"),
+    #   filename: 'save.mp3')
+    # song149.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Repeat+After+Me+(Interlude).mp3"),
+    #   filename: 'repeat.mp3')
+    # song150.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/After+Hours.mp3"),
+    #   filename: 'afterhours.mp3')
+    # song151.mp3.attach(
+    #   io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Until+I+Bleed+Out.mp3"),
+    #   filename: 'untilibleed.mp3')
     puts "Done!"
 # end
