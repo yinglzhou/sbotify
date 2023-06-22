@@ -16,6 +16,7 @@
     flex-direction: row;
     justify-content: flex-end;
     margin-top: 22px;
+    align-items: center;
 }
 
 
@@ -28,9 +29,14 @@
     transition: 0.3s;
 }
 
+#signup {
+    padding-bottom: 14px;
+}
+
 #signup a:hover {
     color: white;
 }
+
 
 #login {
     margin-top: -18px;

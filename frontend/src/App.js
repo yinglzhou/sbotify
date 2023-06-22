@@ -31,6 +31,7 @@ function App() {
         </Route>
 
         <Route path='/search'>
+          <div id='gray-background'></div>
           {showLoginModal && <LoginPopUp/>}
           <Navigation>
             <SearchBar/>
