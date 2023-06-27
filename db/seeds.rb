@@ -59,6 +59,10 @@ require "open-uri"
     Artist.create!(name: "keshi") #6
     Artist.create!(name: "DPR IAN") #7
     Artist.create!(name: "Pink Sweat$") #8
+    Artist.create!(name: "Taylor Swift") #9
+    Artist.create!(name: "DPR LIVE") #10
+    Artist.create!(name: "Beyoncé") #11
+    Artist.create!(name: "Harry Styles") #12
 
     puts "Creating albums..."
     album1 = Album.create!(name: "Nicole", artist_id: 1) #1
@@ -72,6 +76,10 @@ require "open-uri"
     album9 = Album.create!(name: "MOONCHILD", artist_id: 1) #9
     album10 = Album.create!(name: "When It's All Said And Done... Take Time", artist_id: 2) #10
     album11 = Album.create!(name: "After Hours", artist_id: 4) #11
+    album12 = Album.create!(name: "Midnights", artist_id: 9) #12
+    album13 = Album.create!(name: "Her", artist_id: 10) #13
+    album14 = Album.create!(name: "RENAISSANCE", artist_id: 11) #14
+    album15 = Album.create!(name: "Harry's House", artist_id: 12) #15
 
     puts "Creating songs..."
     song1 = Song.create!(title: "Before", duration: "3:54", album_id: 1, artist_id: 1)
@@ -246,8 +254,59 @@ require "open-uri"
     song150 = Song.create!(title: "After Hours", duration: "6:10", album_id: 11, artist_id: 4)
     song151 = Song.create!(title: "Until I Bleed Out", duration: "3:10", album_id: 11, artist_id: 4)
     
+    song152 = Song.create!(title: "Lavender Haze", duration: "3:22", album_id: 12, artist_id: 9)
+    song153 = Song.create!(title: "Maroon", duration: "3:38", album_id: 12, artist_id: 9)
+    song154 = Song.create!(title: "Anti-Hero", duration: "3:20", album_id: 12, artist_id: 9)
+    song155 = Song.create!(title: "Snow On The Beach (feat. Lana Del Ray)", duration: "4:16", album_id: 12, artist_id: 9)
+    song156 = Song.create!(title: "You're On Your Own Kid", duration: "3:14", album_id: 12, artist_id: 9)
+    song157 = Song.create!(title: "Midnight Rain", duration: "2:54", album_id: 12, artist_id: 9)
+    song158 = Song.create!(title: "Question...?", duration: "3:30", album_id: 12, artist_id: 9)
+    song159 = Song.create!(title: "Vigilante Shit", duration: "2:44", album_id: 12, artist_id: 9)
+    song160 = Song.create!(title: "Bejeweled", duration: "3:14", album_id: 12, artist_id: 9)
+    song161 = Song.create!(title: "Labrinyth", duration: "4:07", album_id: 12, artist_id: 9)
+    song162 = Song.create!(title: "Karma", duration: "3:24", album_id: 12, artist_id: 9)
+    song163 = Song.create!(title: "Sweet Nothing", duration: "3:08", album_id: 12, artist_id: 9)
+    song164 = Song.create!(title: "Mastermind", duration: "3:11", album_id: 12, artist_id: 9)
     
-    
+    song165 = Song.create!(title: "Your Name? (Intro)", duration: "0:16", album_id: 13, artist_id: 10)
+    song166 = Song.create!(title: "Jasmine", duration: "3:21", album_id: 13, artist_id: 10)
+    song167 = Song.create!(title: "Text Me", duration: "2:57", album_id: 13, artist_id: 10)
+    song168 = Song.create!(title: "Is You Down", duration: "2:27", album_id: 13, artist_id: 10)
+    song169 = Song.create!(title: "Martini Blue", duration: "3:15", album_id: 13, artist_id: 10)
+
+    song170 = Song.create!(title: "I'M THAT GIRL", duration: "3:28", album_id: 14, artist_id: 11)
+    song171 = Song.create!(title: "COZY", duration: "3:30", album_id: 14, artist_id: 11)
+    song172 = Song.create!(title: "ALIEN SUPERSTAR", duration: "3:35", album_id: 14, artist_id: 11)
+    song173 = Song.create!(title: "CUFF IT", duration: "3:45", album_id: 14, artist_id: 11)
+    song174 = Song.create!(title: "ENERGY (feat. Beam)", duration: "1:56", album_id: 14, artist_id: 11)
+    song175 = Song.create!(title: "BREAK MY SOUL", duration: "4:38", album_id: 14, artist_id: 11)
+    song176 = Song.create!(title: "CHURCH GIRL", duration: "3:44", album_id: 14, artist_id: 11)
+    song177 = Song.create!(title: "PLASTIC OFF THE SOFA", duration: "4:14", album_id: 14, artist_id: 11)
+    song178 = Song.create!(title: "VIRGO'S GROOVE", duration: "6:08", album_id: 14, artist_id: 11)
+    song179 = Song.create!(title: "MOVE (feat. Grace Jones & Tems)", duration: "3:23", album_id: 14, artist_id: 11)
+    song180 = Song.create!(title: "HEATED", duration: "4:20", album_id: 14, artist_id: 11)
+    song181 = Song.create!(title: "THIQUE", duration: "4:04", album_id: 14, artist_id: 11)
+    song182 = Song.create!(title: "ALL UP IN YOUR MIND", duration: "2:49", album_id: 14, artist_id: 11)
+    song183 = Song.create!(title: "AMERICA HAS A PROBLEM", duration: "3:18", album_id: 14, artist_id: 11)
+    song184 = Song.create!(title: "PURE/HONEY", duration: "4:48", album_id: 14, artist_id: 11)
+    song185 = Song.create!(title: "SUMMER RENAISSANCE", duration: "4:33", album_id: 14, artist_id: 11)
+
+
+    song186 = Song.create!(title: "Music For a Sushi Restaurant", duration: "3:13", album_id: 15, artist_id: 12)
+    song187 = Song.create!(title: "Late Night Talking", duration: "2:57", album_id: 15, artist_id: 12)
+    song188 = Song.create!(title: "Grapejuice", duration: "3:11", album_id: 15, artist_id: 12)
+    song189 = Song.create!(title: "As It Was", duration: "2:47", album_id: 15, artist_id: 12)
+    song190 = Song.create!(title: "Daylight", duration: "2:44", album_id: 15, artist_id: 12)
+    song191 = Song.create!(title: "Little Freak", duration: "3:22", album_id: 15, artist_id: 12)
+    song192 = Song.create!(title: "Matilda", duration: "4:05", album_id: 15, artist_id: 12)
+    song193 = Song.create!(title: "Cinema", duration: "4:03", album_id: 15, artist_id: 12)
+    song194 = Song.create!(title: "Daydreaming", duration: "3:07", album_id: 15, artist_id: 12)
+    song195 = Song.create!(title: "Keep Driving", duration: "2:20", album_id: 15, artist_id: 12)
+    song196 = Song.create!(title: "Satellite", duration: "3:38", album_id: 15, artist_id: 12)
+    song197 = Song.create!(title: "Boyfriends", duration: "3:14", album_id: 15, artist_id: 12)
+    song198 = Song.create!(title: "Love Of My Life", duration: "3:11", album_id: 15, artist_id: 12)
+
+
     puts "Creating playlists..."
     Playlist.create!(name: 'sour apples', owner_id: 1) #1
     Playlist.create!(name: 'sour grapes', owner_id: 2)#2
@@ -265,10 +324,12 @@ require "open-uri"
     PlaylistTrack.create!(playlist_id: 1, song_id: 6)
     PlaylistTrack.create!(playlist_id: 1, song_id: 75)
     PlaylistTrack.create!(playlist_id: 1, song_id: 88)
+    PlaylistTrack.create!(playlist_id: 4, song_id: 189)
+    PlaylistTrack.create!(playlist_id: 4, song_id: 173)
 
     PlaylistTrack.create!(playlist_id: 2, song_id: 11)
     PlaylistTrack.create!(playlist_id: 2, song_id: 12)
-    PlaylistTrack.create!(playlist_id: 2, song_id: 132)
+    PlaylistTrack.create!(playlist_id: 2, song_id: 162)
     PlaylistTrack.create!(playlist_id: 2, song_id: 14)
     PlaylistTrack.create!(playlist_id: 2, song_id: 62)
     PlaylistTrack.create!(playlist_id: 2, song_id: 74)
@@ -279,13 +340,15 @@ require "open-uri"
     PlaylistTrack.create!(playlist_id: 4, song_id: 93)
     PlaylistTrack.create!(playlist_id: 4, song_id: 84)
     PlaylistTrack.create!(playlist_id: 4, song_id: 46)
+    PlaylistTrack.create!(playlist_id: 4, song_id: 189)
+    PlaylistTrack.create!(playlist_id: 4, song_id: 173)
 
     PlaylistTrack.create!(playlist_id: 6, song_id: 34)
     PlaylistTrack.create!(playlist_id: 6, song_id: 2)
     PlaylistTrack.create!(playlist_id: 6, song_id: 68)
     PlaylistTrack.create!(playlist_id: 6, song_id: 45)
     PlaylistTrack.create!(playlist_id: 6, song_id: 109)
-    PlaylistTrack.create!(playlist_id: 6, song_id: 139)
+    PlaylistTrack.create!(playlist_id: 6, song_id: 169)
     PlaylistTrack.create!(playlist_id: 6, song_id: 120)
     PlaylistTrack.create!(playlist_id: 6, song_id: 6)
 
@@ -326,7 +389,18 @@ require "open-uri"
     album11.album_cover.attach(
       io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/album-covers/After+Hours.jpeg"),
       filename: 'afterhours.png')
-
+    album12.album_cover.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/album-covers/Midnights.jpeg"),
+      filename: 'midnights.png')
+    album13.album_cover.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/album-covers/Her.jpeg"),
+      filename: 'her.png')
+    album14.album_cover.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/album-covers/RENAISSANCE.jpeg"),
+      filename: 'renaissance.png')
+    album15.album_cover.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/album-covers/Harry's+House.jpeg"),
+      filename: 'harryshouse.png')
 
 
 
@@ -803,5 +877,155 @@ require "open-uri"
     song151.mp3.attach(
       io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/After+Hours/Until+I+Bleed+Out.mp3"),
       filename: 'untilibleed.mp3')
+
+# midnights
+    song152.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Lavender+Haze.mp3"),
+      filename: 'lavhaze.mp3')
+    song153.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Maroon.mp3"),
+      filename: 'maroon.mp3')
+    song154.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Anti-Hero.mp3"),
+      filename: 'anti.mp3')
+    song155.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Snow+On+The+Beach+(feat.+Lana+Del+Rey).mp3"),
+      filename: 'snow.mp3')
+    song156.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/You're+On+Your+Own%2C+Kid.mp3"),
+      filename: 'on-your-own.mp3')
+    song157.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Midnight+Rain.mp3"),
+      filename: 'midnight.mp3')
+    song158.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Question...%3F.mp3"),
+      filename: 'question.mp3')
+    song159.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Vigilante+Shit.mp3"),
+      filename: 'vigil.mp3')
+    song160.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Bejeweled.mp3"),
+      filename: 'bejeweled.mp3')
+    song161.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Labyrinth.mp3"),
+      filename: 'labrinyth.mp3')
+    song162.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Karma.mp3"),
+      filename: 'karma.mp3')
+    song163.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Sweet+Nothing.mp3"),
+      filename: 'sweetnothing.mp3')
+    song164.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Midnights/Mastermind.mp3"),
+      filename: 'mastermind.mp3')
+
+# her
+    song165.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Her/Your+Name%3F+(Intro).mp3"),
+      filename: 'yourname.mp3')
+    song166.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Her/Jasmine.mp3"),
+      filename: 'jasmine.mp3')
+    song167.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Her/Text+Me.mp3"),
+      filename: 'textme.mp3')
+    song168.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Her/Is+You+Down.mp3"),
+      filename: 'isyoudown.mp3')
+    song169.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Her/Martini+Blue.mp3"),
+      filename: 'martini.mp3')
+
+# renaissance
+    song170.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/I'M+THAT+GIRL.mp3"),
+      filename: 'imthatgirl.mp3')
+    song171.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/COZY.mp3"),
+      filename: 'cozy.mp3')
+    song172.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/ALIEN+SUPERSTAR.mp3"),
+      filename: 'alien.mp3')
+    song173.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/CUFF+IT.mp3"),
+      filename: 'cuffit.mp3')
+    song174.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/ENERGY+(feat.+Beam).mp3"),
+      filename: 'energy.mp3')
+    song175.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/BREAK+MY+SOUL.mp3"),
+      filename: 'breakmysoul.mp3')
+    song176.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/CHURCH+GIRL.mp3"),
+      filename: 'church.mp3')
+    song177.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/PLASTIC+OFF+THE+SOFA.mp3"),
+      filename: 'plastic.mp3')
+    song178.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/VIRGO'S+GROOVE.mp3"),
+      filename: 'virgos.mp3')
+    song179.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/MOVE+(feat.+Grace+Jones+%26+Tems).mp3"),
+      filename: 'move.mp3')
+    song180.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/HEATED.mp3"),
+      filename: 'heated.mp3')
+    song181.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/THIQUE.mp3"),
+      filename: 'thique.mp3')
+    song182.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/ALL+UP+IN+YOUR+MIND.mp3"),
+      filename: 'allupinyourmind.mp3')
+    song183.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/AMERICA+HAS+A+PROBLEM.mp3"),
+      filename: 'america.mp3')
+    song184.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/PURE_HONEY.mp3"),
+      filename: 'purehoney.mp3')
+    song185.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/RENAISSANCE/SUMMER+RENAISSANCE.mp3"),
+      filename: 'summer.mp3')
+
+# harrys house
+    song186.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Music+For+a+Sushi+Restaurant.mp3"),
+      filename: 'miasr.mp3')
+    song187.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Late+Night+Talking.mp3"),
+      filename: 'latenighttalking.mp3')
+    song188.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Grapejuice.mp3"),
+      filename: 'save.mp3')
+    song189.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/As+It+Was.mp3"),
+      filename: 'asitwas.mp3')
+    song190.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Daylight.mp3"),
+      filename: 'daylight.mp3')
+    song191.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Little+Freak.mp3"),
+      filename: 'littlefreak.mp3')
+    song192.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Matilda.mp3"),
+      filename: 'matilda.mp3')
+    song193.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Cinema.mp3"),
+      filename: 'cinema.mp3')
+    song194.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Daydreaming.mp3"),
+      filename: 'daydreaming.mp3')
+    song195.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Keep+Driving.mp3"),
+      filename: 'keepdriving.mp3')
+    song196.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Satellite.mp3"),
+      filename: 'satellite.mp3')
+    song197.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Boyfriends.mp3"),
+      filename: 'boyfriends.mp3')
+    song198.mp3.attach(
+      io: URI.open("https://sbotify-seeds.s3.us-east-2.amazonaws.com/songs/Harry's+House/Love+Of+My+Life.mp3"),
+      filename: 'loml.mp3')
+
     puts "Done!"
 # end
